@@ -1,0 +1,1627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:cm4di="https://w3id.org/cm4di#"
+>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#trustFrameworkName">
+    <rdfs:label>trustFrameworkName</rdfs:label>
+    <rdfs:comment>Name of the trust framework.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#identifierScopeRef">
+    <rdfs:label>identifierScopeRef</rdfs:label>
+    <rdfs:comment>Reference to the scope in which the identifier is valid.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Identifier"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#externalVersionRef">
+    <rdfs:label>externalVersionRef</rdfs:label>
+    <rdfs:comment>Version reference of the external source.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#ONTrustTrust"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#holderRef">
+    <rdfs:label>holderRef</rdfs:label>
+    <rdfs:comment>Reference to the holder associated with the entity.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="N290e7f7494014708855b05feeed1f8ee">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Subscriber"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Credential"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Party"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#profileRef">
+    <rdfs:label>profileRef</rdfs:label>
+    <rdfs:comment>Reference to extended profiles.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#ProfileArtifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#policyRef">
+    <rdfs:label>policyRef</rdfs:label>
+    <rdfs:comment>Reference to governing policies.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="Nb613e5afb0a740e5b09f3cf051a7873f">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#IdentityContext"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authorization"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#PolicyArtifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#obligationRef">
+    <rdfs:label>obligationRef</rdfs:label>
+    <rdfs:comment>References to obligations or advice attached to an authorization result.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#AuthorizationResult"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#ObligationArtifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#issues">
+    <rdfs:label>issues</rdfs:label>
+    <rdfs:comment>Associates a CredentialServiceProvider with the Credential it issues.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#issuedBy">
+        <rdfs:label>issuedBy</rdfs:label>
+        <rdfs:comment>Inverse of issues.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+        <rdfs:range rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#schemaRef">
+    <rdfs:label>schemaRef</rdfs:label>
+    <rdfs:comment>Reference to a schema artifact.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#SchemaArtifact"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#issuanceTime">
+    <rdfs:label>issuanceTime</rdfs:label>
+    <rdfs:comment>Time of issuance.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#authenticationMethodRef">
+    <rdfs:label>authenticationMethodRef</rdfs:label>
+    <rdfs:comment>References to authentication methods.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authentication"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Method"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#claimValue">
+    <rdfs:label>claimValue</rdfs:label>
+    <rdfs:comment>Value asserted by the claim.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#lifecycleStatus">
+    <rdfs:label>lifecycleStatus</rdfs:label>
+    <rdfs:comment>Lifecycle status of the digital identity.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#validFrom">
+    <rdfs:label>validFrom</rdfs:label>
+    <rdfs:comment>Lower bound of validity.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#subscriptionType">
+    <rdfs:label>subscriptionType</rdfs:label>
+    <rdfs:comment>Type of subscription or membership.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Subscriber"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#validUntil">
+    <rdfs:label>validUntil</rdfs:label>
+    <rdfs:comment>Upper bound of validity.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#trustReferenceRef">
+    <rdfs:label>trustReferenceRef</rdfs:label>
+    <rdfs:comment>Reference from an IdentityProvider to a TrustReference.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityProvider"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#hasAttribute">
+    <rdfs:label>hasAttribute</rdfs:label>
+    <rdfs:comment>Associates an IdentitySubject with one or more intrinsic identity attributes.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#assuranceHint">
+    <rdfs:label>assuranceHint</rdfs:label>
+    <rdfs:comment>Lightweight indication of assurance or strength.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#bindingStatus">
+    <rdfs:label>bindingStatus</rdfs:label>
+    <rdfs:comment>Current binding status of the authenticator.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:AnnotationProperty rdf:about="https://w3id.org/cm4di#mappingNote">
+    <rdfs:label>mappingNote</rdfs:label>
+    <rdfs:comment>Short note about alignment or operational interpretation.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#domainRef">
+    <rdfs:label>domainRef</rdfs:label>
+    <rdfs:comment>Reference to an organizational or technical domain.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Domain"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#reflects">
+    <rdfs:label>reflects</rdfs:label>
+    <rdfs:comment>Associates a DigitalIdentity with the IdentityAttributes it reflects.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#authenticationContextRef">
+    <rdfs:label>authenticationContextRef</rdfs:label>
+    <rdfs:comment>Reference to the authentication context class or assurance context.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authentication"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#AssuranceContext"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#displayName">
+    <rdfs:label>displayName</rdfs:label>
+    <rdfs:comment>Human-readable label for the party.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Party"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#authenticatorRef">
+    <rdfs:label>authenticatorRef</rdfs:label>
+    <rdfs:comment>References to authenticators used in authentication.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authentication"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#claimEvidenceRef">
+    <rdfs:label>claimEvidenceRef</rdfs:label>
+    <rdfs:comment>References to supporting claim evidence.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#EvidenceArtifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#protocolRef">
+    <rdfs:label>protocolRef</rdfs:label>
+    <rdfs:comment>References to issuance or management protocols.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Protocol"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#representationFormat">
+    <rdfs:label>representationFormat</rdfs:label>
+    <rdfs:comment>Concrete operational format of the representation.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#asserts">
+    <rdfs:label>asserts</rdfs:label>
+    <rdfs:comment>Associates a Claim with one or more asserted IdentityAttributes.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#status">
+    <rdfs:label>status</rdfs:label>
+    <rdfs:comment>Current status of the party.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="N4980d08b90654e51b80e398eebe5e859">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Party"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#issuerAuthorityRef">
+    <rdfs:label>issuerAuthorityRef</rdfs:label>
+    <rdfs:comment>Reference to an issuing authority.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Authority"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#about">
+    <rdfs:label>about</rdfs:label>
+    <rdfs:comment>Associates a Claim with the IdentitySubject it is about.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#subjectOfClaim">
+        <rdfs:label>subjectOfClaim</rdfs:label>
+        <rdfs:comment>Inverse of about.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+        <rdfs:range rdf:resource="https://w3id.org/cm4di#Claim"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#enrollmentTime">
+    <rdfs:label>enrollmentTime</rdfs:label>
+    <rdfs:comment>Time of enrollment.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Enrollment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#evidenceReference">
+    <rdfs:label>evidenceReference</rdfs:label>
+    <rdfs:comment>References to trust evidence or attestations.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#EvidenceArtifact"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#claimIssuedAt">
+    <rdfs:label>claimIssuedAt</rdfs:label>
+    <rdfs:comment>Time of issuance or assertion of the claim.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:AnnotationProperty rdf:about="https://w3id.org/cm4di#hasStereotype">
+    <rdfs:label>hasStereotype</rdfs:label>
+    <rdfs:comment>Stores the OntoUML stereotype associated with a modeling element.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#claimRef">
+    <rdfs:label>claimRef</rdfs:label>
+    <rdfs:comment>References to claims participating in authentication.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authentication"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Claim"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#verificationPolicyRef">
+    <rdfs:label>verificationPolicyRef</rdfs:label>
+    <rdfs:comment>Reference to verification policies.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Verifier"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#PolicyArtifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#hasParticipant">
+    <rdfs:label>hasParticipant</rdfs:label>
+    <rdfs:comment>Associates a participant-bearing entity with an event in which it participates, following the direction used in the CM4DI conceptual diagram.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="N93f7340e966043ff9945d3d109767724">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#IdentitySubject"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Verifier"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authenticator"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Claim"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#RelyingParty"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="Nfc9c60a751574aa19434992b5c30867c">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authentication"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authorization"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:range>
+    <cm4di:mappingNote>The conceptual diagram uses participant-to-event edges labeled hasParticipant. This OWL operationalization preserves that relation label and direction for compatibility with CM4DI.</cm4di:mappingNote>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#manages">
+    <rdfs:label>manages</rdfs:label>
+    <rdfs:comment>Associates an IdentityProvider with one or more DigitalIdentity instances it manages.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityProvider"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#managedBy">
+        <rdfs:label>managedBy</rdfs:label>
+        <rdfs:comment>Inverse of manages.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+        <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityProvider"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#credentialType">
+    <rdfs:label>credentialType</rdfs:label>
+    <rdfs:comment>Type or category of the credential.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#managedCredentialType">
+    <rdfs:label>managedCredentialType</rdfs:label>
+    <rdfs:comment>Credential type managed by the CSP.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#statusReference">
+    <rdfs:label>statusReference</rdfs:label>
+    <rdfs:comment>Reference to status, revocation, or lifecycle information.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#EvidenceArtifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#serviceEndpointRef">
+    <rdfs:label>serviceEndpointRef</rdfs:label>
+    <rdfs:comment>References to provider service endpoints.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityProvider"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#ServiceEndpoint"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#trustScore">
+    <rdfs:label>trustScore</rdfs:label>
+    <rdfs:comment>Quantitative trust score.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#confidenceLevel">
+    <rdfs:label>confidenceLevel</rdfs:label>
+    <rdfs:comment>Confidence or quality indicator of the attribute.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </owl:DatatypeProperty>
+  <owl:Ontology rdf:about="https://w3id.org/cm4di">
+    <dcterms:title>CM4DI Ontology</dcterms:title>
+    <dcterms:description>Field-complete OWL operationalization of the CM4DI ontology for digital identity with trust integration, grounded in UFO and specified in OntoUML.</dcterms:description>
+    <owl:versionInfo>1.3-field-complete</owl:versionInfo>
+    <owl:versionIRI rdf:resource="https://w3id.org/cm4di/1.3"/>
+    <rdfs:label>CM4DI Ontology</rdfs:label>
+    <rdfs:comment>OWL operationalization of the CM4DI conceptual model enriched with the CM4DI Field Registry v0.1.</rdfs:comment>
+    <dcterms:creator>Araz Saie Arasi</dcterms:creator>
+    <dcterms:creator>Hassan Haghighi</dcterms:creator>
+    <dcterms:creator>Hossein Azgomi</dcterms:creator>
+    <dcterms:license rdf:resource="https://www.apache.org/licenses/LICENSE-2.0"/>
+    <rdfs:seeAlso rdf:resource="https://github.com/ArazSaieArasi3/CM4DI"/>
+  </owl:Ontology>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#subjectStatus">
+    <rdfs:label>subjectStatus</rdfs:label>
+    <rdfs:comment>Current status of the subject.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#nonceOrSessionBinding">
+    <rdfs:label>nonceOrSessionBinding</rdfs:label>
+    <rdfs:comment>Session or anti-replay binding value.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authentication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#externalConceptRef">
+    <rdfs:label>externalConceptRef</rdfs:label>
+    <rdfs:comment>Reference to the external trust concept.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#ONTrustTrust"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#normalizationRule">
+    <rdfs:label>normalizationRule</rdfs:label>
+    <rdfs:comment>Rule or method for identifier normalization.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Identifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#jurisdictionRef">
+    <rdfs:label>jurisdictionRef</rdfs:label>
+    <rdfs:comment>Reference to a legal or governance jurisdiction.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Jurisdiction"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#managedContextRef">
+    <rdfs:label>managedContextRef</rdfs:label>
+    <rdfs:comment>Reference to an identity context managed by an identity provider.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityProvider"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#claimIssuerRef">
+    <rdfs:label>claimIssuerRef</rdfs:label>
+    <rdfs:comment>Reference to the issuer or source of the claim.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Party"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#resourceRef">
+    <rdfs:label>resourceRef</rdfs:label>
+    <rdfs:comment>References to targeted resources.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authorization"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#ResourceArtifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#hasTrustReference">
+    <rdfs:label>hasTrustReference</rdfs:label>
+    <rdfs:comment>Associates a DigitalIdentity with zero or more TrustReference instances.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#isTrustReferenceOf">
+        <rdfs:label>isTrustReferenceOf</rdfs:label>
+        <rdfs:comment>Inverse of hasTrustReference.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+        <rdfs:range rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#actionRef">
+    <rdfs:label>actionRef</rdfs:label>
+    <rdfs:comment>References to requested or evaluated actions.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authorization"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#ActionArtifact"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#externalLabel">
+    <rdfs:label>externalLabel</rdfs:label>
+    <rdfs:comment>Human-readable label of the external concept.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#ONTrustTrust"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#holds">
+    <rdfs:label>holds</rdfs:label>
+    <rdfs:comment>Associates a Subscriber with the Credential it holds.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Subscriber"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#heldBy">
+        <rdfs:label>heldBy</rdfs:label>
+        <rdfs:comment>Inverse of holds.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+        <rdfs:range rdf:resource="https://w3id.org/cm4di#Subscriber"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#representationType">
+    <rdfs:label>representationType</rdfs:label>
+    <rdfs:comment>Type of representation.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#identifiedBy">
+    <rdfs:label>identifiedBy</rdfs:label>
+    <rdfs:comment>Associates a DigitalIdentity with one or more identifiers.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Identifier"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#isPrimary">
+    <rdfs:label>isPrimary</rdfs:label>
+    <rdfs:comment>Indicates whether the identifier is the primary one.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Identifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#verifierRef">
+    <rdfs:label>verifierRef</rdfs:label>
+    <rdfs:comment>Reference to the verifier participating in authentication.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authentication"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Verifier"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#assuranceLevel">
+    <rdfs:label>assuranceLevel</rdfs:label>
+    <rdfs:comment>Level or strength of the authentication outcome.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#AuthenticationResult"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#proofRef">
+    <rdfs:label>proofRef</rdfs:label>
+    <rdfs:comment>References to proof or signature materials.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#EvidenceArtifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#verificationContextRef">
+    <rdfs:label>verificationContextRef</rdfs:label>
+    <rdfs:comment>Reference to the context in which verification occurs.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Verifier"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#grantedScopeOrAction">
+    <rdfs:label>grantedScopeOrAction</rdfs:label>
+    <rdfs:comment>Granted scopes, permissions, or actions.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#AuthorizationResult"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#alignedWith">
+    <rdfs:label>alignedWith</rdfs:label>
+    <rdfs:comment>Weak semantic alignment between a TrustReference and an external trust concept.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#ONTrustTrust"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#audienceRef">
+    <rdfs:label>audienceRef</rdfs:label>
+    <rdfs:comment>Reference to intended audiences or target services.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#RelyingParty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Audience"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#conditionRef">
+    <rdfs:label>conditionRef</rdfs:label>
+    <rdfs:comment>References to conditions evaluated during authorization.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authorization"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Condition"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#subjectCategory">
+    <rdfs:label>subjectCategory</rdfs:label>
+    <rdfs:comment>Category of the identity subject.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#reasonCode">
+    <rdfs:label>reasonCode</rdfs:label>
+    <rdfs:comment>Reason or explanation code for the outcome.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="Ndff4a223e36e43ddb5fa0fa649c49efb">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthenticationResult"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthorizationResult"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#enrollmentStatus">
+    <rdfs:label>enrollmentStatus</rdfs:label>
+    <rdfs:comment>Current status of the enrollment.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Enrollment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#registrationChannel">
+    <rdfs:label>registrationChannel</rdfs:label>
+    <rdfs:comment>Channel through which enrollment occurred.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Enrollment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#attributeSourceRef">
+    <rdfs:label>attributeSourceRef</rdfs:label>
+    <rdfs:comment>Reference to the source of an identity attribute.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Party"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#clientMetadataRef">
+    <rdfs:label>clientMetadataRef</rdfs:label>
+    <rdfs:comment>Reference to client or application metadata.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#RelyingParty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#ClientMetadata"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#subscriptionStatus">
+    <rdfs:label>subscriptionStatus</rdfs:label>
+    <rdfs:comment>Current status of the subscriber role.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Subscriber"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#claimStatus">
+    <rdfs:label>claimStatus</rdfs:label>
+    <rdfs:comment>Status of the claim.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#description">
+    <rdfs:label>description</rdfs:label>
+    <rdfs:comment>Descriptive textual summary of the party.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Party"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:AnnotationProperty rdf:about="https://w3id.org/cm4di#constraintText">
+    <rdfs:label>constraintText</rdfs:label>
+    <rdfs:comment>Textual rendering of a design constraint or modeling guideline.</rdfs:comment>
+  </owl:AnnotationProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#trustSource">
+    <rdfs:label>trustSource</rdfs:label>
+    <rdfs:comment>Source of trust information.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#requestedScopeRef">
+    <rdfs:label>requestedScopeRef</rdfs:label>
+    <rdfs:comment>Reference to requested scopes, permissions, or access targets.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#RelyingParty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#ScopeArtifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#scopedIn">
+    <rdfs:label>scopedIn</rdfs:label>
+    <rdfs:comment>Associates a scoped artifact with the IdentityContext in which it is interpreted.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="N3f310f96c5134c04885a46eb4b0277e7">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#DigitalIdentity"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Identifier"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#TrustReference"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#providerRef">
+    <rdfs:label>providerRef</rdfs:label>
+    <rdfs:comment>Reference to the provider involved in enrollment.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Enrollment"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#digitalIdentityId">
+    <rdfs:label>digitalIdentityId</rdfs:label>
+    <rdfs:comment>Identifier of the digital identity representation.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Party">
+    <rdfs:label>Party</rdfs:label>
+    <cm4di:hasStereotype>kind</cm4di:hasStereotype>
+    <rdfs:comment>Base identity-providing entity for all parties participating in the digital identity ecosystem.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N6773eac7adc848e6803e8ff5270f035a">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#partyId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nf3b73820e9b14acb95e433e316fceb48">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#partyType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#ClientMetadata">
+    <rdfs:label>ClientMetadata</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Enrollment">
+    <rdfs:label>Enrollment</rdfs:label>
+    <cm4di:hasStereotype>relator</cm4di:hasStereotype>
+    <rdfs:comment>Relator materially grounding the mediated relation between a Subscriber and a CredentialServiceProvider.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N2a3e9a8ae1d34235944f3480a2b3dce0">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#enrollmentId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Naccaeaa34c824b40a5a922c01dd28cf9">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#subscriberRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Subscriber"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N5cd4bda428664368a70611b469e6f8b4">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#providerRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nccdfb7ed8c0742d4814aee78755bcb11">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#mediates"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Subscriber"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N4432f2f6c8b445669b639369e530afdd">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#mediates"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#IdentityAttribute">
+    <rdfs:label>IdentityAttribute</rdfs:label>
+    <cm4di:hasStereotype>quality</cm4di:hasStereotype>
+    <rdfs:comment>Intrinsic or descriptive quality inhering in an IdentitySubject.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N2945db7a579d4bbea22de16b9bfb55a8">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#attributeId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N4f0b700d259b4e9d86102c98b9abb74b">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#attributeType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nfaf4bbb29c614e0aaf0343e8242fc94a">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#valueType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N4ebdc963932b49b1b436bd2e56c2058e">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#attributeValue"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#verifierType">
+    <rdfs:label>verifierType</rdfs:label>
+    <rdfs:comment>Type of verifier.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Verifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#verifierId">
+    <rdfs:label>verifierId</rdfs:label>
+    <rdfs:comment>Stable identifier of the verifier.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Verifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#alignmentTargetRef">
+    <rdfs:label>alignmentTargetRef</rdfs:label>
+    <rdfs:comment>Reference to external trust concepts used as alignment targets.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#ONTrustTrust"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#assertedAttributeRef">
+    <rdfs:label>assertedAttributeRef</rdfs:label>
+    <rdfs:comment>Reference to asserted attributes.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#aboutSubjectRef">
+    <rdfs:label>aboutSubjectRef</rdfs:label>
+    <rdfs:comment>Reference to the subject the claim is about.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#EvidenceArtifact">
+    <rdfs:label>EvidenceArtifact</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#isBoundToCredential">
+    <rdfs:label>isBoundToCredential</rdfs:label>
+    <rdfs:comment>Inverse of boundTo.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Credential"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#authenticationId">
+    <rdfs:label>authenticationId</rdfs:label>
+    <rdfs:comment>Stable identifier of the authentication event.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authentication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#CredentialServiceProvider">
+    <rdfs:label>CredentialServiceProvider</rdfs:label>
+    <cm4di:hasStereotype>subkind</cm4di:hasStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm4di#Party"/>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N0070a32b7c364810b2e0b38638c59af6">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#cspId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Ndb94aaa387c3490096667a7f557532fc">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#serviceType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Specialization of Party responsible for issuing credentials.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#AuthenticationResult">
+    <rdfs:label>AuthenticationResult</rdfs:label>
+    <cm4di:hasStereotype>value object</cm4di:hasStereotype>
+    <rdfs:comment>Value-like outcome produced by an authentication event.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N0fe4d00d6cd94525b43640a2f7b964c5">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#resultId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N4f5b286d6e9143edaf8616f491c8cda3">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#decision"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#PolicyArtifact">
+    <rdfs:label>PolicyArtifact</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#RelyingParty">
+    <rdfs:label>RelyingParty</rdfs:label>
+    <cm4di:hasStereotype>subkind</cm4di:hasStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm4di#Party"/>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nb258c74643914a0b85979a2bad99c59a">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#rpId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N6e294101b89643a38fae3e860e0cc92f">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#rpType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Specialization of Party participating in authorization decisions and relying on identity-related information.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Authentication">
+    <rdfs:label>Authentication</rdfs:label>
+    <cm4di:hasStereotype>event</cm4di:hasStereotype>
+    <rdfs:comment>Event in which an identity subject is authenticated through one or more participating entities or artifacts.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N865066f49c104655913d59d0850f1f4b">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#authenticationId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N9a88fe4a72fe4281a21551628f5affb8">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#authenticationTime"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nae0868d7d29c4f4db0c92a26d21fa423">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#subjectParticipantRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nbd4e672ca69c4d82a2047221c01f9541">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#resultRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#AuthenticationResult"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Ndcd148f00a5d497d86e098678cfdab73">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#produces"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#AuthenticationResult"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#resultId">
+    <rdfs:label>resultId</rdfs:label>
+    <rdfs:comment>Stable identifier of the result object.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="N275e5fd3fc814b919b1dcf716a30ae54">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthenticationResult"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthorizationResult"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#claimId">
+    <rdfs:label>claimId</rdfs:label>
+    <rdfs:comment>Stable identifier of the claim.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#rpType">
+    <rdfs:label>rpType</rdfs:label>
+    <rdfs:comment>Type of relying party.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#RelyingParty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#valueType">
+    <rdfs:label>valueType</rdfs:label>
+    <rdfs:comment>Type of the attribute value.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#resultRef">
+    <rdfs:label>resultRef</rdfs:label>
+    <rdfs:comment>Reference to the explicit outcome object of the event.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="Ne6bbe8e0ad314b55b834fa1b34e5aa76">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authentication"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authorization"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="Nd1c710b2c6cc4c2293720ea4030f404e">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthenticationResult"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthorizationResult"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#issuerRef">
+    <rdfs:label>issuerRef</rdfs:label>
+    <rdfs:comment>Reference to the credential issuer.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Party"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#credentialId">
+    <rdfs:label>credentialId</rdfs:label>
+    <rdfs:comment>Stable identifier of the credential.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#subjectRef">
+    <rdfs:label>subjectRef</rdfs:label>
+    <rdfs:comment>Reference to the identity subject.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="N576a737f5ac740bb934bef9de8ab18b0">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#DigitalIdentity"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Credential"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Claim"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#IdentitySubject"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#trustReferenceId">
+    <rdfs:label>trustReferenceId</rdfs:label>
+    <rdfs:comment>Stable identifier of the trust reference.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#TrustReference"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Protocol">
+    <rdfs:label>Protocol</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#subscriberId">
+    <rdfs:label>subscriberId</rdfs:label>
+    <rdfs:comment>Identifier of the subscriber role instance.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Subscriber"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Authenticator">
+    <rdfs:label>Authenticator</rdfs:label>
+    <cm4di:hasStereotype>kind</cm4di:hasStereotype>
+    <rdfs:comment>Authentication mechanism or authenticator entity bound to a credential and participating in authentication events.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nd67d4ac21a99449ead32f241712b3ba1">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#authenticatorId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N29e102bf990b4dbd82ede9bca1c9683e">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#authenticatorType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Subscriber">
+    <rdfs:label>Subscriber</rdfs:label>
+    <cm4di:hasStereotype>role</cm4di:hasStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N7e3e4abc06c54a839e60cf707545ae9d">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#subscriberId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Context-dependent anti-rigid role that an IdentitySubject may assume in order to hold credentials.</rdfs:comment>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#contextId">
+    <rdfs:label>contextId</rdfs:label>
+    <rdfs:comment>Stable identifier of the identity context.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#mediates">
+    <rdfs:label>mediates</rdfs:label>
+    <rdfs:comment>Associates Enrollment with the endurants it materially mediates.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Enrollment"/>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="N9b17ae5c0fa4416cb1952af1b9ead4da">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Subscriber"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#CredentialServiceProvider"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Claim">
+    <rdfs:label>Claim</rdfs:label>
+    <cm4di:hasStereotype>social object</cm4di:hasStereotype>
+    <rdfs:comment>Socially or institutionally constructed object that is about an IdentitySubject and asserts one or more identity attributes.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N82c94796c68a42fa8d49e3fa45eef62e">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#claimId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N8277799b26674e03b168843d01ff101a">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#claimType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nb1e75f5d07c94616872502ac7fda7fed">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#aboutSubjectRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nb29fb6ccec81414f97027ca0bd95be4e">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#assertedAttributeRef"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#partyType">
+    <rdfs:label>partyType</rdfs:label>
+    <rdfs:comment>General type of the party.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Party"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Domain">
+    <rdfs:label>Domain</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#identifierScheme">
+    <rdfs:label>identifierScheme</rdfs:label>
+    <rdfs:comment>Scheme or namespace of the identifier.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Identifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#DigitalIdentity">
+    <rdfs:label>DigitalIdentity</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+    <rdfs:comment>Informational representation of an IdentitySubject within a specific identity context.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N030122fb2d1842719a9ec774f8355237">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#digitalIdentityId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N6cb146a1f0074365b20238eb58ff174b">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#subjectRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nc7d9b5d6d2834687b6fabbe9142acced">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#contextRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Audience">
+    <rdfs:label>Audience</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#IdentitySubject">
+    <rdfs:label>IdentitySubject</rdfs:label>
+    <cm4di:hasStereotype>subkind</cm4di:hasStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm4di#Party"/>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N3173f2c31b544cc0b5fa567f24e0387b">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#representedBy"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Rigid specialization of Party acting as the primary subject of digital identity representation, claims, and attributes.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Identifier">
+    <rdfs:label>Identifier</rdfs:label>
+    <cm4di:hasStereotype>value object</cm4di:hasStereotype>
+    <rdfs:comment>Value-like identifier used to identify a DigitalIdentity within a context.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N78eaf5fa785948ed975102fd701400d5">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#identifierValue"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N2ae53ae0dfd949188b8b8210e936b018">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#identifierScheme"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#supportedClaimRef">
+    <rdfs:label>supportedClaimRef</rdfs:label>
+    <rdfs:comment>References to claims supported by the credential.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Claim"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#ServiceEndpoint">
+    <rdfs:label>ServiceEndpoint</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#supports">
+    <rdfs:label>supports</rdfs:label>
+    <rdfs:comment>Associates a Credential with one or more Claims that it supports.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#supportedByCredential">
+        <rdfs:label>supportedByCredential</rdfs:label>
+        <rdfs:comment>Inverse of supports.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+        <rdfs:range rdf:resource="https://w3id.org/cm4di#Credential"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+    <cm4di:mappingNote>The supports relation is operationalized as Credential-to-Claim, following the current Version 15 conceptual diagram and its intended identity-evidence interpretation.</cm4di:mappingNote>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#contextRef">
+    <rdfs:label>contextRef</rdfs:label>
+    <rdfs:comment>Reference to the context in which the entity or event is interpreted.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="N80b3c4d672824495a25778dc6fa0b727">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#DigitalIdentity"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authentication"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authorization"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#TrustReference"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#IdentitySubject"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#attributeType">
+    <rdfs:label>attributeType</rdfs:label>
+    <rdfs:comment>Type of the attribute.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#attributeId">
+    <rdfs:label>attributeId</rdfs:label>
+    <rdfs:comment>Stable identifier of the attribute.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Jurisdiction">
+    <rdfs:label>Jurisdiction</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#boundAuthenticatorRef">
+    <rdfs:label>boundAuthenticatorRef</rdfs:label>
+    <rdfs:comment>Reference to an authenticator bound to the credential.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#ObligationArtifact">
+    <rdfs:label>ObligationArtifact</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#providerType">
+    <rdfs:label>providerType</rdfs:label>
+    <rdfs:comment>Type of provider.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityProvider"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#IdentityContext">
+    <rdfs:label>IdentityContext</rdfs:label>
+    <cm4di:hasStereotype>kind</cm4di:hasStereotype>
+    <rdfs:comment>Contextual scope within which digital identity, identifiers, and trust references are interpreted.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N990b5825315c44e29a11029939c85f22">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#contextId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N7be3cd899cae4f6194407a8f9e256ccd">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#contextType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#authenticatorId">
+    <rdfs:label>authenticatorId</rdfs:label>
+    <rdfs:comment>Stable identifier of the authenticator.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#boundTo">
+    <rdfs:label>boundTo</rdfs:label>
+    <rdfs:comment>Associates a Credential with the Authenticator to which it is bound.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Credential"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/cm4di#isBoundToCredential"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#SchemaArtifact">
+    <rdfs:label>SchemaArtifact</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#subscriberRef">
+    <rdfs:label>subscriberRef</rdfs:label>
+    <rdfs:comment>Reference to the subscriber involved in enrollment.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Enrollment"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Subscriber"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#evaluatedClaimRef">
+    <rdfs:label>evaluatedClaimRef</rdfs:label>
+    <rdfs:comment>References to evaluated claims.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authorization"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Claim"/>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#IdentityProvider">
+    <rdfs:label>IdentityProvider</rdfs:label>
+    <cm4di:hasStereotype>subkind</cm4di:hasStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm4di#Party"/>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N3a14f30066b24ef7be3a0f082699496a">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#providerId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N5a56376573d242938d9520c8b2883efc">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#providerType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Specialization of Party responsible for managing digital identities.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Verifier">
+    <rdfs:label>Verifier</rdfs:label>
+    <cm4di:hasStereotype>subkind</cm4di:hasStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm4di#Party"/>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N717de0e8ec164a3b88a51ba687cc206d">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#verifierId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N8439a5e6002b419cb9ec4becf4edb62b">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#verifierType"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Specialization of Party participating in authentication for validation or verification purposes.</rdfs:comment>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#authorizationTime">
+    <rdfs:label>authorizationTime</rdfs:label>
+    <rdfs:comment>Time of authorization.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authorization"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#identifierValue">
+    <rdfs:label>identifierValue</rdfs:label>
+    <rdfs:comment>Actual identifier value.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Identifier"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#TrustReference">
+    <rdfs:label>TrustReference</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+    <rdfs:comment>Lightweight informational object used to reference and align with external trust semantics without embedding them into the core ontology.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N34c1252237a14b3e979cd584c03e22d6">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#trustReferenceId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N2edd272fa26e4ae99b54b60d656a4d5d">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#alignmentTargetRef"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#ONTrustTrust"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N44912854c77d469da40a2fa170bc17ce">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#contextRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#contextType">
+    <rdfs:label>contextType</rdfs:label>
+    <rdfs:comment>Type of context.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityContext"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Credential">
+    <rdfs:label>Credential</rdfs:label>
+    <cm4di:hasStereotype>social object</cm4di:hasStereotype>
+    <rdfs:comment>Socially or institutionally constructed object issued by a CredentialServiceProvider and held by a Subscriber.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nabbcf5c309da49ef8342945036d51c84">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#credentialId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N6117bd7130c341d1badc774c1fd4a0fc">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#issuerRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Party"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nf895489f28544638ad15826a422cc813">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#boundAuthenticatorRef"/>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nf536e1491d4741df97d02ee8da37ecd8">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#supportedClaimRef"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Claim"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N2f8caee8b5bd4989ae6b1e04e6653778">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#boundTo"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N16aa3013bab94ac4a0f859316f621036">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#supports"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Claim"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N9cd6702309bf4347bd6a23b615c00820">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#issuedBy"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N0b8dac56ae364d008a44fab41794d46c">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#heldBy"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Subscriber"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#cspId">
+    <rdfs:label>cspId</rdfs:label>
+    <rdfs:comment>Stable identifier of the credential service provider.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#ProfileArtifact">
+    <rdfs:label>ProfileArtifact</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Authorization">
+    <rdfs:label>Authorization</rdfs:label>
+    <cm4di:hasStereotype>event</cm4di:hasStereotype>
+    <rdfs:comment>Event in which access or authorization is determined based on claims and relying-party participation.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N3dfd3e19983e4a19b3f3c674dacbcdfb">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#authorizationId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N47197156f6674b6786364b9a4a893e64">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#authorizationTime"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Na74e55b06e844b098101f06d1f247196">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#relyingPartyRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#RelyingParty"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N1fe8a7b7f03a457aa8e1edd997ab0384">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#evaluatedClaimRef"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Claim"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N48abddb559b04624b8b5cbf7e55f99ee">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#resultRef"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#AuthorizationResult"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N5ef6b60ef39d41d9aaf423f3d1cacd84">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#produces"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#AuthorizationResult"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N5f5793d35f42454a8e2496ef8de61d8d">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#evaluates"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="https://w3id.org/cm4di#Claim"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#relyingPartyRef">
+    <rdfs:label>relyingPartyRef</rdfs:label>
+    <rdfs:comment>Reference to the relying party participating in authorization.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authorization"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#RelyingParty"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#attributeValue">
+    <rdfs:label>attributeValue</rdfs:label>
+    <rdfs:comment>Value of the attribute.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityAttribute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#serviceType">
+    <rdfs:label>serviceType</rdfs:label>
+    <rdfs:comment>Type of credential-related service.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#CredentialServiceProvider"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#evaluates">
+    <rdfs:label>evaluates</rdfs:label>
+    <rdfs:comment>Associates an Authorization event with one or more Claims it evaluates.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authorization"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#Claim"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#authenticationTime">
+    <rdfs:label>authenticationTime</rdfs:label>
+    <rdfs:comment>Time of authentication.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authentication"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Authority">
+    <rdfs:label>Authority</rdfs:label>
+    <cm4di:hasStereotype>kind</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#ResourceArtifact">
+    <rdfs:label>ResourceArtifact</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#authorizationId">
+    <rdfs:label>authorizationId</rdfs:label>
+    <rdfs:comment>Stable identifier of the authorization event.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authorization"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#ScopeArtifact">
+    <rdfs:label>ScopeArtifact</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#providerId">
+    <rdfs:label>providerId</rdfs:label>
+    <rdfs:comment>Stable identifier of the identity provider.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentityProvider"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#rpId">
+    <rdfs:label>rpId</rdfs:label>
+    <rdfs:comment>Stable identifier of the relying party.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#RelyingParty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#representedBy">
+    <rdfs:label>representedBy</rdfs:label>
+    <rdfs:comment>Associates an IdentitySubject with one or more DigitalIdentity representations.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#represents">
+        <rdfs:label>represents</rdfs:label>
+        <rdfs:comment>Inverse of representedBy.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/cm4di#DigitalIdentity"/>
+        <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#subjectParticipantRef">
+    <rdfs:label>subjectParticipantRef</rdfs:label>
+    <rdfs:comment>Reference to the subject participating in authentication.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authentication"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm4di#IdentitySubject"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#decision">
+    <rdfs:label>decision</rdfs:label>
+    <rdfs:comment>Decision or outcome value.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="N5b0046e6143147cfa62ef29b56f005e8">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthenticationResult"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthorizationResult"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#partyId">
+    <rdfs:label>partyId</rdfs:label>
+    <rdfs:comment>Stable identifier of the base participating entity.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Party"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="https://w3id.org/cm4di#produces">
+    <rdfs:label>produces</rdfs:label>
+    <rdfs:comment>Associates an event with its explicit result object.</rdfs:comment>
+    <rdfs:domain>
+      <rdf:Description rdf:nodeID="N5ed56f56211f4bd4a98adcb2548d2a0c">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authentication"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#Authorization"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:domain>
+    <rdfs:range>
+      <rdf:Description rdf:nodeID="N14778f5997f1463b97172d8afc675ed6">
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthenticationResult"/>
+          <rdf:Description rdf:about="https://w3id.org/cm4di#AuthorizationResult"/>
+        </owl:unionOf>
+      </rdf:Description>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Method">
+    <rdfs:label>Method</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#AuthorizationResult">
+    <rdfs:label>AuthorizationResult</rdfs:label>
+    <cm4di:hasStereotype>value object</cm4di:hasStereotype>
+    <rdfs:comment>Value-like outcome produced by an authorization event.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nd50e32e3a95042a88c7fb1d59db83e81">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#resultId"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N268b15a794ce44aeaae04febd761ecb4">
+        <owl:onProperty rdf:resource="https://w3id.org/cm4di#decision"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#claimType">
+    <rdfs:label>claimType</rdfs:label>
+    <rdfs:comment>Semantic type of the claim.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Claim"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#AssuranceContext">
+    <rdfs:label>AssuranceContext</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#enrollmentId">
+    <rdfs:label>enrollmentId</rdfs:label>
+    <rdfs:comment>Stable identifier of the enrollment relation instance.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Enrollment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#ONTrustTrust">
+    <rdfs:label>ONTrustTrust</rdfs:label>
+    <cm4di:hasStereotype>external reference</cm4di:hasStereotype>
+    <rdfs:comment>External trust concept aligned through trace semantics rather than full ontological commitment.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="https://w3id.org/cm4di#Condition">
+    <rdfs:label>Condition</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="https://w3id.org/cm4di#authenticatorType">
+    <rdfs:label>authenticatorType</rdfs:label>
+    <rdfs:comment>Type of authenticator.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/cm4di#Authenticator"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="https://w3id.org/cm4di#ActionArtifact">
+    <rdfs:label>ActionArtifact</rdfs:label>
+    <cm4di:hasStereotype>information object</cm4di:hasStereotype>
+  </owl:Class>
+</rdf:RDF>
