@@ -111,9 +111,7 @@ This separation helps avoid category mistakes and supports a clean, extensible, 
 
 The conceptual diagram of the latest CM4DI version is shown below.
 
-> Replace the filename in the image path below whenever a newer diagram version is added to the `diagram/` folder.
-
-![CM4DI Conceptual Model](diagram/CM4DI-Generation2-Version15.jpg)
+![CM4DI Conceptual Model](CM4DI-Generation2-Version15.jpg)
 
 ## Core Concepts
 
