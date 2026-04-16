@@ -8,6 +8,16 @@ CM4DI (Conceptual Model for Digital Identity) is an ontology-driven conceptual m
 
 The model is grounded in the Unified Foundational Ontology (UFO) and specified in OntoUML. This repository documents the current conceptual specification of CM4DI and serves as the foundation for its lightweight OWL operationalization, future scenario-based validation, and subsequent formal enrichment.
 
+## Documentation
+
+The CM4DI ontology core documentation includes:
+
+- Ontology model (OWL)
+- Conceptual diagrams
+- Field registry
+  [CM4DI Field Registry v0.1](CM4DI-field-registry-v0.1.md)
+- Profile mappings
+
 ## Vision and Evolution
 
 CM4DI is intended as a reusable ontology artifact for digital identity conceptualization, documentation, and progressive formalization. The current release emphasizes:
