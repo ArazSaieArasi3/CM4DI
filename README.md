@@ -12,10 +12,9 @@ The model is grounded in the Unified Foundational Ontology (UFO) and specified i
 
 The CM4DI ontology core documentation includes:
 
-- Ontology model (OWL)
-- Conceptual diagrams
-- Field registry
-  [CM4DI Field Registry v0.1](CM4DI-field-registry-v0.1.md)
+- Ontology model (OWL): [CM4DI ontology v0.1](CM4DI.owl)
+- Conceptual diagrams: [CM4DI ontology Diagram v0.1](CM4DI-Generation2-Version15.jpg)
+- Field registry: [CM4DI Field Registry v0.1](CM4DI-field-registry-v0.1.md)
 - Profile mappings
 
 ## Vision and Evolution
