@@ -4,19 +4,19 @@ CM4DI: an ontology for digital identity with trust integration, grounded in UFO,
 
 ## Overview
 
-CM4DI (Conceptual Model for Digital Identity) is an ontology-driven conceptual model for digital identity with modular trust integration. It is designed to provide a minimal but expressive semantic backbone for identity-centric digital ecosystems by structuring identity-bearing entities, digital identities, credentials, claims, contextual scoping, authentication, authorization, and trust references within a coherent ontological framework.
+CM4DI (Conceptual Model for Digital Identity) is an ontology-driven conceptual model for digital identity with modular trust integration. It provides a minimal but expressive semantic backbone for identity-centric digital ecosystems by structuring identity-bearing entities, digital identities, credentials, claims, contextual scoping, authentication, authorization, and trust references within a coherent ontological framework.
 
-The model is grounded in the Unified Foundational Ontology (UFO) and specified in OntoUML. In addition to the conceptual model, this repository is intended to provide a lightweight OWL artifact to improve transparency, reproducibility, and future extensibility.
+The model is grounded in the Unified Foundational Ontology (UFO) and specified in OntoUML. This repository documents the current conceptual specification of CM4DI and serves as the foundation for its lightweight OWL operationalization, future scenario-based validation, and subsequent formal enrichment.
 
 ## Vision and Evolution
 
-CM4DI is intended as a reusable ontology artifact for digital identity conceptualization and future formalization. The current release emphasizes:
+CM4DI is intended as a reusable ontology artifact for digital identity conceptualization, documentation, and progressive formalization. The current release emphasizes:
 
 - a principled ontology-driven conceptual core
 - explicit grounding in UFO and OntoUML
 - modular trust integration through `TrustReference`
-- a lightweight OWL operationalization
-- a basis for scenario-based validation and future ontology enrichment
+- explicit event-result symmetry for authentication and authorization
+- a lightweight publication baseline for documentation and future OWL release
 
 Future releases may extend the current artifact with:
 
@@ -24,7 +24,7 @@ Future releases may extend the current artifact with:
 - stronger OWL formalization
 - example instantiations and case-based mappings
 - extension modules for governance, consent, policy, and assurance details
-- additional documentation and alignment mappings
+- additional documentation and external ontology alignment mappings
 
 ## Scope of the Ontology
 
@@ -45,7 +45,7 @@ The following concerns are intentionally outside the current minimal core:
 - detailed consent and privacy policy layers
 - heavy access-control policy formalization
 - production deployment concerns
-- complete lifecycle/process orchestration
+- complete lifecycle orchestration
 - deep formalization of external trust ontologies
 
 This scope preserves ontological clarity and keeps the core model minimal, modular, and extensible.
@@ -67,7 +67,7 @@ The model adopts the following ontological distinctions:
 - `«value object»` for abstract value-like constructs used in the engineering view
 - `«trace»` for lightweight external semantic alignment
 
-The OWL artifact in this repository should be understood as a lightweight operationalization of the model. It does not attempt to fully collapse all OntoUML/UFO semantics into OWL, but rather provides a publishable and reusable ontology artifact aligned with the current conceptual specification.
+The OWL artifact associated with this repository should be understood as a lightweight operationalization of the conceptual model. It does not attempt to fully reduce all OntoUML/UFO distinctions into OWL, but rather provides a publishable and reusable ontology artifact aligned with the current conceptual specification.
 
 ## Repository Contents
 
@@ -76,7 +76,7 @@ This repository contains or is intended to contain the following artifacts:
 - `README.md` — repository overview and ontology documentation
 - `LICENSE` — repository license
 - `cm4di.owl` — lightweight OWL artifact of CM4DI
-- `docs/CM4DI-Generation2-Version14.jpg` — ontology diagram
+- `diagram/CM4DI-Generation2-Version15.jpg` — current ontology diagram
 - `docs/concepts.md` — optional concept reference documentation
 - `docs/relations.md` — optional relation reference documentation
 - `docs/competency-questions.md` — optional competency question documentation
@@ -94,6 +94,7 @@ At the core of the model are:
 - **intrinsic identity characterization**, represented by `IdentityAttribute`
 - **mediated social grounding**, represented by `Enrollment`
 - **interaction events**, represented by `Authentication` and `Authorization`
+- **explicit event outcomes**, represented by `AuthenticationResult` and `AuthorizationResult`
 - **trust alignment hooks**, represented by `TrustReference`
 
 The model explicitly separates:
@@ -104,48 +105,45 @@ The model explicitly separates:
 - interaction mediation from event participation
 - core identity structure from external trust semantics
 
-This separation helps avoid category mistakes and supports a clean, extensible identity-centered ontology.
+This separation helps avoid category mistakes and supports a clean, extensible, identity-centered ontology.
 
 ## Ontology Diagram
 
-The current OntoUML conceptual model is illustrated below.
+The conceptual diagram of the latest CM4DI version is shown below.
 
-![CM4DI Ontology Diagram](docs/CM4DI-Generation2-Version14.jpg)
+> Replace the filename in the image path below whenever a newer diagram version is added to the `diagram/` folder.
 
-> If the figure path changes, update the image reference accordingly.
+![CM4DI Conceptual Model](diagram/CM4DI-Generation2-Version15.jpg)
 
 ## Core Concepts
 
-The following table summarizes the core concepts currently represented in CM4DI.
-
-| Concept | Stereotype | Description |
+| Concept | OntoUML Stereotype | Description |
 |---|---|---|
 | Party | `«kind»` | Base identity-providing entity for all parties participating in the digital identity ecosystem. |
-| IdentitySubject | `«subkind»` | A specialization of `Party` that acts as the primary subject of digital identity representation, claims, and attributes. |
-| DigitalIdentity | `«Information Object»` | An informational representation of an `IdentitySubject` within a specific identity context. |
+| IdentitySubject | `«subkind»` | A rigid specialization of `Party` that acts as the primary subject of digital identity representation, claims, and attributes. |
+| DigitalIdentity | `«information object»` | An informational representation of an `IdentitySubject` within a specific identity context. |
 | IdentityContext | `«kind»` | A contextual scope within which digital identity, identifiers, and trust references are interpreted. |
 | Identifier | `«value object»` | A value-like identifier used to identify a `DigitalIdentity` within a context. |
 | IdentityAttribute | `«quality»` | An intrinsic or descriptive quality inhering in an `IdentitySubject`. |
-| Claim | `«social object»` | A socially or institutionally constructed object that is about an `IdentitySubject` and asserts one or more attributes. |
+| Claim | `«social object»` | A socially or institutionally constructed object that is about an `IdentitySubject` and asserts one or more identity attributes. |
 | Credential | `«social object»` | A socially or institutionally constructed object issued by a `CredentialServiceProvider` and held by a `Subscriber`. |
 | Authenticator | `«kind»` | An authentication mechanism or authenticator entity bound to a credential and participating in authentication events. |
 | Authentication | `«event»` | An event in which an identity subject is authenticated through one or more participating entities or artifacts. |
 | AuthenticationResult | `«value object»` | A value-like outcome produced by an authentication event. |
-| Authorization | `«event»` | An event in which access or authorization is determined, typically based on claims and relying-party participation. |
+| Authorization | `«event»` | An event in which access or authorization is determined based on claims and relying-party participation. |
+| AuthorizationResult | `«value object»` | A value-like outcome produced by an authorization event. |
 | IdentityProvider | `«subkind»` | A specialization of `Party` responsible for managing digital identities. |
 | CredentialServiceProvider | `«subkind»` | A specialization of `Party` responsible for issuing credentials. |
 | Verifier | `«subkind»` | A specialization of `Party` participating in authentication for validation or verification purposes. |
 | RelyingParty | `«subkind»` | A specialization of `Party` participating in authorization decisions and relying on identity-related information. |
 | Subscriber | `«role»` | A context-dependent anti-rigid role that an `IdentitySubject` may assume in order to hold credentials. |
 | Enrollment | `«relator»` | A relator materially grounding the mediated relation between a `Subscriber` and a `CredentialServiceProvider`. |
-| TrustReference | `«Information Object»` | A lightweight informational object used to reference and align with external trust semantics without embedding them into the core ontology. |
-| ONTrust:Trust | `«External Reference»` | An external trust reference aligned through trace semantics rather than full ontological commitment. |
+| TrustReference | `«information object»` | A lightweight informational object used to reference and align with external trust semantics without embedding them into the core ontology. |
+| ONTrust:Trust | `«external reference»` | An external trust reference aligned through trace semantics rather than full ontological commitment. |
 
 ## Core Relations
 
-The following table documents the main relations represented in the current CM4DI diagram.
-
-| Concept 1 | Cardinality (Concept 1 side) | Relation | Arrow Shape | Cardinality (Concept 2 side) | Concept 2 | Description |
+| Concept 1 | Cardinality (Concept 1 side) | Relation | Arrow Type | Cardinality (Concept 2 side) | Concept 2 | Description |
 |---|---:|---|---|---:|---|---|
 | IdentitySubject | — | specializes | Generalization | — | Party | `IdentitySubject` is a rigid specialization of `Party`. |
 | IdentityProvider | — | specializes | Generalization | — | Party | `IdentityProvider` is a specialization of `Party`. |
@@ -158,21 +156,22 @@ The following table documents the main relations represented in the current CM4D
 | IdentitySubject | 1..* | representedBy | Open Arrow | 1 | DigitalIdentity | An `IdentitySubject` is represented by one or more `DigitalIdentity` instances; each `DigitalIdentity` represents one `IdentitySubject`. |
 | DigitalIdentity | 1 | scopedIn | Open Arrow | 1..* | IdentityContext | A `DigitalIdentity` is scoped in an `IdentityContext`; a context may contain multiple digital identities. |
 | DigitalIdentity | 1 | identifiedBy | Open Arrow | 1..* | Identifier | A `DigitalIdentity` is identified by one or more identifiers. |
-| IdentitySubject | 1..* | hasAttribute | Characterization | 1 | IdentityAttribute | An `IdentitySubject` has one or more intrinsic identity attributes. |
-| DigitalIdentity | 1 | reflects | Open Arrow | 1..* | IdentityAttribute | A `DigitalIdentity` reflects one or more `IdentityAttribute` instances. |
+| IdentitySubject | 1 | hasAttribute | Characterization | 1..* | IdentityAttribute | An `IdentitySubject` has one or more intrinsic identity attributes. |
+| DigitalIdentity | 1 | reflects | Open Arrow | 1..* | IdentityAttribute | A `DigitalIdentity` reflects one or more identity attributes. |
 | Claim | 1 | about | Open Arrow | 0..* | IdentitySubject | A `Claim` is about an `IdentitySubject`. |
 | Claim | 1 | asserts | Open Arrow | 0..* | IdentityAttribute | A `Claim` asserts an `IdentityAttribute`. |
 | CredentialServiceProvider | 1 | issues | Open Arrow | 0..* | Credential | A `CredentialServiceProvider` issues credentials. |
 | Subscriber | 1 | holds | Open Arrow | 0..* | Credential | A `Subscriber` holds credentials. |
 | Credential | 1 | boundTo | Open Arrow | 0..* | Authenticator | A `Credential` is bound to an `Authenticator`. |
 | Credential | 1 | supports | Open Arrow | 1..* | Claim | A `Credential` supports one or more claims. |
-| Verifier | 1 | hasParticipant | Participation | 1 | Authentication | A `Verifier` participates in an `Authentication` event. |
 | IdentitySubject | 1 | hasParticipant | Participation | 1 | Authentication | An `IdentitySubject` participates in an `Authentication` event. |
-| Authenticator | 1..* | hasParticipant | Participation | 1 | Authentication | One or more `Authenticator` instances may participate in an `Authentication` event. |
+| Verifier | 1 | hasParticipant | Participation | 1 | Authentication | A `Verifier` participates in an `Authentication` event. |
+| Claim | 1..* | hasParticipant | Participation | 1 | Authentication | One or more claims participate in an `Authentication` event. |
+| Authenticator | 1..* | hasParticipant | Participation | 1 | Authentication | One or more authenticators may participate in an `Authentication` event. |
 | Authentication | 1 | produces | Open Arrow | 1 | AuthenticationResult | An `Authentication` event produces an `AuthenticationResult`. |
 | RelyingParty | 1 | hasParticipant | Participation | 1 | Authorization | A `RelyingParty` participates in an `Authorization` event. |
 | Authorization | 1 | evaluates | Open Arrow | 1..* | Claim | An `Authorization` event evaluates one or more claims. |
-| Authorization | 1 | produces | Open Arrow | 1 | IdentitySubject | This relation is preserved from the current diagram, but it should be treated as **requiring final confirmation**, since its visual routing and semantic intention may need further validation. |
+| Authorization | 1 | produces | Open Arrow | 1 | AuthorizationResult | An `Authorization` event produces an `AuthorizationResult`. |
 | IdentityProvider | 1 | manages | Open Arrow | 0..* | DigitalIdentity | An `IdentityProvider` manages digital identities. |
 | DigitalIdentity | 1 | hasTrustReference | Open Arrow | 0..* | TrustReference | A `DigitalIdentity` may have zero or more trust references. |
 | TrustReference | 1 | scopedIn | Open Arrow | 1 | IdentityContext | A `TrustReference` is scoped in an `IdentityContext`. |
@@ -200,20 +199,16 @@ At this stage, the artifact should be understood as:
 
 - a grounded conceptual ontology
 - an OntoUML-specified model
-- a lightweight OWL-oriented release
+- a lightweight OWL-oriented release baseline
 - a reusable research artifact for transparency and reuse
 
-The current release is not intended to claim full production-grade formalization. Instead, it provides a stable and publishable ontology artifact that can be extended in future work.
+The current release also incorporates an explicit event-result symmetry for both authentication and authorization.
 
 ## Notes on Model Interpretation
 
 The current model documentation is based on the present CM4DI conceptual diagram. All named concepts and all explicitly represented labeled relations from the model have been captured in this README.
 
-One relation currently requires final confirmation:
-
-- `Authorization --produces--> IdentitySubject`
-
-This relation is preserved because it appears in the current diagram, but its semantic role should be reviewed before treating it as a stable commitment in future formal releases.
+In the current version, `Authorization` explicitly produces `AuthorizationResult`, thereby aligning the authorization structure with the event-result pattern already used for authentication.
 
 ## Citation
 
