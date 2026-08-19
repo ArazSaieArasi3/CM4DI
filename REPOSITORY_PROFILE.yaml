@@ -1,0 +1,57 @@
+framework:
+  name: OGCM-RF
+  version: 0.1.0-development-baseline
+
+implementation:
+  name: CM4DI Journal Extension
+  repository: ArazSaieArasi3/CM4DI
+  conformance_level: adoption-in-progress
+  status: active-research
+
+model:
+  current_version: conference-baseline-plus-journal-v2-development
+  conceptual_model_tool: OntoUML / diagrams.net
+
+ontology:
+  canonical_serialization: OWL RDF/XML (current baseline; canonical-source policy to be reviewed)
+  ontology_editor: Protege-compatible OWL tooling
+  upper_ontologies:
+    - UFO
+
+documentation:
+  platform: GitHub Markdown
+  website: null
+
+mapping:
+  preferred_format: machine-readable registry plus human-readable mapping tables
+
+evaluation:
+  implemented_layers:
+    - conceptual-model review (baseline)
+  planned_layers:
+    - syntax-and-serialization
+    - logical-consistency
+    - ontological-grounding
+    - competency-questions
+    - standards-coverage
+    - operational-platform-mapping
+    - cross-paradigm-comparison
+    - dataset-based-instantiation
+    - reproducibility
+    - expert-review-if-feasible
+
+persistent_identifiers:
+  policy: preserve existing public IRIs; define stable IDs for research artifacts before ontology expansion
+  base_iri: https://w3id.org/cm4di#
+
+extensions:
+  - cross-paradigm digital-identity profiles
+  - standards-and-trust-framework evidence registry
+  - enterprise-cloud-IAM mappings
+  - wallet-and-verifiable-credential mappings
+  - machine-workload-device-agent identity mappings
+  - segregated social-identity discovery track
+
+deviations:
+  - no formal OGCM-RF conformance claim while OGCM-RF remains an experimental development baseline
+  - historical conference artifacts remain untouched until a controlled migration/release step
