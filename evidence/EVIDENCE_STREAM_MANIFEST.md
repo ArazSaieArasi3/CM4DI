@@ -8,6 +8,7 @@ This manifest prevents evidence-ID collisions while discovery streams execute in
 | Government / trust frameworks | `government/GOVERNMENT_EVIDENCE_REGISTRY.csv` | `CM4DI-EVID0030`–`CM4DI-EVID0045` | Reviewed | Pending Issue #9 |
 | Enterprise / cloud IAM / SSO | `enterprise/ENTERPRISE_IAM_EVIDENCE_REGISTRY.csv` | `CM4DI-EVID0046`–`CM4DI-EVID0070` | Reviewed | Pending Issue #9 |
 | Machine / workload / device / AI-agent identity | `nonhuman/NONHUMAN_IDENTITY_EVIDENCE_REGISTRY.csv` | `CM4DI-EVID0071`–`CM4DI-EVID0090` | Reviewed | Pending Issue #9 |
+| Reference implementations / conformance / datasets | `implementations/IMPLEMENTATION_DATA_EVIDENCE_REGISTRY.csv` | `CM4DI-EVID0091`–`CM4DI-EVID0105` | Reviewed | Pending Issue #9 |
 
 ## Allocation rule
 New discovery streams must continue after the highest reserved evidence ID and record their range here before creating evidence records. Issue #9 will deduplicate, normalize supersession/status, and merge curated records into the central registry without renumbering retained evidence IDs.
