@@ -10,6 +10,7 @@ This manifest prevents evidence-ID collisions while discovery streams execute in
 | Machine / workload / device / AI-agent identity | `nonhuman/NONHUMAN_IDENTITY_EVIDENCE_REGISTRY.csv` | `CM4DI-EVID0071`–`CM4DI-EVID0090` | Reviewed | Pending Issue #9 |
 | Reference implementations / conformance / datasets | `implementations/IMPLEMENTATION_DATA_EVIDENCE_REGISTRY.csv` | `CM4DI-EVID0091`–`CM4DI-EVID0105` | Reviewed | Pending Issue #9 |
 | Academic literature / competitor models | `academic/ACADEMIC_EVIDENCE_REGISTRY.csv` | `CM4DI-EVID0106`–`CM4DI-EVID0120` | Reviewed | Pending Issue #9 |
+| Social-identity opportunity / boundary | `social/SOCIAL_IDENTITY_EVIDENCE_REGISTRY.csv` | `CM4DI-EVID0121`–`CM4DI-EVID0134` | Reviewed / segregated | Pending Issue #9; default disposition `Social-Future` unless explicitly bridged |
 
 ## Allocation rule
 New discovery streams must continue after the highest reserved evidence ID and record their range here before creating evidence records. Issue #9 will deduplicate, normalize supersession/status, and merge curated records into the central registry without renumbering retained evidence IDs.
