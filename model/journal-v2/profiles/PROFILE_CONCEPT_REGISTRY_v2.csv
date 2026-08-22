@@ -1,0 +1,69 @@
+concept_id,profile,label,ontouml_stereotype,definition,core_alignment,status
+CM4DI-C1001,P01,Account,kind,"Platform-local managed identity representation associated with an IdentitySubject; not the subject itself.",DigitalIdentity related representation,wave6-candidate
+CM4DI-C1002,P01,UserProfile,kind,"Mutable information record containing account- or subject-related attributes in an IAM system.",Claim/IdentityAttribute,wave6-candidate
+CM4DI-C1003,P01,IdentitySource,roleMixin,"Role played by a system or service from which identity information is obtained.",Evidence provenance,wave6-candidate
+CM4DI-C1004,P01,AuthoritativeIdentitySource,roleMixin,"IdentitySource role that is authoritative for specified identity information or account data.",Evidence provenance,wave6-candidate
+CM4DI-C1005,P01,IdentityStore,kind,"Information service/repository that persists accounts profiles groups or identity data.",External infrastructure,wave6-candidate
+CM4DI-C1006,P01,AdministrativeDomain,kind,"Operational administration boundary such as tenant realm environment or population.",Distinct from IdentityContext,wave6-candidate
+CM4DI-C1007,P01,Application,kind,"Software entity that may play relying-party client resource-server or principal roles.",Party/RelyingParty/Principal,wave6-candidate
+CM4DI-C1008,P01,ApplicationRegistration,kind,"Configuration information object describing an application/client registration in an identity domain.",Application mapping,wave6-candidate
+CM4DI-C1009,P01,Federation,relator,"Inter-organizational/system identity relationship enabling authentication or identity information exchange across domains.",Party/TrustReference/Authentication,wave6-candidate
+CM4DI-C1010,P01,FederationConnection,relator,"Configured relationship implementing federation between identity systems/providers and relying applications.",Federation,wave6-candidate
+CM4DI-C1011,P01,IdentityBroker,roleMixin,"Intermediary role that mediates identity/authentication flows between external identity sources/providers and relying systems.",Party,wave6-candidate
+CM4DI-C1012,P01,Provisioning,event,"Process/event that creates updates synchronizes disables or removes platform-local account/profile representations.",Distinct from Enrollment,wave6-candidate
+CM4DI-C1013,P01,ProvisioningConnection,relator,"Configured source-target relationship through which identity data is provisioned.",IdentitySource/IdentityStore,wave6-candidate
+CM4DI-C1014,P01,AttributeMapping,kind,"Mapping artifact defining source-to-target identity attribute/claim transformation and provenance.",Claim/IdentityAttribute,wave6-candidate
+CM4DI-C1015,P01,Session,relator,"Temporally bounded security interaction context established after authentication and maintained independently from AuthenticationResult.",AuthenticationResult related,wave6-candidate
+CM4DI-C1016,P01,PermissionBundle,kind,"Normative bundle of permissions corresponding to IAM roles permission sets or similar operational constructs.",Permission,wave6-candidate
+CM4DI-C1017,P01,AccessPolicy,kind,"Normative policy artifact governing access grants or authorization decisions.",Authorization/Permission,wave6-candidate
+CM4DI-C1018,P01,AccessCondition,kind,"Predicate/condition artifact used in access policies or authorization evaluation.",AuthorizationContext,wave6-candidate
+CM4DI-C1019,P01,AccessGroup,kind,"Operational grouping used for assignment provisioning or access management; not a social-identity group.",Principal/AccessGrant,wave6-candidate
+CM4DI-C1020,P01,GroupMembership,relator,"Membership relation between an account/principal and an operational access group.",Principal,wave6-candidate
+CM4DI-C2001,P02,Issuer,roleMixin,"Contextual role played by a party that issues a Credential.",Party/CredentialIssuance,wave6-candidate
+CM4DI-C2002,P02,Holder,roleMixin,"Contextual role played by an entity that possesses controls or presents a credential; not necessarily its subject.",Party/Credential,wave6-candidate
+CM4DI-C2003,P02,CredentialPresentationVerifier,roleMixin,"Verifier role that evaluates a credential presentation and associated evidence/proof.",Verifier,wave6-candidate
+CM4DI-C2004,P02,Wallet,roleMixin,"Role played by software that stores manages or presents credentials on behalf of a holder.",Party/Application,wave6-candidate
+CM4DI-C2005,P02,HolderService,roleMixin,"Service-provider role that stores manages or enables reusable identity/credential holdings for a holder.",Party,wave6-candidate
+CM4DI-C2006,P02,CredentialPresentation,event,"Event in which a holder or wallet presents credential-derived information/evidence to a verifier.",Credential/Evidence,wave6-candidate
+CM4DI-C2007,P02,PresentationRequest,kind,"Information object expressing requested credential claims constraints or presentation requirements.",Claim/Authorization-like request pattern,wave6-candidate
+CM4DI-C2008,P02,Controller,roleMixin,"Role played by an entity authorized to control an identifier or verification material.",Party/Identifier,wave6-candidate
+CM4DI-C2009,P02,VerificationMethod,kind,"Information/cryptographic artifact used to verify signatures proofs or control relationships.",Evidence/Proof,wave6-candidate
+CM4DI-C2010,P02,VerifiableDataRegistry,kind,"Information service providing status schema identifier or trusted-entity information for credential ecosystems.",TrustReference/CredentialStatus,wave6-candidate
+CM4DI-C2011,P02,SelectiveDisclosure,mode,"Capability/mode of a presentation enabling disclosure of a subset or derived subset of credential information.",CredentialPresentation,wave6-candidate
+CM4DI-C2012,P02,VerifiablePresentation,kind,"Presentation information artifact carrying selected credential-derived claims and proofs.",Evidence/Claim,wave6-candidate
+CM4DI-C3001,P03,Workload,kind,"Running compute entity such as a process container job or deployed workload that can play IdentitySubject and Principal roles.",IdentitySubject/Principal,wave6-candidate
+CM4DI-C3002,P03,RuntimeInstance,kind,"Concrete execution instance of software or a workload at runtime.",Workload,wave6-candidate
+CM4DI-C3003,P03,ServiceAccount,kind,"Non-human managed account representation used by software or automation.",P01 Account / DigitalIdentity,wave6-candidate
+CM4DI-C3004,P03,ServicePrincipal,roleMixin,"Tenant/domain-local security-principal role representing an application or service for authorization.",Principal,wave6-candidate
+CM4DI-C3005,P03,ManagedIdentity,roleMixin,"Managed workload-identity pattern in which credential lifecycle is controlled by the platform.",DigitalIdentity/Credential,wave6-candidate
+CM4DI-C3006,P03,Device,kind,"Physical or virtual device capable of independently playing identity subject principal and/or authenticator roles.",IdentitySubject/Principal/Authenticator,wave6-candidate
+CM4DI-C3007,P03,DeviceIdentityRecord,kind,"Directory or registry representation of a device distinct from the device and its credentials.",DigitalIdentity-related representation,wave6-candidate
+CM4DI-C3008,P03,NodeAttestation,event,"Attestation event establishing properties/identity of a node or host used as evidence for workload identity.",Evidence/IdentityBinding,wave6-candidate
+CM4DI-C3009,P03,WorkloadAttestation,event,"Attestation event establishing which runtime workload is requesting an identity or credential.",Evidence/IdentityBinding,wave6-candidate
+CM4DI-C3010,P03,TrustDomain,kind,"Identity namespace/security boundary backed by an issuing authority and trust material.",Distinct from IdentityContext and P04 TrustFramework,wave6-candidate
+CM4DI-C3011,P03,TrustBundle,kind,"Cryptographic trust artifact containing authoritative verification material for a trust domain.",TrustReference/Evidence,wave6-candidate
+CM4DI-C3012,P03,SVID,kind,"SPIFFE verifiable identity document carrying a SPIFFE identifier and cryptographic proof material.",Credential,wave6-candidate
+CM4DI-C3013,P03,TemporaryCredential,kind,"Short-lived credential issued for a session federated principal workload or agent.",Credential,wave6-candidate
+CM4DI-C3014,P03,TokenExchange,event,"Event transforming or exchanging external proof/credential for a local temporary credential or security context.",Credential lifecycle/federation,wave6-candidate
+CM4DI-C3015,P03,SoftwareAgent,kind,"Goal-directed software entity capable of acting autonomously or on delegated authority.",IdentitySubject/Principal,wave6-candidate
+CM4DI-C3016,P03,AIAgent,subkind,"SoftwareAgent specialization whose behavior is driven substantially by AI models/planning mechanisms.",SoftwareAgent,wave6-candidate
+CM4DI-C3017,P03,AgentIdentity,kind,"Managed digital identity representation specifically associated with a SoftwareAgent.",DigitalIdentity,wave6-candidate
+CM4DI-C3018,P03,AgentSponsor,roleMixin,"Accountability/governance role played by a person or organization responsible for an agent identity lifecycle.",Party,wave6-candidate
+CM4DI-C4001,P04,TrustFramework,kind,"Governed normative framework defining rules obligations requirements and trust conditions for ecosystem participation/services.",TrustReference alignment,wave6-candidate
+CM4DI-C4002,P04,GovernanceFramework,kind,"Normative governance framework defining institutional roles conformance processes and operating rules.",TrustFramework related,wave6-candidate
+CM4DI-C4003,P04,TrustRegistry,kind,"Governed information service registering participants providers credentials or trust status.",TrustReference,wave6-candidate
+CM4DI-C4004,P04,TrustedList,kind,"Governed information artifact enumerating trusted/certified services or entities and their statuses.",TrustRegistry related,wave6-candidate
+CM4DI-C4005,P04,TrustAnchor,roleMixin,"Authoritative/cryptographic root role used as a terminus for a trust chain.",TrustReference,wave6-candidate
+CM4DI-C4006,P04,TrustChain,kind,"Structured path of trust statements certificates or entity statements terminating at a trust anchor.",TrustReference,wave6-candidate
+CM4DI-C4007,P04,GovernanceAuthority,roleMixin,"Institutional role responsible for defining or enforcing framework rules.",Party,wave6-candidate
+CM4DI-C4008,P04,Registrar,roleMixin,"Institutional role responsible for registering ecosystem participants/services.",Party,wave6-candidate
+CM4DI-C4009,P04,Regulator,roleMixin,"Institutional oversight role responsible for regulatory supervision or enforcement.",Party,wave6-candidate
+CM4DI-C4010,P04,ConformityAssessmentBody,roleMixin,"Independent role performing conformity assessment against a framework/profile.",Party,wave6-candidate
+CM4DI-C4011,P04,Certification,event,"Governance event/process establishing certified status against defined requirements.",AssuranceAssessment related,wave6-candidate
+CM4DI-C4012,P04,Accreditation,event,"Governance event/process establishing authority/competence status of a conformity-assessment actor.",AssuranceAssessment related,wave6-candidate
+CM4DI-C4013,P04,EcosystemParticipation,relator,"Governed relationship connecting a participant to a trust/governance ecosystem with status and scope.",Party/TrustReference,wave6-candidate
+CM4DI-C4014,P04,ParticipantStatus,mode,"Dependent status of an ecosystem participation such as approved suspended revoked or expired.",EcosystemParticipation,wave6-candidate
+CM4DI-C4015,P04,LegalIdentity,kind,"Legally recognized identity construct used as a government/legal basis for digital identity processes; profile-scoped and human/legal centric.",IdentitySubject related,wave6-candidate
+CM4DI-C4016,P04,PersonIdentificationData,kind,"Governed identity data set about a person used in legal/government identification contexts.",Claim/IdentityAttribute/Credential,wave6-candidate
+CM4DI-C4017,P04,GovernmentAttestation,kind,"Government or regulated attestation carrying verified attributes/status about a subject.",Credential,wave6-candidate
+CM4DI-C4018,P04,IdentityServiceProvider,roleMixin,"Broad service-provider role supplying proofing authentication attribute or identity-management services in governed ecosystems.",Party,wave6-candidate
