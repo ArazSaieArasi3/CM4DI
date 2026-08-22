@@ -1,16 +1,16 @@
 # CM4DI Journal V2 — Research and Ontology Roadmap
 
 ## Objective
-Evolve CM4DI into a publication-ready, reproducible, cross-paradigm reference ontology for digital identity while preserving a stable core and separating ecosystem-specific semantics into profiles.
+Evolve CM4DI into a publication-ready, reproducible, cross-paradigm reference ontology for digital identity while preserving a stable Core, organizing the problem space through DDD Domains and Bounded Contexts, and exposing ecosystem-specific semantics through cross-domain Profiles.
 
 ## Execution Principle
-Work proceeds through evidence-first discovery, scope locking, conceptual-model refinement, formalization, mapping, evaluation, and publication. The existing OWL model is not expanded substantially before Gate B and Gate C, reducing ontology churn and rework.
+Work proceeds through evidence-first discovery, scope locking, conceptual-model refinement, DDD alignment, formalization, mapping, evaluation, and publication. Domain, Bounded Context, Profile and OWL Module are governed as distinct constructs.
 
 ## Wave 0 — Governance and Baseline
 - G01 Preserve conference baseline and isolate journal development.
 - G02 Audit current repository, ontology, field registry, diagrams, case study, and documentation.
 - G03 Adopt OGCM-RF implementation structure progressively.
-- G04 Define stable IDs for concepts, relations, evidence, CQs, mappings, datasets, evaluations, and releases.
+- G04 Define stable IDs for concepts, relations, domains, bounded contexts, evidence, CQs, mappings, datasets, evaluations, and releases.
 - G05 Define versioning and release policy.
 - G06 Establish structured evidence/provenance registry.
 - R01 Fix mission, scope, non-scope, and journal direction.
@@ -57,6 +57,8 @@ Outputs required before the decision:
 - social-identity future-work register;
 - explicit Core/Profile/Deferred/Reject recommendations.
 
+**Status:** completed and approved.
+
 ## Wave 5 — Conceptual Model Revision
 - O01 Conference-model gap analysis against evidence.
 - O02 Competency-question registry.
@@ -78,23 +80,53 @@ Outputs required before the decision:
 ## Gate C — Conceptual Model Freeze
 The revised OntoUML/UFO model and Core/Profile boundaries are approved before major formal-ontology refactoring.
 
+**Status:** completed and approved; semantic Core remains frozen.
+
 ## Wave 6 — Profiles and Mappings
-- P01 Enterprise/Federated Identity Profile.
-- P02 Wallet/Verifiable Digital Credential Profile.
-- P03 Machine/Workload/Device/Agent Identity Profile.
-- P04 Trust/Assurance/Government Identity Profile.
+Profiles are cross-domain integration views, not DDD Domains.
+- P01 Enterprise Identity Profile — legacy label Enterprise / Federated Identity Profile.
+- P02 Verifiable Credential Profile — legacy label Wallet / Verifiable Digital Credential Profile.
+- P03 Technical Identity Profile — legacy label Machine / Workload / Device / Agent Identity Profile.
+- P04 Governed Identity Profile — legacy label Trust / Assurance / Government Identity Profile.
+
+**Status:** completed. Original Wave-6 package contained 68 profile concepts, 64 profile relations, 68 mappings and 20 profile CQs. The subsequent DDD regression audit found one missing governed account-linking relation required by CQ0024; `CM4DI-R1020 linkedAccount` was added, making the current profile-relation total 65 without changing Gate-C Core semantics.
+
+## DDD Alignment Amendment — Between Wave 6 and Wave 7
+**Parent:** #50. This controlled refactor is required before OWL modularization.
+
+- #51 Define canonical DDD Domain/Subdomain taxonomy, stable IDs and naming policy.
+- #52 Assign all 102 concepts to primary Domains and derive Bounded Contexts plus Context Map.
+- #53 Decouple Profiles from Domains and define cross-context integration contracts.
+- #54 Migrate CQ, mapping and evidence traceability to Domain/Bounded Context ownership.
+- #55 Revalidate/re-execute Gate B, Gate C and Wave-6 evaluations affected by the taxonomy change.
+- #56 Synchronize roadmap, framework and Wave-7 module architecture.
+- #57 Close CQ-to-governed-relation traceability before SPARQL implementation.
+
+### DDD naming rule
+Canonical Domain and Bounded Context names MUST NOT contain `&` and MUST NOT use slash-composed multi-domain names. Historical aliases are retained only for lineage.
+
+### Current DDD structure
+- overall Domain: Digital Identity Management;
+- 15 canonical subdomains;
+- 13 Bounded Contexts;
+- 4 stable cross-domain Profile views;
+- Domain != Bounded Context != Profile != OWL Module.
 
 ## Wave 7 — Formal Ontology and Automation
+- I00 Freeze the DDD-aligned formal module graph before writing module OWL files.
 - I01 Establish canonical OWL source policy and release candidate.
 - I02 SHACL constraints.
 - I03 Deterministic serialization pipeline for required RDF/OWL formats.
 - I04 Namespace, IRI and version-IRI governance.
 - I05 CI validation workflow.
 - I06 ROBOT/HermiT logical checks.
-- I07 SPARQL competency-question suite.
+- I07 SPARQL competency-question suite using exact CQ→relation traceability.
 - I08 Machine-readable example instances and scenarios.
 - I09 Documentation generation.
 - I10 Machine-readable mapping artifacts.
+
+### Wave-7 architecture rule
+The Gate-C Core remains the stable semantic entrypoint. Extension OWL modules are derived from Bounded Context ownership, semantic cohesion and acyclic dependency analysis. P01–P04 MAY be exposed as aggregate entrypoints/mapping bundles, but the old automatic `Core + four profile OWL modules` assumption is superseded.
 
 ## Gate D — Evaluation Design Lock
 Freeze representative standards, platforms, datasets, scenarios, CQs, metrics, reasoners and expert-review protocol before final evaluation.
@@ -119,7 +151,7 @@ Freeze representative standards, platforms, datasets, scenarios, CQs, metrics, r
 - A02 Journal outline.
 - A03 Focused Related Work.
 - A04 Journal methodology.
-- A05 CM4DI Core and profile specification section.
+- A05 CM4DI Core, DDD organization and Profile specification section.
 - A06 Mapping/interoperability results.
 - A07 Evaluation results.
 - A08 Discussion and theoretical/practical implications.
@@ -133,4 +165,4 @@ Freeze representative standards, platforms, datasets, scenarios, CQs, metrics, r
 Final approval of manuscript, release artifacts, reproducibility package, declarations, references, figures, supplementary material, and target-journal compliance.
 
 ## Default Autonomy Rule
-Discovery, evidence registration, mapping preparation, documentation, tests, registry maintenance, and non-destructive repository organization are Green work. Work pauses for user decision only at Gates B, C, D and E or when a discovery materially changes the approved mission.
+Discovery, evidence registration, mapping preparation, documentation, tests, registry maintenance, DDD governance and non-destructive repository organization are Green work. Work pauses for user decision only at Gates B, C, D and E or when a discovery materially changes the approved research mission.
