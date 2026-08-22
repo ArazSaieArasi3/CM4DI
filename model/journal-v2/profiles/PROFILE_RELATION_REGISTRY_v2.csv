@@ -1,0 +1,65 @@
+relation_id,profile,label,source,target,relation_semantics,status
+CM4DI-R1001,P01,representsAccount,Account,IdentitySubject,"Account represents or is associated with a subject without being identical to it.",wave6-candidate
+CM4DI-R1002,P01,hasProfile,Account,UserProfile,"Account is associated with a mutable user/profile record.",wave6-candidate
+CM4DI-R1003,P01,sourcedFrom,UserProfile,IdentitySource,"Profile data is obtained from an identity source.",wave6-candidate
+CM4DI-R1004,P01,authoritativeFor,AuthoritativeIdentitySource,IdentityAttribute,"Source is authoritative for specified identity attributes/data.",wave6-candidate
+CM4DI-R1005,P01,stores,IdentityStore,Account,"Identity store persists account representations.",wave6-candidate
+CM4DI-R1006,P01,administeredWithin,Account,AdministrativeDomain,"Account is administered in a tenant/realm/environment boundary.",wave6-candidate
+CM4DI-R1007,P01,registeredAs,Application,ApplicationRegistration,"Application has a domain-specific registration/configuration artifact.",wave6-candidate
+CM4DI-R1008,P01,mediatesFederation,FederationConnection,Federation,"Configured connection realizes a federation relationship.",wave6-candidate
+CM4DI-R1009,P01,brokersFor,IdentityBroker,FederationConnection,"Broker mediates a federation connection/flow.",wave6-candidate
+CM4DI-R1010,P01,provisionsTo,ProvisioningConnection,IdentityStore,"Provisioning connection targets an identity store/system.",wave6-candidate
+CM4DI-R1011,P01,provisionsFrom,ProvisioningConnection,IdentitySource,"Provisioning connection obtains identity data from a source.",wave6-candidate
+CM4DI-R1012,P01,executesProvisioning,Provisioning,ProvisioningConnection,"Provisioning event/process occurs through a configured connection.",wave6-candidate
+CM4DI-R1013,P01,usesAttributeMapping,Provisioning,AttributeMapping,"Provisioning uses explicit attribute/claim mappings.",wave6-candidate
+CM4DI-R1014,P01,establishesSession,AuthenticationResult,Session,"A successful authentication result may establish a distinct session.",wave6-candidate
+CM4DI-R1015,P01,bundlesPermission,PermissionBundle,Permission,"Operational permission bundle groups one or more Core permissions.",wave6-candidate
+CM4DI-R1016,P01,governedByPolicy,AccessGrant,AccessPolicy,"Access grant may be governed by a profile-level access policy.",wave6-candidate
+CM4DI-R1017,P01,hasCondition,AccessPolicy,AccessCondition,"Access policy may contain access conditions.",wave6-candidate
+CM4DI-R1018,P01,memberOf,Principal,AccessGroup,"Principal may be an operational member of an access group.",wave6-candidate
+CM4DI-R1019,P01,mediatesMembership,GroupMembership,AccessGroup,"GroupMembership mediates account/principal and access group.",wave6-candidate
+CM4DI-R2001,P02,issues,Issuer,Credential,"Issuer role participates in CredentialIssuance and issues a credential.",wave6-candidate
+CM4DI-R2002,P02,holds,Holder,Credential,"Holder possesses/controls credential independently of subjecthood.",wave6-candidate
+CM4DI-R2003,P02,operatesWallet,Holder,Wallet,"Holder uses/controls wallet software in a credential interaction.",wave6-candidate
+CM4DI-R2004,P02,servedBy,Holder,HolderService,"Holder may use a reusable credential/identity holding service.",wave6-candidate
+CM4DI-R2005,P02,requestsPresentation,CredentialPresentationVerifier,PresentationRequest,"Verifier issues a request describing required credential information.",wave6-candidate
+CM4DI-R2006,P02,presents,Holder,CredentialPresentation,"Holder participates in a credential-presentation event.",wave6-candidate
+CM4DI-R2007,P02,usesCredential,CredentialPresentation,Credential,"Presentation derives information/evidence from credential(s).",wave6-candidate
+CM4DI-R2008,P02,producesPresentationArtifact,CredentialPresentation,VerifiablePresentation,"Presentation event produces a presentation information artifact.",wave6-candidate
+CM4DI-R2009,P02,evaluatesPresentation,CredentialPresentationVerifier,VerifiablePresentation,"Presentation verifier evaluates the presentation artifact and evidence/proof.",wave6-candidate
+CM4DI-R2010,P02,controlsIdentifier,Controller,Identifier,"Controller role controls an identifier/associated verification material.",wave6-candidate
+CM4DI-R2011,P02,usesVerificationMethod,Proof,VerificationMethod,"Proof may be verified using a profile verification method.",wave6-candidate
+CM4DI-R2012,P02,resolvesVia,Identifier,VerifiableDataRegistry,"Identifier/status/schema data may be resolved via a registry/service.",wave6-candidate
+CM4DI-R2013,P02,hasDisclosureMode,CredentialPresentation,SelectiveDisclosure,"Presentation may use selective disclosure.",wave6-candidate
+CM4DI-R3001,P03,executesAs,RuntimeInstance,Workload,"Runtime instance realizes an executing workload.",wave6-candidate
+CM4DI-R3002,P03,usesServiceAccount,Workload,ServiceAccount,"Workload may use a service-account representation.",wave6-candidate
+CM4DI-R3003,P03,playsServicePrincipal,Application,ServicePrincipal,"Application/service may play a domain-local service-principal role.",wave6-candidate
+CM4DI-R3004,P03,managedAs,Workload,ManagedIdentity,"Workload may be represented through a managed-identity pattern.",wave6-candidate
+CM4DI-R3005,P03,representedByDeviceRecord,Device,DeviceIdentityRecord,"Device identity record represents a device in a directory/registry.",wave6-candidate
+CM4DI-R3006,P03,attestsNode,NodeAttestation,Device,"Node attestation evaluates a host/node/device context.",wave6-candidate
+CM4DI-R3007,P03,attestsWorkload,WorkloadAttestation,Workload,"Workload attestation evaluates a runtime workload.",wave6-candidate
+CM4DI-R3008,P03,groundsBinding,WorkloadAttestation,IdentityBinding,"Attestation evidence grounds a Core identity binding.",wave6-candidate
+CM4DI-R3009,P03,scopedByTrustDomain,Identifier,TrustDomain,"Workload identifiers such as SPIFFE IDs are scoped by a trust domain.",wave6-candidate
+CM4DI-R3010,P03,hasTrustBundle,TrustDomain,TrustBundle,"Trust domain is supported by a trust bundle.",wave6-candidate
+CM4DI-R3011,P03,svidIdentifies,SVID,Identifier,"SVID carries/references a workload identifier.",wave6-candidate
+CM4DI-R3012,P03,exchangesFor,TokenExchange,TemporaryCredential,"Token exchange may produce a short-lived credential.",wave6-candidate
+CM4DI-R3013,P03,agentRepresentedBy,SoftwareAgent,AgentIdentity,"Agent identity representation is associated with a software agent.",wave6-candidate
+CM4DI-R3014,P03,sponsoredBy,AgentIdentity,AgentSponsor,"Agent identity has an accountable sponsor/owner role.",wave6-candidate
+CM4DI-R3015,P03,usesDelegation,SoftwareAgent,Delegation,"Agent delegated access reuses Core Delegation.",wave6-candidate
+CM4DI-R3016,P03,usesAutonomousGrant,SoftwareAgent,AccessGrant,"Autonomous agent access reuses Core AccessGrant.",wave6-candidate
+CM4DI-R4001,P04,governs,TrustFramework,EcosystemParticipation,"Trust framework governs participant relationships/statuses.",wave6-candidate
+CM4DI-R4002,P04,governedBy,TrustRegistry,TrustFramework,"Registry/list operates under a trust/governance framework.",wave6-candidate
+CM4DI-R4003,P04,containsTrustedEntry,TrustedList,EcosystemParticipation,"Trusted list communicates governed participant/service status.",wave6-candidate
+CM4DI-R4004,P04,terminatesAt,TrustChain,TrustAnchor,"Technical trust chain terminates at a trust anchor.",wave6-candidate
+CM4DI-R4005,P04,setsRules,GovernanceAuthority,GovernanceFramework,"Governance authority defines/enforces governance rules.",wave6-candidate
+CM4DI-R4006,P04,registers,Registrar,EcosystemParticipation,"Registrar establishes or records ecosystem participation.",wave6-candidate
+CM4DI-R4007,P04,oversees,Regulator,EcosystemParticipation,"Regulator oversees governed participants/services.",wave6-candidate
+CM4DI-R4008,P04,assessesConformance,ConformityAssessmentBody,Certification,"CAB performs assessment supporting certification.",wave6-candidate
+CM4DI-R4009,P04,certifies,Certification,EcosystemParticipation,"Certification establishes certified status of participation/service.",wave6-candidate
+CM4DI-R4010,P04,accredits,Accreditation,ConformityAssessmentBody,"Accreditation establishes competence/authority of a CAB.",wave6-candidate
+CM4DI-R4011,P04,hasParticipantStatus,EcosystemParticipation,ParticipantStatus,"Governed participation carries a lifecycle/status distinct from credential status.",wave6-candidate
+CM4DI-R4012,P04,legalBasisFor,LegalIdentity,IdentitySubject,"Legal identity construct may provide a legal/government basis for identity subject treatment.",wave6-candidate
+CM4DI-R4013,P04,expressedBy,LegalIdentity,PersonIdentificationData,"Person identification data expresses legal/government identity data.",wave6-candidate
+CM4DI-R4014,P04,attestsGovernmentData,GovernmentAttestation,PersonIdentificationData,"Government attestation carries/attests governed identity data.",wave6-candidate
+CM4DI-R4015,P04,providesIdentityService,IdentityServiceProvider,TrustFramework,"Provider participates in governed identity services under a framework.",wave6-candidate
+CM4DI-R4016,P04,mapsAssuranceTo,TrustFramework,AssuranceAssessment,"Framework assurance taxonomies map to Core dimension-specific assessments.",wave6-candidate
