@@ -1,0 +1,103 @@
+concept_id,label,primary_domain_id,primary_domain,secondary_domains,assignment_rationale,status
+CM4DI-C0001,Party,CM4DI-D0001,Identity Representation,"CM4DI-D0009;CM4DI-D0010;CM4DI-D0014","Foundational contextual participant role used across identity interactions.",current
+CM4DI-C0002,IdentitySubject,CM4DI-D0001,Identity Representation,"CM4DI-D0011;CM4DI-D0012;CM4DI-D0013;CM4DI-D0015","Defines what identity representation or identity information is about.",current
+CM4DI-C0003,DigitalIdentity,CM4DI-D0001,Identity Representation,"CM4DI-D0008;CM4DI-D0011;CM4DI-D0012;CM4DI-D0013","Canonical managed digital representation of an IdentitySubject.",current
+CM4DI-C0004,Identifier,CM4DI-D0001,Identity Representation,"CM4DI-D0010;CM4DI-D0011","Foundational scoped reference/sign used across profiles.",current
+CM4DI-C0005,IdentityContext,CM4DI-D0001,Identity Representation,"CM4DI-D0006;CM4DI-D0007","Defines interpretation context for identity representations; distinct from operational/security domains.",current
+CM4DI-C0006,IdentityAttribute,CM4DI-D0002,Identity Information,"CM4DI-D0008;CM4DI-D0015","Identity-information element about a subject.",current
+CM4DI-C0007,Claim,CM4DI-D0002,Identity Information,"CM4DI-D0005;CM4DI-D0010;CM4DI-D0015","Assertion about an IdentitySubject; reused by credentials and exchange.",current
+CM4DI-C0008,Evidence,CM4DI-D0003,Identity Evidence,"CM4DI-D0004;CM4DI-D0010;CM4DI-D0011;CM4DI-D0014","Cross-context evidential role supporting claims, bindings and assessments.",current
+CM4DI-C0009,Proof,CM4DI-D0003,Identity Evidence,"CM4DI-D0010;CM4DI-D0011","Specialized evidential role for verification/proof use.",current
+CM4DI-C0010,IdentityBinding,CM4DI-D0003,Identity Evidence,"CM4DI-D0004;CM4DI-D0011;CM4DI-D0012","Relator grounding subject-to-representation/credential/authenticator bindings.",current
+CM4DI-C0011,Credential,CM4DI-D0005,Credential Management,"CM4DI-D0010;CM4DI-D0011;CM4DI-D0015","Credential lifecycle ownership belongs to Credential Management.",current
+CM4DI-C0012,CredentialStatus,CM4DI-D0005,Credential Management,"CM4DI-D0010;CM4DI-D0011","Credential lifecycle/status semantics.",current
+CM4DI-C0013,CredentialLifecycleEvent,CM4DI-D0005,Credential Management,CM4DI-D0011,"Generic credential lifecycle event.",current
+CM4DI-C0014,CredentialIssuance,CM4DI-D0005,Credential Management,"CM4DI-D0010;CM4DI-D0015","Credential issuance event owned by lifecycle domain.",current
+CM4DI-C0015,IdentityProofing,CM4DI-D0004,Identity Establishment,CM4DI-D0015,"Establishes confidence before or while creating a managed identity relationship.",current
+CM4DI-C0016,Enrollment,CM4DI-D0004,Identity Establishment,"CM4DI-D0008;CM4DI-D0015","Creates managed identity relationship; distinct from provisioning.",current
+CM4DI-C0017,Authentication,CM4DI-D0006,Authentication,"CM4DI-D0009;CM4DI-D0011","Authentication process semantics.",current
+CM4DI-C0018,Authenticator,CM4DI-D0006,Authentication,CM4DI-D0012,"Contextual authentication role; devices may play it without being defined by it.",current
+CM4DI-C0019,AuthenticationResult,CM4DI-D0006,Authentication,CM4DI-D0009,"Authentication outcome; distinct from Session.",current
+CM4DI-C0020,AssuranceAssessment,CM4DI-D0003,Identity Evidence,"CM4DI-D0004;CM4DI-D0006;CM4DI-D0014","Cross-dimensional evidence-backed assurance assessment.",current
+CM4DI-C0021,Authorization,CM4DI-D0007,Authorization,"CM4DI-D0011;CM4DI-D0013","Authorization evaluation process.",current
+CM4DI-C0022,AuthorizationRequest,CM4DI-D0007,Authorization,,"Authorization request information object.",current
+CM4DI-C0023,AuthorizationContext,CM4DI-D0007,Authorization,"CM4DI-D0011;CM4DI-D0013","Environmental/request context for access decisions.",current
+CM4DI-C0024,AuthorizationResult,CM4DI-D0007,Authorization,,"Explicit authorization decision artifact.",current
+CM4DI-C0025,Principal,CM4DI-D0007,Authorization,"CM4DI-D0008;CM4DI-D0011;CM4DI-D0012;CM4DI-D0013","Authorization role played by heterogeneous actors/representations.",current
+CM4DI-C0026,Resource,CM4DI-D0007,Authorization,,"Protected-target role.",current
+CM4DI-C0027,Action,CM4DI-D0007,Authorization,,"Requested operation specification.",current
+CM4DI-C0028,Permission,CM4DI-D0007,Authorization,CM4DI-D0008,"Normative access unit.",current
+CM4DI-C0029,AccessGrant,CM4DI-D0007,Authorization,"CM4DI-D0008;CM4DI-D0011;CM4DI-D0013","Durable assignment distinct from runtime decision.",current
+CM4DI-C0030,Delegation,CM4DI-D0007,Authorization,CM4DI-D0013,"Delegated authority semantics used especially by agent scenarios.",current
+CM4DI-C0031,TrustAssessment,CM4DI-D0014,Trust Governance,"CM4DI-D0003;CM4DI-D0009;CM4DI-D0010","Trust assessment is distinct from cryptographic validation and conformance status.",current
+CM4DI-C0032,TrustReference,CM4DI-D0014,Trust Governance,"CM4DI-D0009;CM4DI-D0010;CM4DI-D0011","Alignment/reference hook to external trust constructs.",current
+CM4DI-C0033,RelyingParty,CM4DI-D0009,Federation,"CM4DI-D0006;CM4DI-D0010","Primary ownership in cross-domain relying interactions; reused in credential and authentication scenarios.",current
+CM4DI-C0034,Verifier,CM4DI-D0003,Identity Evidence,"CM4DI-D0006;CM4DI-D0010","Generic verification role; concrete exchange/authentication verifier roles specialize by context.",current
+CM4DI-C1001,Account,CM4DI-D0008,Identity Administration,,"Platform-local managed identity representation.",current
+CM4DI-C1002,UserProfile,CM4DI-D0008,Identity Administration,,"Mutable managed identity information record.",current
+CM4DI-C1003,IdentitySource,CM4DI-D0008,Identity Administration,"CM4DI-D0002;CM4DI-D0003","Operational source of identity information.",current
+CM4DI-C1004,AuthoritativeIdentitySource,CM4DI-D0008,Identity Administration,CM4DI-D0003,"Source authoritative for specified identity information.",current
+CM4DI-C1005,IdentityStore,CM4DI-D0008,Identity Administration,,"Managed repository/service for identity data.",current
+CM4DI-C1006,AdministrativeDomain,CM4DI-D0008,Identity Administration,CM4DI-D0009,"Operational administration boundary, distinct from IdentityContext.",current
+CM4DI-C1007,Application,CM4DI-D0008,Identity Administration,"CM4DI-D0007;CM4DI-D0009","Managed software entity that may play identity interaction roles.",current
+CM4DI-C1008,ApplicationRegistration,CM4DI-D0008,Identity Administration,CM4DI-D0009,"Configuration record for an application/client in an identity domain.",current
+CM4DI-C1009,Federation,CM4DI-D0009,Federation,CM4DI-D0014,"Cross-domain identity relationship.",current
+CM4DI-C1010,FederationConnection,CM4DI-D0009,Federation,CM4DI-D0014,"Configured federation relationship.",current
+CM4DI-C1011,IdentityBroker,CM4DI-D0009,Federation,CM4DI-D0008,"Intermediary role mediating identity/authentication flows across domains.",current
+CM4DI-C1012,Provisioning,CM4DI-D0008,Identity Administration,,"Creates, updates or synchronizes platform-local representations; not Enrollment.",current
+CM4DI-C1013,ProvisioningConnection,CM4DI-D0008,Identity Administration,,"Configured source-target provisioning relationship.",current
+CM4DI-C1014,AttributeMapping,CM4DI-D0008,Identity Administration,CM4DI-D0002,"Operational mapping artifact for claims/attributes.",current
+CM4DI-C1015,Session,CM4DI-D0006,Authentication,CM4DI-D0009,"Temporally bounded post-authentication security context.",current
+CM4DI-C1016,PermissionBundle,CM4DI-D0007,Authorization,CM4DI-D0008,"Operational grouping of Core Permissions.",current
+CM4DI-C1017,AccessPolicy,CM4DI-D0007,Authorization,,"Detailed policy artifact retained outside minimal Core semantics.",current
+CM4DI-C1018,AccessCondition,CM4DI-D0007,Authorization,,"Predicate or condition used in authorization evaluation.",current
+CM4DI-C1019,AccessGroup,CM4DI-D0007,Authorization,CM4DI-D0008,"Operational access grouping; not a social-identity group.",current
+CM4DI-C1020,GroupMembership,CM4DI-D0007,Authorization,CM4DI-D0008,"Operational membership mediating access assignment.",current
+CM4DI-C2001,Issuer,CM4DI-D0005,Credential Management,CM4DI-D0010,"Contextual credential-issuing role.",current
+CM4DI-C2002,Holder,CM4DI-D0010,Credential Exchange,CM4DI-D0005,"Credential holding/control role; not necessarily subject.",current
+CM4DI-C2003,CredentialPresentationVerifier,CM4DI-D0010,Credential Exchange,CM4DI-D0003,"Verifier role specialized for credential presentations.",current
+CM4DI-C2004,Wallet,CM4DI-D0010,Credential Exchange,CM4DI-D0008,"Software role managing or presenting credentials.",current
+CM4DI-C2005,HolderService,CM4DI-D0010,Credential Exchange,,"Service role supporting holder credential operations.",current
+CM4DI-C2006,CredentialPresentation,CM4DI-D0010,Credential Exchange,"CM4DI-D0005;CM4DI-D0003","Presentation event distinct from Authentication.",current
+CM4DI-C2007,PresentationRequest,CM4DI-D0010,Credential Exchange,,"Request artifact for credential-derived information.",current
+CM4DI-C2008,Controller,CM4DI-D0010,Credential Exchange,CM4DI-D0001,"Role controlling identifier or verification material.",current
+CM4DI-C2009,VerificationMethod,CM4DI-D0010,Credential Exchange,CM4DI-D0003,"Verification artifact used in credential/identifier ecosystems.",current
+CM4DI-C2010,VerifiableDataRegistry,CM4DI-D0010,Credential Exchange,CM4DI-D0014,"Registry or service supporting status, schema, identifier or trusted-entity information.",current
+CM4DI-C2011,SelectiveDisclosure,CM4DI-D0010,Credential Exchange,,"Presentation capability controlling disclosed information.",current
+CM4DI-C2012,VerifiablePresentation,CM4DI-D0010,Credential Exchange,CM4DI-D0003,"Presentation artifact carrying selected claims and proofs.",current
+CM4DI-C3001,Workload,CM4DI-D0011,Workload Identity,"CM4DI-D0001;CM4DI-D0007","Runtime compute entity capable of subject and principal roles.",current
+CM4DI-C3002,RuntimeInstance,CM4DI-D0011,Workload Identity,,"Concrete execution instance.",current
+CM4DI-C3003,ServiceAccount,CM4DI-D0011,Workload Identity,CM4DI-D0008,"Non-human account representation used by workloads or automation.",current
+CM4DI-C3004,ServicePrincipal,CM4DI-D0011,Workload Identity,CM4DI-D0007,"Workload or application principal role.",current
+CM4DI-C3005,ManagedIdentity,CM4DI-D0011,Workload Identity,"CM4DI-D0005;CM4DI-D0008","Provider-managed workload identity pattern.",current
+CM4DI-C3006,Device,CM4DI-D0012,Device Identity,"CM4DI-D0001;CM4DI-D0006;CM4DI-D0007","Device entity independent of its identity record, credential or authenticator role.",current
+CM4DI-C3007,DeviceIdentityRecord,CM4DI-D0012,Device Identity,CM4DI-D0008,"Managed representation or record of a Device.",current
+CM4DI-C3008,NodeAttestation,CM4DI-D0011,Workload Identity,CM4DI-D0003,"Attestation event supporting workload identity establishment.",current
+CM4DI-C3009,WorkloadAttestation,CM4DI-D0011,Workload Identity,CM4DI-D0003,"Attestation event identifying requesting workload.",current
+CM4DI-C3010,TrustDomain,CM4DI-D0011,Workload Identity,CM4DI-D0014,"Workload identity namespace or security boundary; not TrustFramework.",current
+CM4DI-C3011,TrustBundle,CM4DI-D0011,Workload Identity,"CM4DI-D0014;CM4DI-D0003","Verification material for workload trust domain.",current
+CM4DI-C3012,SVID,CM4DI-D0011,Workload Identity,CM4DI-D0005,"SPIFFE credential specialization.",current
+CM4DI-C3013,TemporaryCredential,CM4DI-D0011,Workload Identity,"CM4DI-D0005;CM4DI-D0009","Short-lived credential used in workload or federated operations.",current
+CM4DI-C3014,TokenExchange,CM4DI-D0011,Workload Identity,"CM4DI-D0005;CM4DI-D0009","Credential or security-context exchange event.",current
+CM4DI-C3015,SoftwareAgent,CM4DI-D0013,Agent Identity,"CM4DI-D0001;CM4DI-D0007","Goal-directed software entity capable of identity and principal roles.",current
+CM4DI-C3016,AIAgent,CM4DI-D0013,Agent Identity,,"AI-driven SoftwareAgent specialization.",current
+CM4DI-C3017,AgentIdentity,CM4DI-D0013,Agent Identity,CM4DI-D0001,"Managed digital identity representation specialized for an agent.",current
+CM4DI-C3018,AgentSponsor,CM4DI-D0013,Agent Identity,CM4DI-D0014,"Accountability or governance role responsible for agent identity lifecycle.",current
+CM4DI-C4001,TrustFramework,CM4DI-D0014,Trust Governance,,"Governed normative framework for ecosystem trust conditions.",current
+CM4DI-C4002,GovernanceFramework,CM4DI-D0014,Trust Governance,,"Institutional operating and conformance framework.",current
+CM4DI-C4003,TrustRegistry,CM4DI-D0014,Trust Governance,CM4DI-D0010,"Governed registry of participants, providers or trust status.",current
+CM4DI-C4004,TrustedList,CM4DI-D0014,Trust Governance,,"Governed trusted-entity or service list.",current
+CM4DI-C4005,TrustAnchor,CM4DI-D0014,Trust Governance,CM4DI-D0011,"Root or terminus role for a trust chain.",current
+CM4DI-C4006,TrustChain,CM4DI-D0014,Trust Governance,CM4DI-D0009,"Structured path of trust statements, certificates or entity statements.",current
+CM4DI-C4007,GovernanceAuthority,CM4DI-D0014,Trust Governance,,"Role defining or enforcing governance rules.",current
+CM4DI-C4008,Registrar,CM4DI-D0014,Trust Governance,,"Role registering ecosystem participants or services.",current
+CM4DI-C4009,Regulator,CM4DI-D0014,Trust Governance,,"Oversight or regulatory role.",current
+CM4DI-C4010,ConformityAssessmentBody,CM4DI-D0014,Trust Governance,,"Independent conformance-assessment role.",current
+CM4DI-C4011,Certification,CM4DI-D0014,Trust Governance,,"Governance process establishing certified status.",current
+CM4DI-C4012,Accreditation,CM4DI-D0014,Trust Governance,,"Governance process establishing assessment competence or authority.",current
+CM4DI-C4013,EcosystemParticipation,CM4DI-D0014,Trust Governance,CM4DI-D0015,"Governed participant-framework relationship.",current
+CM4DI-C4014,ParticipantStatus,CM4DI-D0014,Trust Governance,,"Status of governed ecosystem participation.",current
+CM4DI-C4015,LegalIdentity,CM4DI-D0015,Government Identity,"CM4DI-D0001;CM4DI-D0004","Legally recognized identity construct used in government or legal contexts.",current
+CM4DI-C4016,PersonIdentificationData,CM4DI-D0015,Government Identity,"CM4DI-D0002;CM4DI-D0005","Governed person-identification data set.",current
+CM4DI-C4017,GovernmentAttestation,CM4DI-D0015,Government Identity,"CM4DI-D0005;CM4DI-D0003","Government or regulated attestation about a subject.",current
+CM4DI-C4018,IdentityServiceProvider,CM4DI-D0015,Government Identity,"CM4DI-D0014;CM4DI-D0004;CM4DI-D0006","Governed provider role supplying identity services.",current
