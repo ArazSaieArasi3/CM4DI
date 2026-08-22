@@ -1,0 +1,74 @@
+gate: C
+status: READY_FOR_USER_APPROVAL
+project: CM4DI-journal-v2
+date: 2026-08-22
+branch: journal-v2
+
+semantic_source_policy:
+  conceptual_truth:
+    - path: model/journal-v2/CM4DI_CORE_CONCEPT_REGISTRY_v2.csv
+      blob_sha: 30eddacbc4af33806917c94fd2bd957a312cc0a8
+      role: canonical_gate_c_concept_registry
+    - path: model/journal-v2/CM4DI_CORE_RELATION_REGISTRY_GATE_C.csv
+      blob_sha: 3c56fd7f2b190a370ab664e7c77e3c598b51e609
+      role: canonical_gate_c_relation_registry
+    - path: model/journal-v2/CORE_PROFILE_BOUNDARY_v2.md
+      blob_sha: e6117181f2c1e712bdc4b87fb85b522f8a1d5f29
+      role: canonical_gate_c_scope_boundary
+    - path: research/COMPETENCY_QUESTION_REGISTRY_v2.csv
+      blob_sha: 83d34919513b8fb2981de99b1e7ea0499c75b9ee
+      role: governed_requirement_registry
+  derived_view:
+    - path: model/journal-v2/CM4DI_CORE_CONCEPTUAL_MODEL_v2.mmd
+      blob_sha: f6a632ebf0b45d523d81a78ad850772553ac7a75
+      role: human_readable_structural_view
+
+supporting_artifacts:
+  - model/journal-v2/DOMAIN_BOUNDARIES_AND_UBIQUITOUS_LANGUAGE.md
+  - model/journal-v2/PROFILE_INTERFACE_CONTRACTS_v2.md
+  - model/journal-v2/WAVE5_DOMAIN_DECISION_LOG.md
+  - model/journal-v2/CM4DI_RELATION_STEREOTYPE_DECISIONS_v2.csv
+  - evaluation/WAVE5_BASELINE_TO_V2_DELTA_2026-08-22.md
+  - evaluation/ONTOUML_UFO_STEREOTYPE_REVIEW_v2.md
+  - evaluation/ONTOUML_ANTIPATTERN_REVIEW_v2.md
+
+counts:
+  core_concepts_and_role_patterns: 34
+  core_relations: 55
+  competency_questions: 32
+  governed_profiles: 4
+  anti_pattern_checks: 40
+
+profile_architecture:
+  P01: Enterprise/Federation
+  P02: Wallet/Verifiable-Credentials
+  P03: Machine/Workload/Device/Agent
+  P04: Trust/Assurance/Government
+
+critical_modeling_decisions:
+  - Party and IdentitySubject are abstract roleMixins, not rigid universal kinds.
+  - Evidence and Proof are roleMixins, permitting credentials/documents/assertions/attestations to play evidential roles.
+  - IdentityBinding, AccessGrant and Delegation are relators.
+  - IdentityProofing, Enrollment, Authentication and Authorization are distinct events.
+  - AuthenticationResult and AuthorizationResult are result information artifacts, not event occurrences.
+  - IdentityContext and AuthorizationContext are distinct situations.
+  - Account, Session, Federation, Wallet, TrustFramework, LegalIdentity, Workload, Device and AI Agent are profile-first.
+  - No MachineIdentity superclass.
+  - SocialIdentity remains future/external; SocialLogin is P01 federation/authentication mapping.
+
+supersession_notes:
+  - path: model/journal-v2/CM4DI_CORE_RELATION_REGISTRY_v2.csv
+    status: draft_semantic_registry
+    superseded_for_ontouml_stereotype_by: model/journal-v2/CM4DI_CORE_RELATION_REGISTRY_GATE_C.csv
+
+baseline_preservation:
+  conference_owl_sha: e04ae62319aac1c123877b0b03acf3f5137a9849
+  conference_drawio_sha: 0dce512f4c0611ccaf2fd5665d6148fb379b22af
+  canonical_formal_refactor_permitted: false
+
+next_after_gate_c_approval:
+  - Wave 6 profile design and mappings
+  - Wave 7 formal OWL/SHACL/serialization/CI/SPARQL implementation
+
+freeze_rule: >-
+  No semantic change to the Gate-C concept/relation/boundary registries is permitted after approval without an explicit change record and impact analysis against CQs, profiles and evaluation mappings.
