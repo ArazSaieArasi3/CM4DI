@@ -1,0 +1,53 @@
+cq_id,governed_relation_ids,relation_resolution,formalization_notes,status
+CM4DI-CQ0001,"CM4DI-R0001;CM4DI-R0002",governed,"Direct Core relations.",closed
+CM4DI-CQ0002,"CM4DI-R0001;CM4DI-R0002",governed+foundational,"Role realization/playedBy is a foundational typing relation and must not be invented as a domain material relation.",closed
+CM4DI-CQ0003,,foundational,"IdentitySubject role realization is supplied by domain/profile rigid kinds; no new Core relation required.",closed
+CM4DI-CQ0004,"CM4DI-R0003;CM4DI-R0004;CM4DI-R0005",governed,"Identifier target and scope are directly traceable.",closed
+CM4DI-CQ0005,"CM4DI-R0006;CM4DI-R0007;CM4DI-R0008",governed,"Direct Claim semantics.",closed
+CM4DI-CQ0006,"CM4DI-R0009;CM4DI-R0010;CM4DI-R0011;CM4DI-R0017;CM4DI-R0025",governed+derived,"Evidence supporting AssuranceAssessment may be derived through proofing/trust provenance unless Wave 7 justifies a direct property.",closed
+CM4DI-CQ0007,"CM4DI-R0012;CM4DI-R0009;CM4DI-R0017",governed+derived,"Proof use is contextual; no essential Proof artifact relation is introduced.",closed
+CM4DI-CQ0008,"CM4DI-R0018;CM4DI-R0019;CM4DI-R0020;CM4DI-R0021",governed,"Direct Credential provenance/content/status trace.",closed
+CM4DI-CQ0009,"CM4DI-R0022;CM4DI-R0021",governed+formalization-needed,"Timestamp and explicit status-transition result property belong to Wave 7 OWL/SHACL design if needed for executable CQ.",closed
+CM4DI-CQ0010,"CM4DI-R0025;CM4DI-R0026",governed,"Direct proofing evidence/outcome relations.",closed
+CM4DI-CQ0011,"CM4DI-R0027;CM4DI-R0028;CM4DI-R0029",governed,"Direct enrollment semantics.",closed
+CM4DI-CQ0012,"CM4DI-R0013;CM4DI-R0014;CM4DI-R0015;CM4DI-R0016;CM4DI-R0017",governed,"IdentityBinding mediation and grounding are explicit.",closed
+CM4DI-CQ0013,"CM4DI-R0030;CM4DI-R0032;CM4DI-R0033;CM4DI-R0034",governed,"Direct Authentication event trace.",closed
+CM4DI-CQ0014,,foundational,"Authenticator is roleMixin; role-player realization is foundational typing, not a new material relation.",closed
+CM4DI-CQ0015,"CM4DI-R0050;CM4DI-R0035",governed+formalization-needed,"Assurance dimension and level/value data properties/controlled values are Wave 7 formalization inputs.",closed
+CM4DI-CQ0016,"CM4DI-R0037;CM4DI-R0038;CM4DI-R0039",governed,"Direct AuthorizationRequest kernel.",closed
+CM4DI-CQ0017,"CM4DI-R0040;CM4DI-R0002",governed,"Two context types are independently traceable.",closed
+CM4DI-CQ0018,"CM4DI-R0036;CM4DI-R0041",governed,"Evaluation and result relation explicit.",closed
+CM4DI-CQ0019,"CM4DI-R0042;CM4DI-R0043",governed,"Permission/action/resource semantics explicit.",closed
+CM4DI-CQ0020,"CM4DI-R0044;CM4DI-R0045;CM4DI-R0046",governed+formalization-needed,"Validity interval may require temporal properties/SHACL in Wave 7.",closed
+CM4DI-CQ0021,"CM4DI-R0047;CM4DI-R0048;CM4DI-R0049",governed+formalization-needed,"Delegation scope may be represented through delegated permission/resource constraints in Wave 7.",closed
+CM4DI-CQ0022,"CM4DI-R0051;CM4DI-R0052;CM4DI-R0053",governed,"Trust assessment hook is explicit.",closed
+CM4DI-CQ0023,"CM4DI-R4001;CM4DI-R4002;CM4DI-R4004;CM4DI-R0053",governed,"Cross-context Trust Governance distinction is explicit.",closed
+CM4DI-CQ0024,"CM4DI-R1001;CM4DI-R1020;CM4DI-R0001",governed,"Regression repair: nonexistent IdentityLink concept removed; account co-reference represented by governed linkedAccount relation without equality inference.",closed
+CM4DI-CQ0025,"CM4DI-R0034;CM4DI-R1014",governed+formalization-needed,"Session expiration/revocation lifecycle properties are Wave 7 extension constraints.",closed
+CM4DI-CQ0026,"CM4DI-R2001;CM4DI-R2002;CM4DI-R2009;CM4DI-R0018",governed,"Issuer/holder/verifier and credential-subject separation explicit.",closed
+CM4DI-CQ0027,"CM4DI-R3002;CM4DI-R3003",governed+foundational,"Workload subject/principal role realization remains foundational; representation/principal relations are profile governed.",closed
+CM4DI-CQ0028,"CM4DI-R3005",governed+foundational,"Device subject/authenticator/principal role multiplicity is foundational role realization; no collapse relation is created.",closed
+CM4DI-CQ0029,"CM4DI-R3013;CM4DI-R3014;CM4DI-R3015;CM4DI-R3016;CM4DI-R0044;CM4DI-R0047;CM4DI-R0048",governed,"AgentSponsor typo repaired; autonomous/delegated access trace explicit.",closed
+CM4DI-CQ0030,"CM4DI-R4012;CM4DI-R4013;CM4DI-R4009;CM4DI-R0001",governed,"Government Identity and Trust Governance remain distinct contexts.",closed
+CM4DI-CQ0031,,mapping-boundary,"SocialLogin is a mapping-only bridge (CM4DI-MAP0018); SocialIdentity remains external. No ontology relation is required.",closed
+CM4DI-CQ0032,,cross-context,"Comparative scenario CQ is evaluated through profile/domain composition and mappings rather than one ontology relation.",closed
+CM4DI-CQ0033,"CM4DI-R1001;CM4DI-R1006",governed,"Account/subject/admin-domain separation.",closed
+CM4DI-CQ0034,"CM4DI-R1003;CM4DI-R1004",governed,"Source provenance and authority relations.",closed
+CM4DI-CQ0035,"CM4DI-R1008;CM4DI-R1009;CM4DI-R0034",governed,"Federation path plus authentication result trace.",closed
+CM4DI-CQ0036,"CM4DI-R0034;CM4DI-R1014",governed,"AuthenticationResult to Session trace.",closed
+CM4DI-CQ0037,"CM4DI-R1015;CM4DI-R0044;CM4DI-R0045",governed,"Permission bundle and grant relations.",closed
+CM4DI-CQ0038,"CM4DI-R2002;CM4DI-R0018",governed,"Holder and credential subject independently traceable.",closed
+CM4DI-CQ0039,"CM4DI-R2001;CM4DI-R0023",governed,"Issuer and issuance event trace.",closed
+CM4DI-CQ0040,"CM4DI-R2005;CM4DI-R2006;CM4DI-R2007;CM4DI-R2008;CM4DI-R0019",governed,"Request/presentation/claims trace.",closed
+CM4DI-CQ0041,"CM4DI-R2011;CM4DI-R2009",governed,"VerificationMethod used for Proof within presentation verification.",closed
+CM4DI-CQ0042,"CM4DI-R2013;CM4DI-R2007",governed+formalization-needed,"Undisclosed information requires instance/query comparison and is evaluated in SPARQL rather than a new ontological relation.",closed
+CM4DI-CQ0043,"CM4DI-R3002;CM4DI-R3004;CM4DI-R0044",governed+foundational,"Workload-to-managed representation and principal role trace.",closed
+CM4DI-CQ0044,"CM4DI-R3007;CM4DI-R3008;CM4DI-R0017",governed,"Attestation-to-binding evidence path explicit.",closed
+CM4DI-CQ0045,"CM4DI-R3009;CM4DI-R3010;CM4DI-R3011;CM4DI-R0021",governed,"Identifier/SVID/TrustDomain decomposition explicit.",closed
+CM4DI-CQ0046,"CM4DI-R3005",governed+foundational,"Contextual role multiplicity evaluated through type assertions and role realization.",closed
+CM4DI-CQ0047,"CM4DI-R3013;CM4DI-R3014;CM4DI-R3015;CM4DI-R3016;CM4DI-R0044;CM4DI-R0047;CM4DI-R0048",governed,"Agent identity, sponsor and access modes explicitly traceable.",closed
+CM4DI-CQ0048,"CM4DI-R4001;CM4DI-R4011",governed,"Framework participation/status trace.",closed
+CM4DI-CQ0049,"CM4DI-R4008;CM4DI-R4009;CM4DI-R4010",governed,"Certification/accreditation lifecycles separate.",closed
+CM4DI-CQ0050,"CM4DI-R4016;CM4DI-R0050;CM4DI-R0035",governed+formalization-needed,"Assurance dimensions/levels require controlled-value formalization in Wave 7.",closed
+CM4DI-CQ0051,"CM4DI-R4012;CM4DI-R4013;CM4DI-R4014;CM4DI-R0018;CM4DI-R0019",governed,"Legal basis, person data, attestation and credential path explicit.",closed
+CM4DI-CQ0052,"CM4DI-R4002;CM4DI-R4003;CM4DI-R4004;CM4DI-R4009;CM4DI-R0051;CM4DI-R0052;CM4DI-R0053",governed,"Evaluative trust, governance conformance and technical chain distinctions explicit.",closed
