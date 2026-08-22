@@ -18,6 +18,7 @@ CM4DI-R1016,P01,governedByPolicy,AccessGrant,AccessPolicy,"Access grant may be g
 CM4DI-R1017,P01,hasCondition,AccessPolicy,AccessCondition,"Access policy may contain access conditions.",wave6-candidate
 CM4DI-R1018,P01,memberOf,Principal,AccessGroup,"Principal may be an operational member of an access group.",wave6-candidate
 CM4DI-R1019,P01,mediatesMembership,GroupMembership,AccessGroup,"GroupMembership mediates account/principal and access group.",wave6-candidate
+CM4DI-R1020,P01,linkedAccount,Account,Account,"Explicit profile-level link indicating two account representations are correlated or co-referential under declared evidence/provenance; it does not assert account equality or subject equality automatically.",ddd-regression-candidate
 CM4DI-R2001,P02,issues,Issuer,Credential,"Issuer role participates in CredentialIssuance and issues a credential.",wave6-candidate
 CM4DI-R2002,P02,holds,Holder,Credential,"Holder possesses/controls credential independently of subjecthood.",wave6-candidate
 CM4DI-R2003,P02,operatesWallet,Holder,Wallet,"Holder uses/controls wallet software in a credential interaction.",wave6-candidate
