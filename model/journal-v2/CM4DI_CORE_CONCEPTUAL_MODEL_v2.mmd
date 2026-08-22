@@ -1,0 +1,203 @@
+classDiagram
+    direction LR
+
+    class Party {
+      <<roleMixin>>
+      contextual interaction participant
+    }
+    class IdentitySubject {
+      <<roleMixin>>
+      subject of identity representation/information
+    }
+    class DigitalIdentity {
+      <<kind>>
+      managed digital representation
+    }
+    class Identifier {
+      <<kind>>
+      scoped identifier/sign
+    }
+    class IdentityContext {
+      <<situation>>
+      interpretation context
+    }
+
+    class IdentityAttribute {
+      <<kind>>
+      identity-information element
+    }
+    class Claim {
+      <<kind>>
+      assertion about subject
+    }
+    class Evidence {
+      <<kind>>
+      supporting evidence artifact
+    }
+    class Proof {
+      <<role>>
+      Evidence used as proof
+    }
+    class IdentityBinding {
+      <<relator>>
+      subject-representation binding
+    }
+
+    class Credential {
+      <<kind>>
+      issued information artifact
+    }
+    class CredentialStatus {
+      <<mode>>
+      credential status
+    }
+    class CredentialLifecycleEvent {
+      <<event>>
+    }
+    class CredentialIssuance {
+      <<event>>
+    }
+
+    class IdentityProofing {
+      <<event>>
+    }
+    class Enrollment {
+      <<event>>
+    }
+
+    class Authentication {
+      <<event>>
+    }
+    class Authenticator {
+      <<roleMixin>>
+    }
+    class AuthenticationResult {
+      <<kind>>
+      result record
+    }
+    class AssuranceAssessment {
+      <<kind>>
+      dimension-specific assessment
+    }
+
+    class Principal {
+      <<roleMixin>>
+      authorization principal
+    }
+    class Resource {
+      <<roleMixin>>
+      protected target
+    }
+    class Action {
+      <<kind>>
+      requested-action specification
+    }
+    class AuthorizationRequest {
+      <<kind>>
+    }
+    class AuthorizationContext {
+      <<situation>>
+    }
+    class Authorization {
+      <<event>>
+    }
+    class AuthorizationResult {
+      <<kind>>
+      decision record
+    }
+    class Permission {
+      <<kind>>
+      normative permission
+    }
+    class AccessGrant {
+      <<relator>>
+    }
+    class Delegation {
+      <<relator>>
+    }
+
+    class TrustAssessment {
+      <<kind>>
+    }
+    class TrustReference {
+      <<kind>>
+      external alignment artifact
+    }
+    class RelyingParty {
+      <<roleMixin>>
+    }
+    class Verifier {
+      <<roleMixin>>
+    }
+
+    Evidence <|-- Proof : plays role
+    CredentialLifecycleEvent <|-- CredentialIssuance
+    Party <|-- RelyingParty : interaction role specialization
+    Party <|-- Verifier : interaction role specialization
+
+    DigitalIdentity "0..*" --> "1" IdentitySubject : represents
+    DigitalIdentity "0..*" --> "1" IdentityContext : interpretedIn
+    DigitalIdentity --> Identifier : hasIdentifier
+    Identifier --> IdentitySubject : identifiesSubject
+    Identifier --> IdentityContext : scopedBy
+
+    Claim "0..*" --> "1" IdentitySubject : about
+    Claim --> IdentityAttribute : asserts
+    Claim --> Party : assertedBy
+    Evidence --> Claim : supportsClaim
+    Evidence --> Party : providedBy
+    Evidence --> Evidence : derivedFrom
+
+    IdentityBinding "0..*" --> "1" IdentitySubject : mediatesSubject
+    IdentityBinding --> DigitalIdentity : bindsDigitalIdentity
+    IdentityBinding --> Credential : bindsCredential
+    IdentityBinding --> Authenticator : bindsAuthenticator
+    IdentityBinding --> Evidence : groundedBy
+
+    Credential --> IdentitySubject : credentialAbout
+    Credential --> Claim : carriesClaim
+    Credential --> Party : credentialIssuedBy
+    Credential --> CredentialStatus : hasCredentialStatus
+    CredentialLifecycleEvent --> Credential : affectsCredential
+    CredentialIssuance --> Credential : producesCredential
+
+    IdentityProofing --> IdentitySubject : proofingSubject
+    IdentityProofing --> Evidence : usesEvidence
+    IdentityProofing --> AssuranceAssessment : producesAssessment
+    Enrollment --> IdentitySubject : enrollsSubject
+    Enrollment --> DigitalIdentity : createsDigitalIdentity
+    Enrollment --> IdentityBinding : createsBinding
+
+    Authentication --> Party : performedBy
+    Authentication --> IdentitySubject : authenticatesSubject
+    Authentication --> Authenticator : usesAuthenticator
+    Authentication --> IdentityContext : authenticationInContext
+    Authentication "1" --> "1" AuthenticationResult : produces
+    AuthenticationResult --> AssuranceAssessment : hasAssuranceAssessment
+
+    Authorization "1" --> "1" AuthorizationRequest : evaluatesRequest
+    AuthorizationRequest "0..*" --> "1" Principal : requestPrincipal
+    AuthorizationRequest "0..*" --> "1" Resource : requestResource
+    AuthorizationRequest "0..*" --> "1" Action : requestAction
+    AuthorizationRequest --> AuthorizationContext : requestContext
+    Authorization "1" --> "1" AuthorizationResult : producesDecision
+
+    Permission --> Action : permitsAction
+    Permission --> Resource : appliesTo
+    AccessGrant "0..*" --> "1" Principal : grantPrincipal
+    AccessGrant --> Permission : grantPermission
+    AccessGrant --> Resource : grantScope
+    Delegation "0..*" --> "1" Principal : delegator
+    Delegation "0..*" --> "1" Principal : delegatee
+    Delegation --> Permission : delegatedPermission
+
+    TrustAssessment --> Party : trustTarget
+    TrustAssessment --> Evidence : supportedBy
+    TrustAssessment --> TrustReference : alignsTo
+    RelyingParty --> Claim : reliesOn
+    Verifier --> Evidence : verifiesEvidence
+
+%% Boundary notes
+%% - Person, Organization, Device, Workload and AI Agent are domain/profile kinds that may play IdentitySubject/Party/Principal roles.
+%% - Account, Session, Federation, Wallet/VC, TrustFramework and Machine-specific classes are profile-level.
+%% - IdentityProvider/CredentialServiceProvider/Subscriber are not universal Core kinds in journal v2.
