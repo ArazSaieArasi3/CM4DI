@@ -31,11 +31,11 @@ classDiagram
       assertion about subject
     }
     class Evidence {
-      <<kind>>
-      supporting evidence artifact
+      <<roleMixin>>
+      artifact playing evidential role
     }
     class Proof {
-      <<role>>
+      <<roleMixin>>
       Evidence used as proof
     }
     class IdentityBinding {
@@ -130,7 +130,7 @@ classDiagram
       <<roleMixin>>
     }
 
-    Evidence <|-- Proof : plays role
+    Evidence <|-- Proof : evidence-role specialization
     CredentialLifecycleEvent <|-- CredentialIssuance
     Party <|-- RelyingParty : interaction role specialization
     Party <|-- Verifier : interaction role specialization
@@ -198,6 +198,7 @@ classDiagram
     Verifier --> Evidence : verifiesEvidence
 
 %% Boundary notes
+%% - Evidence and Proof are roleMixins: a Credential/document/assertion/etc. may play them contextually.
 %% - Person, Organization, Device, Workload and AI Agent are domain/profile kinds that may play IdentitySubject/Party/Principal roles.
 %% - Account, Session, Federation, Wallet/VC, TrustFramework and Machine-specific classes are profile-level.
 %% - IdentityProvider/CredentialServiceProvider/Subscriber are not universal Core kinds in journal v2.
