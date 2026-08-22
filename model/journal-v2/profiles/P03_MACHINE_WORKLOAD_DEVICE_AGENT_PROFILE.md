@@ -1,32 +1,40 @@
-# P03 — Machine / Workload / Device / Agent Profile
+# P03 — Technical Identity Profile
+
+**Legacy label:** Machine / Workload / Device / Agent  
+**DDD status:** Cross-domain integration Profile. `Technical Identity` is a profile/grouping view, not a monolithic DDD Domain.
 
 ## Purpose
-Represent non-human identity subjects and their operational identity representations without introducing a misleading `MachineIdentity` superclass.
+Represent technical and non-human identity scenarios without introducing a misleading `MachineIdentity` superclass or forcing Workload Identity, Device Identity and Agent Identity into one problem-space model.
 
-## Core reuse
-- `Workload`, `Device` and `SoftwareAgent` are profile/domain kinds that may play Core `IdentitySubject`, `Party`, `Principal` and, when appropriate, `Authenticator` roles.
-- `ServiceAccount`, `ServicePrincipal` and `ManagedIdentity` are representation/principal patterns, not synonyms for workload or software agent.
-- SPIFFE ID maps to Core `Identifier`; SVID specializes/maps to Core `Credential` and can play Core `Evidence`/`Proof` roles.
-- Node/Workload Attestation produces evidence grounding Core `IdentityBinding` and `AssuranceAssessment` patterns.
-- Agent delegated access reuses Core `Delegation`; autonomous access reuses `AccessGrant`.
+## Domain composition
+P03 composes Identity Representation, Identity Evidence, Credential Management, Authentication, Authorization, Identity Administration, Workload Identity, Device Identity, Agent Identity and Trust Governance.
+
+## Domain reuse
+- `Workload`, `Device` and `SoftwareAgent`/`AIAgent` belong to three separate DDD subdomains and Bounded Contexts.
+- All may play `IdentitySubject`, `Party`, `Principal` and context-specific roles without sharing a fabricated MachineIdentity kind.
+- `ServiceAccount`, `ServicePrincipal` and `ManagedIdentity` belong primarily to Workload Identity and link explicitly to Identity Administration and Authorization.
+- SPIFFE ID maps to Identity Representation `Identifier`; SVID reuses Credential Management and may play Identity Evidence roles.
+- Node/Workload Attestation consumes Identity Evidence/IdentityBinding.
+- Device may independently play IdentitySubject and Authenticator; these are separate role occurrences.
+- Agent delegated access consumes Authorization `Delegation`; autonomous rights consume `AccessGrant`.
 
 ## Profile concepts
-P03 contributes 18 governed concepts: Workload, RuntimeInstance, ServiceAccount, ServicePrincipal, ManagedIdentity, Device, DeviceIdentityRecord, NodeAttestation, WorkloadAttestation, TrustDomain, TrustBundle, SVID, TemporaryCredential, TokenExchange, SoftwareAgent, AIAgent, AgentIdentity and AgentSponsor.
+P03 contributes 18 governed concepts distributed across Workload Identity, Device Identity and Agent Identity. Primary assignments are canonical in `../ddd/CONCEPT_DOMAIN_ASSIGNMENT_v2.csv`.
 
 ## Representative external alignments
-- SPIFFE/SPIRE: SPIFFE ID -> Core `Identifier`; SVID -> P03 `SVID`/Core `Credential`; Trust Domain -> P03 `TrustDomain`; Trust Bundle -> P03 `TrustBundle`; Workload/Node Attestation -> P03 events grounded in Core Evidence/Binding.
-- Kubernetes: ServiceAccount -> P03 `ServiceAccount`; projected service-account token -> `TemporaryCredential`; Pod/process/job -> Workload/RuntimeInstance depending granularity.
-- Microsoft Entra: Service Principal -> P03 `ServicePrincipal`; Managed Identity -> P03 `ManagedIdentity`; Device object -> `DeviceIdentityRecord`; Agent Identity -> `AgentIdentity`; sponsor -> `AgentSponsor`.
-- Google Workload Identity Federation: external workload -> P03 `Workload`; federated principal -> Core `Principal`; service account -> P03 `ServiceAccount`; STS exchange -> `TokenExchange`.
-- AWS workload/AgentCore patterns: IAM role/session credentials map through Core `Principal`/`AccessGrant` and P03 `TemporaryCredential`; agent identity -> `AgentIdentity` with autonomous or delegated access patterns.
+- SPIFFE/SPIRE: SPIFFE ID -> Identifier; SVID -> Workload Identity/Credential; TrustDomain/TrustBundle remain technical trust constructs; attestation grounds Identity Evidence.
+- Kubernetes: ServiceAccount and projected credentials are Workload Identity constructs.
+- Microsoft Entra: ServicePrincipal and ManagedIdentity are Workload Identity; Device object maps to DeviceIdentityRecord; AgentIdentity/AgentSponsor map to Agent Identity.
+- Google Workload Identity Federation: Workload and ServiceAccount semantics compose Workload Identity, Federation and Authorization.
+- AWS workload/agent patterns: temporary credentials, principals, grants and agent identity are explicitly cross-domain.
 
 ## Anti-conflation invariants
 `Workload != WorkloadIdentity`; `Workload != ServiceAccount`; `ServiceAccount != ServicePrincipal`; `ServicePrincipal != Application`; `Device != DeviceIdentityRecord`; `Device != Authenticator`; `SPIFFE ID != SVID`; `TrustDomain != IdentityContext`; `TrustDomain != TrustFramework`; `Attestation != Authentication`; `AgentIdentity != AIAgent`; `Sponsor != Delegator` by default.
 
 ## Minimum scenarios
-1. **SPIFFE workload:** Workload plays `IdentitySubject` and `Principal`; SPIFFE ID is an `Identifier`; SVID is a `Credential`; WorkloadAttestation grounds `IdentityBinding`; authorization acts on the principal.
-2. **Device:** Device plays `IdentitySubject`; DeviceIdentityRecord represents the device; a device certificate is a Core Credential; the same device may separately play `Authenticator`.
-3. **AI agent:** AIAgent is a SoftwareAgent and may play `IdentitySubject`/`Principal`; AgentIdentity represents it; AgentSponsor carries accountability; delegated access uses Core Delegation while autonomous access uses AccessGrant.
+1. Workload identity composes Identity Representation + Identity Evidence + Credential Management + Workload Identity + Authorization.
+2. Device identity composes Identity Representation + Device Identity + Authentication/Authorization roles as required.
+3. Agent identity composes Identity Representation + Agent Identity + Authorization + Trust Governance accountability where needed.
 
 ## Wave-7 formalization expectation
-P03 imports the Core and may also reuse selected P01 representation concepts through explicit module dependencies. No cross-profile dependency is allowed to redefine the Core identity criterion.
+Formal packaging MUST follow the DDD Context Map. Workload Identity, Device Identity and Agent Identity may become separate formal modules or a controlled technical-identity aggregate only if dependency analysis justifies it. P03 itself is not automatically an OWL module.
