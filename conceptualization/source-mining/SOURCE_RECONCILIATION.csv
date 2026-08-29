@@ -1,0 +1,1 @@
+reconciliation_id,raw_item_id,source_record_id,normalized_term,semantic_disposition,governed_concept_ids,governed_relation_ids,domain_ids,bounded_context_ids,cq_impact,module_impact,mapping_or_neighbor_alignment,decision_rationale,review_status
