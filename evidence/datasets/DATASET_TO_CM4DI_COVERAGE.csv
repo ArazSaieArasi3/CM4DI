@@ -1,0 +1,8 @@
+dataset_id,concept_ids,relation_or_cq_focus,evaluation_role,qualification
+CM4DI-DS0001,"CM4DI-C0017;CM4DI-C0019;CM4DI-C1001;CM4DI-C3006","Authentication occurrence; successful result proxy; account/user-computer association; temporal graph queries","Scale/instantiation/CQ stress testing for Authentication",primary-qualified
+CM4DI-DS0002,"CM4DI-C0017;CM4DI-C0019;CM4DI-C0023;CM4DI-C1001;CM4DI-C3006","Authentication attempt/result; contextual observations; account; device/client attributes; risk-labeled scenarios","Context-sensitive authentication CQ evaluation and example instances",primary-qualified-with-synthetic-value-limitation
+CM4DI-DS0003,"CM4DI-C4015;CM4DI-C4016;CM4DI-C4017;CM4DI-C4001;CM4DI-C4013;CM4DI-C4014","Official/digital-ID availability; system capability; lifecycle/governance context","Government-profile coverage and cross-country capability evaluation",primary-qualified-aggregate
+CM4DI-DS0004,"CM4DI-C4015;CM4DI-C4016;CM4DI-C0006;CM4DI-C0007","Person-level ID ownership/use and demographic/context variation","Complementary person-level government-ID scenario evaluation",secondary-qualified-survey
+CM4DI-DS0005,"CM4DI-C0017;CM4DI-C0019;CM4DI-C1001;CM4DI-C1003;CM4DI-C3006;CM4DI-C0023","Authentication source/destination; success/failure; AD/controller context; computer/device and compromise events","Richer enterprise-authentication and cross-event evaluation; candidate red-team scenario support",candidate-primary-identity-slice-only
+CM4DI-DS0006,"CM4DI-C0017;CM4DI-C0018","Behavioral authenticator evidence","Narrow authentication-modality experiment only",excluded-primary-restricted
+CM4DI-DS0007,"CM4DI-C0017;CM4DI-C0018","Gaze-based behavioral authentication","Optional authenticator-modality diversity test",monitor
