@@ -1,0 +1,23 @@
+mapping_id,aws_construct,cm4di_target_id,cm4di_target_label,mapping_strength,mapping_type,rationale,anti_equivalence,status
+AWS-MAP-001,IAM Principal,CM4DI-C0025,Principal,strong,implementation,"AWS explicitly uses Principal as policy subject across heterogeneous identity/session kinds","Principal is a contextual authorization role not an entity superclass",accepted
+AWS-MAP-002,IAM User,CM4DI-C1001,Account,strong,implementation,"AWS-account-local managed identity representation","Not person/IdentitySubject",accepted
+AWS-MAP-003,IAM Role,CM4DI-C1016,PermissionBundle,partial,related,"Role carries permissions but also has trust/assumption/session semantics","Never UFO Role and not fully represented by PermissionBundle alone",accepted
+AWS-MAP-004,IAM Role assumption,CM4DI-C0030,Delegation,partial,related,"A trusted principal activates/assumes authority represented by role","Assumption may be delegation/activation rather than delegation in every case",investigate
+AWS-MAP-005,Role session,CM4DI-C1015,Session,strong,implementation,"Temporal principal/session created by role assumption","Not IAM Role itself",accepted
+AWS-MAP-006,Role session principal,CM4DI-C0025,Principal,strong,implementation,"Session acts as principal in policy evaluation","Principal role is contextual and temporal",accepted
+AWS-MAP-007,Temporary security credentials,CM4DI-C3013,TemporaryCredential,strong,implementation,"STS produces short-lived credentials for assumed/federated sessions","Not Session itself",accepted
+AWS-MAP-008,Role trust policy,CM4DI-C1017,AccessPolicy,strong,implementation,"Policy controls who may assume role","Not TrustAssessment or TrustFramework",accepted
+AWS-MAP-009,Permission boundary,CM4DI-C1018,AccessCondition,partial,related,"Constrains maximum effective permission","Not a durable AccessGrant",investigate
+AWS-MAP-010,Session policy,CM4DI-C1017,AccessPolicy,partial,implementation,"Restricts session permissions","Cannot grant beyond base role; composition semantics require evaluation layer",accepted
+AWS-MAP-011,Permission set,CM4DI-C1016,PermissionBundle,strong,implementation,"Reusable collection/template of IAM policies","Not account assignment or generated IAM role",accepted
+AWS-MAP-012,Account assignment,CM4DI-C0029,AccessGrant,strong,implementation,"Durable assignment of user/group and permission set to AWS account","Not runtime AuthorizationResult",accepted
+AWS-MAP-013,Identity source,CM4DI-C1003,IdentitySource,strong,implementation,"Defines where users/groups are managed","External IdP may separately play federation role",accepted
+AWS-MAP-014,Identity Center directory,CM4DI-C1005,IdentityStore,strong,implementation,"Managed store for users/groups","Not IdentitySubject",accepted
+AWS-MAP-015,SCIM provisioning,CM4DI-C1012,Provisioning,strong,implementation,"Creates/updates/deprovisions users/groups in Identity Center","Not SSO/Federation",accepted
+AWS-MAP-016,SCIM source-target relation,CM4DI-C1013,ProvisioningConnection,strong,implementation,"Configured synchronization between external source and Identity Center","Not FederationConnection",accepted
+AWS-MAP-017,Identity Center group,CM4DI-C1019,AccessGroup,strong,implementation,"Operational group used for access assignments","Not social/organizational group by default",accepted
+AWS-MAP-018,Identity Center membership,CM4DI-C1020,GroupMembership,strong,implementation,"Membership affects inherited group assignments","Not Permission itself",accepted
+AWS-MAP-019,Cognito identity pool,CM4DI-C1011,IdentityBroker,partial,implementation,"Brokers external identity tokens to AWS credential issuance","Pool configuration is not broker role/entity in every modeling layer",accepted
+AWS-MAP-020,Cognito external provider relation,CM4DI-C1010,FederationConnection,strong,implementation,"Configured social/OIDC/SAML/user-pool trust/auth relationship","Not ProvisioningConnection",accepted
+AWS-MAP-021,Cognito token-to-role mapping,CM4DI-C1014,AttributeMapping,partial,related,"Claims influence local role selection","Mapping rule also has authorization-policy semantics",investigate
+AWS-MAP-022,AWS Account,CM4DI-C1006,AdministrativeDomain,partial,implementation,"Account bounds IAM resources/policies and access assignments","Also a protected/resource boundary; not IdentityContext",accepted
