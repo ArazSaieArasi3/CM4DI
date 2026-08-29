@@ -1,0 +1,24 @@
+mapping_id,entra_construct,cm4di_target_id,cm4di_target_label,mapping_strength,mapping_type,rationale,anti_equivalence,status
+ENTRA-MAP-001,Tenant,CM4DI-C1006,AdministrativeDomain,strong,implementation,"Directory-local administrative boundary for identity objects and policy","Not IdentityContext",accepted
+ENTRA-MAP-002,Application object,CM4DI-C1008,ApplicationRegistration,strong,implementation,"Home-tenant registration/definition of an application","Not tenant-local ServicePrincipal or runtime Application instance",accepted
+ENTRA-MAP-003,Service principal,CM4DI-C3004,ServicePrincipal,strong,implementation,"Tenant-local security representation/application instance","Not Application/Workload itself",accepted
+ENTRA-MAP-004,Service principal as actor,CM4DI-C0025,Principal,strong,implementation,"Acts as security principal for authorization","Principal is contextual role",accepted
+ENTRA-MAP-005,Managed identity,CM4DI-C3005,ManagedIdentity,strong,implementation,"Platform-managed service-principal-backed identity pattern","Not generic ServicePrincipal equivalence",accepted
+ENTRA-MAP-006,User,CM4DI-C1001,Account,strong,implementation,"Directory-local managed user representation","Not human IdentitySubject",accepted
+ENTRA-MAP-007,App role,CM4DI-C1016,PermissionBundle,partial,related,"Application-defined assignable authorization role","Not UFO Role; can be permission/granularity-specific",accepted
+ENTRA-MAP-008,App role assignment,CM4DI-C0029,AccessGrant,strong,implementation,"Durable assignment of app role to principal","Not runtime AuthorizationResult",accepted
+ENTRA-MAP-009,Directory role definition,CM4DI-C1016,PermissionBundle,strong,implementation,"Collection of directory administrative permissions","Not app role and not UFO Role",accepted
+ENTRA-MAP-010,Directory role assignment,CM4DI-C0029,AccessGrant,strong,implementation,"Principal-role-scope assignment","Not permission definition",accepted
+ENTRA-MAP-011,Application permission,CM4DI-C0028,Permission,strong,related,"App-only permission exposed by resource application","Assignment/consent is separate",accepted
+ENTRA-MAP-012,Delegated permission,CM4DI-C0028,Permission,partial,related,"Permission exercised with signed-in user context","Requires Delegation/grant context",accepted
+ENTRA-MAP-013,OAuth2PermissionGrant,CM4DI-C0029,AccessGrant,partial,implementation,"Consent/grant record for delegated scopes","Also carries delegation semantics; not Permission itself",investigate
+ENTRA-MAP-014,Conditional Access policy,CM4DI-C1017,AccessPolicy,strong,implementation,"Policy targets identities/resources and conditions","Implementation policy model not Core identity semantics",accepted
+ENTRA-MAP-015,Conditional Access condition,CM4DI-C1018,AccessCondition,strong,implementation,"Context/risk/device/network condition","Not IdentityContext",accepted
+ENTRA-MAP-016,Device,CM4DI-C3006,Device,strong,related,"Physical/virtual device represented and used in policy/auth contexts","Directory device object may instead map to DeviceIdentityRecord",accepted
+ENTRA-MAP-017,Directory device object,CM4DI-C3007,DeviceIdentityRecord,strong,implementation,"Managed tenant record representing a device","Not physical device itself",accepted
+ENTRA-MAP-018,Agent identity,CM4DI-C3017,AgentIdentity,strong,implementation,"Directory/security identity representation of an agent","Not SoftwareAgent/AIAgent entity",accepted
+ENTRA-MAP-019,Agent sponsor,CM4DI-C3018,AgentSponsor,strong,implementation,"Accountability/governance sponsor role","Not agent owner identity equality",accepted
+ENTRA-MAP-020,Agent identity as security actor,CM4DI-C0025,Principal,strong,implementation,"Agent identity receives permissions and appears as acting client","Principal role remains contextual",accepted
+ENTRA-MAP-021,Blueprint token exchange,CM4DI-C3014,TokenExchange,partial,related,"Blueprint obtains tokens on behalf of agent identity","Technical impersonation must not imply identity equality",investigate
+ENTRA-MAP-022,Agent on-behalf-of authority,CM4DI-C0030,Delegation,strong,related,"Agent can operate with delegated permissions/user context","Delegation is scoped authority, not subject identity",accepted
+ENTRA-MAP-023,Agent Conditional Access,CM4DI-C1017,AccessPolicy,strong,implementation,"Policy specifically targets agent identities/autonomous/on-behalf-of access","Does not create separate authorization domain",accepted
