@@ -1,0 +1,24 @@
+mapping_id,google_construct,cm4di_target_id,cm4di_target_label,mapping_strength,mapping_type,rationale,anti_equivalence,status
+GCP-MAP-001,Principal,CM4DI-C0025,Principal,strong,implementation,"Authenticated identity or set-member acting in IAM authorization","Contextual role, not rigid entity kind",accepted
+GCP-MAP-002,Permission,CM4DI-C0028,Permission,strong,implementation,"Atomic operation capability over resource","Permission string is implementation-level description",accepted
+GCP-MAP-003,Role,CM4DI-C1016,PermissionBundle,strong,implementation,"Collection of permissions granted as a unit","Not UFO Role",accepted
+GCP-MAP-004,Role binding,CM4DI-C0029,AccessGrant,strong,implementation,"Associates principal(s) with role on resource","Not runtime AuthorizationResult",accepted
+GCP-MAP-005,Allow policy,CM4DI-C1017,AccessPolicy,strong,implementation,"Policy attached to resource containing role bindings","Resource hierarchy/inheritance remains implementation semantics",accepted
+GCP-MAP-006,Deny policy,CM4DI-C1017,AccessPolicy,partial,implementation,"Policy constraining/denying permissions","Not negative Permission object by itself",accepted
+GCP-MAP-007,IAM Condition,CM4DI-C1018,AccessCondition,strong,implementation,"Conditional expression qualifying grant/policy","Not IdentityContext",accepted
+GCP-MAP-008,Principal access boundary,CM4DI-C1018,AccessCondition,partial,related,"Constrains resources a principal is eligible to access","Not AdministrativeDomain or AccessGrant",investigate
+GCP-MAP-009,Service account,CM4DI-C3003,ServiceAccount,strong,implementation,"Managed non-human account representation used by workloads","Not Workload itself",accepted
+GCP-MAP-010,Service account as actor,CM4DI-C0025,Principal,strong,implementation,"Service account receives IAM roles and acts in access decisions","Principal is contextual role",accepted
+GCP-MAP-011,Service account as protected object,CM4DI-C0026,Resource,partial,related,"Service account itself can have IAM policy and be impersonation target","Resource role contextual; does not redefine account type",accepted
+GCP-MAP-012,Workforce pool provider,CM4DI-C1010,FederationConnection,strong,implementation,"Configured OIDC/SAML external identity federation relationship","Not external IdP entity itself",accepted
+GCP-MAP-013,Workload pool provider,CM4DI-C1010,FederationConnection,strong,implementation,"Configured external workload federation relationship","Federation config belongs Workload profile context",accepted
+GCP-MAP-014,Attribute mapping,CM4DI-C1014,AttributeMapping,strong,implementation,"Maps upstream assertion attributes to Google subject/groups/custom attributes","Does not establish truth itself",accepted
+GCP-MAP-015,google.subject,CM4DI-C0004,Identifier,strong,implementation,"Scoped normalized identifier used for federated principal and audit","Not owl:sameAs external identity",accepted
+GCP-MAP-016,Federated workforce identity,CM4DI-C0025,Principal,strong,implementation,"External workforce subject plays Google IAM Principal after federation","Principal representation not real-world subject identity",accepted
+GCP-MAP-017,Federated workload identity,CM4DI-C0025,Principal,strong,implementation,"External workload identity plays Principal after token exchange","Not Workload entity itself",accepted
+GCP-MAP-018,STS exchange,CM4DI-C3014,TokenExchange,strong,implementation,"External credential exchanged for federated token","Not IdentityProofing or Authentication by itself",accepted
+GCP-MAP-019,Service account impersonation,CM4DI-C0030,Delegation,strong,related,"Federated principal receives scoped authority to act using service account","Impersonation does not imply identity equality",accepted
+GCP-MAP-020,Short-lived access token,CM4DI-C3013,TemporaryCredential,strong,implementation,"Short-lived credential issued following federation/impersonation","Not Session",accepted
+GCP-MAP-021,Workforce provider disabled/state,,FederationConnectionStatus candidate,partial,candidate,"Provider lifecycle controls whether new exchanges can occur","Existing token validity is independent",investigate
+GCP-MAP-022,Privileged Access Manager grant,CM4DI-C0029,AccessGrant,partial,related,"Temporary auditable access after request/approval","Requires lifecycle/activation semantics beyond static grant",investigate
+GCP-MAP-023,PrincipalSet,CM4DI-C1019,AccessGroup,weak,related,"Principal set can group/select principals by group/attribute for policy binding","Dynamic selector is not necessarily a managed AccessGroup entity",investigate
