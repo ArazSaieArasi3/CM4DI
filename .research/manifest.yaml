@@ -1,0 +1,74 @@
+schema_version: "1.1"
+template:
+  id: research-manifest
+  version: "1.1.0"
+research:
+  id: R-015
+  title: "CM4DI — Digital Identity Ontology / Conceptual Model"
+  short_name: "CM4DI"
+  primary_program: P1
+  research_line_id: P1-L6
+  research_line: "Cross-Domain Foundational Semantics"
+  cross_program_bridges: [P3, P5]
+  lifecycle_status: "Publication Only / Active Extension"
+  priority: A
+repository:
+  name: CM4DI
+  url: https://github.com/ArazSaieArasi3/CM4DI
+  default_branch: main
+  research_branch: journal-v2
+  visibility: public
+portfolio_bindings:
+  publications: [PUB-002, PUB-003]
+  artifacts: []
+  products: []
+methodology:
+  portfolio:
+    repository: https://github.com/ArazSaieArasi3/araz-research-portfolio
+    manifest_contract: "1.1"
+    framework_ref: "commit:4ac93ba6ced15d89a0c0b66b929fac407436fe94"
+  ogcm_rf:
+    enabled: true
+    framework_ref: "commit:4c6994bc28736cb2100fab7ee8ac8e4e6e773b77"
+    implementation_profile: ".research/ogcm-rf-profile.yaml"
+  methods:
+    - "Design Science Research"
+    - "OGCM-RF Exhaustive Source Mining with Source Completeness Gate"
+    - "Bounded structured multi-source evidence synthesis"
+    - "DDD problem-space and Bounded Context analysis"
+    - "UFO-grounded OntoUML conceptual analysis"
+    - "Modular formal ontology engineering with OWL and SHACL"
+    - "Standards, framework, platform and neighbor-ontology mapping"
+    - "Multi-layer ontology evaluation with CQ, reasoning, mapping, empirical and reproducibility evidence"
+    - "ARP MQAP-EXT conference-to-journal quality procedure"
+execution:
+  current_wave: "W6.5 — Retrospective Source Completeness Reconciliation"
+  current_workstream: "Exhaustively mine material digital-identity sources, especially EU/EUDI, current standards, direct ontology competitors and neighboring ontologies, before freezing Wave-7 formal module boundaries."
+  next_gate:
+    name: "Source Completeness Gate"
+    criteria: "Material source universe is explicit; all material sources have complete/blocked coverage; raw extractions are dispositioned; semantic reconciliation and regression are complete; no unresolved source conflict can alter Core or module ownership; PR #59 is either confirmed or amended."
+  next_action: "Execute Issues #61–#66 and #68; keep PR #59 Draft until Source Completeness PASS, then approve the Wave-7 module graph and proceed to formal commitments #69."
+progress:
+  problem_framing: complete
+  evidence_base: in_progress
+  literature_review: in_progress
+  conceptualization: frozen_with_alignment_amendments
+  data: qualified_evaluation_portfolio_selected
+  artifact_design: in_progress
+  implementation: planned
+  evaluation: planned
+  manuscript: planned_active_extension
+  reproducibility: in_progress
+  publication: active_planned_extension
+verification:
+  last_verified: "2026-08-29"
+  evidence_basis:
+    - "PUB-002 conference baseline is published and repository artifacts are preserved."
+    - "Gate B evidence/scope lock and Gate C conceptual freeze are approved."
+    - "DDD alignment audit #50–#57 passed with 102 concepts, 120 relations, 52 CQs and 68 mappings governed."
+    - "Wave-7 Issue #58 and Draft PR #59 provide a structurally validated 12-module engineering candidate."
+    - "OGCM-RF 2026-08-28 introduced mandatory Exhaustive Source Mining and Source Completeness Gate, requiring retrospective reconciliation before formal freeze."
+  coherence_debt:
+    - "Portfolio R-015 registry text still reflects the 2026-08-22 state and should be synchronized to the current Source Completeness/Wave-7 architecture gate."
+    - "Legacy root conference artifacts are intentionally preserved while journal-v2 uses governed current-facing registries."
+  note: "The journal goal is a well-founded integrated cross-paradigm digital-identity reference ontology. Breadth alone does not justify a complete/comprehensive claim; such language is gated by source completeness, formalization, comparison, standards/framework coverage and reproducible evaluation."
