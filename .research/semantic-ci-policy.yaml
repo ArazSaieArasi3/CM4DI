@@ -1,0 +1,47 @@
+policy_schema_version: "1.0"
+research_id: R-015
+status: staged
+last_reviewed: "2026-08-29"
+governance:
+  generic_policy: "ArazSaieArasi3/araz-research-portfolio/governance/ci-execution-governance.md"
+  semantic_profile: "ArazSaieArasi3/OGCM-RF/framework/semantic-ci-execution-profile.md"
+principles:
+  - "Preserve scientific validation coverage while minimizing redundant GitHub Actions execution."
+  - "Documentation-only changes must not trigger full reasoner/SHACL/SPARQL stacks."
+  - "Build or parse the semantic graph once per run and reuse artifacts across checks where possible."
+  - "One default change-aware semantic CI orchestration is preferred over many overlapping workflows."
+  - "Evaluation evidence must bind to exact commit SHA and semantic artifact versions."
+risk_classes:
+  R0:
+    description: "documentation or non-semantic metadata"
+    automatic_checks: [repository-structure, links-if-cheap]
+  R1:
+    description: "registries, mappings, CQs, source-mining metadata"
+    automatic_checks: [csv-yaml-parse, stable-id-integrity, orphan-traceability, baseline-immutability]
+  R2:
+    description: "OWL/RDF/SHACL/query/example changes without release"
+    automatic_checks: [parse, serialization, owl-profile, shacl, cq-smoke, mapping-regression]
+  R3:
+    description: "semantic axiom/module/import changes"
+    automatic_checks: [parse, registry-integrity, import-graph, owl-profile, hermit-or-equivalent, shacl, cq-regression, mapping-regression]
+  R4:
+    description: "release/publication/evaluation baseline"
+    automatic_checks: [all-r3, reproducibility-manifest, checksums]
+    authoritative_manual_gates: [release-review, publication-claim-review, external-persistent-iri-check]
+concurrency:
+  cancel_in_progress: true
+  key: "cm4di-semantic-ci-${branch_or_pr}"
+expensive_gate_policy:
+  default: "risk-proportional"
+  hermit: "R3/R4 or manually requested"
+  full_cq_suite: "R3/R4; smoke subset allowed for R2"
+  external_link_sweep: "manual/release or scheduled, not every semantic commit"
+  multi-serialization-determinism: "R3/R4"
+current_automatic_workflows: []
+current_authoritative_gates:
+  - "Source Completeness Gate #60"
+  - "Module architecture approval #58/#59"
+  - "Formal ontology validation gate after #69"
+  - "Gate D evaluation-design lock"
+  - "Gate E submission/release lock"
+activation_condition: "Install automatic workflow only after authoritative journal-v2 OWL/SHACL/query source paths exist; until then use deterministic local/manual structural validation and keep Actions spend near zero."
