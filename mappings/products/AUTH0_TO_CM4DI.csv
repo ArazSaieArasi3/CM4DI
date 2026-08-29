@@ -1,0 +1,21 @@
+mapping_id,auth0_construct,cm4di_target_id,cm4di_target_label,mapping_strength,mapping_type,rationale,anti_equivalence,status
+AUTH0-MAP-001,Tenant,CM4DI-C1006,AdministrativeDomain,strong,implementation,"Tenant scopes users apps connections and identifiers","Not IdentityContext",accepted
+AUTH0-MAP-002,User,CM4DI-C1001,Account,strong,implementation,"Tenant-local managed user representation","Not IdentitySubject",accepted
+AUTH0-MAP-003,Normalized User Profile,CM4DI-C1002,UserProfile,strong,implementation,"Mutable normalized information record sourced from providers and metadata","Profile is not subject and not all fields are verified",accepted
+AUTH0-MAP-004,user_id,CM4DI-C0004,Identifier,strong,implementation,"Tenant-scoped provider-qualified identifier","Not globally stable identity criterion",accepted
+AUTH0-MAP-005,Database Connection,CM4DI-C1005,IdentityStore,partial,implementation,"Connection may use Auth0/custom database store","Connection adapter and store are distinct",accepted
+AUTH0-MAP-006,Connection as source,CM4DI-C1003,IdentitySource,partial,implementation,"Connection supplies profile/identity information","Not every connection is authoritative",accepted
+AUTH0-MAP-007,Enterprise/Social Connection,CM4DI-C1010,FederationConnection,strong,implementation,"Configured federated authentication relationship","Social login is not Social Identity ontology",accepted
+AUTH0-MAP-008,Account Link,,linkedAccount,strong,implementation,"Primary/secondary account relation consolidates provider identities","Never owl:sameAs; linking does not merge all provider attributes",accepted
+AUTH0-MAP-009,Organization,,W3C ORG bridge,partial,neighbor-bridge,"B2B organization with members connections and roles","Not AccessGroup or social group by default",investigate
+AUTH0-MAP-010,Organization Membership,,ORG Membership + AccessGrant pattern,partial,neighbor-bridge,"Member belongs to organization and can receive org-scoped roles","Not CM4DI GroupMembership unless used purely as access grouping",investigate
+AUTH0-MAP-011,Organization Role,CM4DI-C1016,PermissionBundle,strong,implementation,"Assignable authorization role for organization member","Not UFO Role",accepted
+AUTH0-MAP-012,Application/Client,CM4DI-C1008,ApplicationRegistration,strong,implementation,"Registered app configuration participating in auth flows","Not software Application entity itself",accepted
+AUTH0-MAP-013,IdP attributes,CM4DI-C0006,IdentityAttribute,partial,implementation,"Profile attributes originating at provider","Attribute value not automatically authoritative or verified",accepted
+AUTH0-MAP-014,user_metadata,CM4DI-C1002,UserProfile,partial,implementation,"User-controlled profile metadata","Not verified Claim",accepted
+AUTH0-MAP-015,app_metadata,CM4DI-C1002,UserProfile,partial,implementation,"Administrator/application-controlled profile metadata","Not Permission by itself",accepted
+AUTH0-MAP-016,Passkey,CM4DI-C0018,Authenticator,strong,implementation,"Passkey is used as authentication factor","Not VC Credential",accepted
+AUTH0-MAP-017,MFA Factor,CM4DI-C0018,Authenticator,strong,implementation,"Factor participates in authentication","Factor kinds are heterogeneous",accepted
+AUTH0-MAP-018,Device association,CM4DI-C3007,DeviceIdentityRecord,partial,related,"Auth0 records devices associated with authentication/account refresh-token context","Device record does not make device the human IdentitySubject",investigate
+AUTH0-MAP-019,Refresh Token,CM4DI-C3013,TemporaryCredential,partial,related,"Time/lifecycle-bound token used to obtain new tokens","Not Session",investigate
+AUTH0-MAP-020,Blocked user status,,AccountStatus candidate,partial,candidate,"Block/unblock changes managed-account access state","Current CM4DI has no generic AccountStatus concept",investigate
