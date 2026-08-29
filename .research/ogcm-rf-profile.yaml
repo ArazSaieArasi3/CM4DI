@@ -1,0 +1,90 @@
+profile_schema_version: "1.0"
+implementation:
+  research_id: R-015
+  repository: "ArazSaieArasi3/CM4DI"
+  profile_status: active
+framework:
+  name: OGCM-RF
+  framework_ref: "commit:4c6994bc28736cb2100fab7ee8ac8e4e6e773b77"
+  conformance_level: partial
+semantic_scope:
+  semantic_source_of_truth: "Gate-C concept/relation registries plus approved DDD alignment are the current conceptual source of truth. Draft PR #59 is only an engineering module-architecture candidate until Source Completeness Gate PASS."
+  core_boundary: "Cross-paradigm digital-identity semantics centered on subjecthood, digital representation, identity information/evidence, establishment, credential semantics, authentication, authorization and minimal trust/assurance hooks."
+  extensions:
+    - "Enterprise Identity Profile — cross-domain integration view"
+    - "Verifiable Credential Profile — cross-domain integration view"
+    - "Technical Identity Profile — cross-domain integration view over Workload Identity, Device Identity and Agent Identity"
+    - "Governed Identity Profile — cross-domain integration view over Trust Governance and Government Identity"
+  historical_or_superseded:
+    - "Published conference-era CM4DI.owl and Generation2-Version15 diagram — immutable semantic baseline for PUB-002 comparison"
+    - "Pre-DDD composite domain labels — historical aliases only"
+modeling:
+  foundational_ontology: [UFO]
+  conceptual_modeling_language: [OntoUML]
+  ontology_languages: [OWL, RDF, Turtle]
+  constraint_languages: [SHACL]
+  canonical_serialization: "Not yet frozen for journal-v2; authoritative formal source policy is owned by Wave 7 and Issue #69."
+identity_and_release:
+  ontology_iri: "https://w3id.org/cm4di#"
+  persistent_iri_status: "historical public base preserved; journal-v2 module/public version-IRI policy not yet released"
+  current_semantic_release: "conference baseline + journal-v2 conceptual development; no new stable journal ontology release"
+  development_state: "Source Completeness reconciliation before formal module freeze"
+  release_manifest: "planned after formalization and evaluation"
+traceability:
+  concept_registry: "model/journal-v2/CM4DI_CORE_CONCEPT_REGISTRY_v2.csv + model/journal-v2/profiles/PROFILE_CONCEPT_REGISTRY_v2.csv"
+  relation_registry: "model/journal-v2/CM4DI_CORE_RELATION_REGISTRY_GATE_C.csv + model/journal-v2/profiles/PROFILE_RELATION_REGISTRY_v2.csv"
+  domain_or_module_registry: "model/journal-v2/ddd/DOMAIN_REGISTRY_v2.csv + model/journal-v2/ddd/BOUNDED_CONTEXT_REGISTRY_v2.csv; Draft PR #59 formal module graph is not yet frozen"
+  competency_questions: "research/COMPETENCY_QUESTION_REGISTRY_v2.csv + research/PROFILE_COMPETENCY_QUESTION_REGISTRY_v2.csv + CQ domain/relation traceability"
+  evidence_provenance: "evidence/ registries + conceptualization/source-mining/ retrospective ESM package (Issue #60)"
+  mappings: "mappings/PROFILE_MAPPING_REGISTRY_v2.csv + domain traceability; neighbor ontology alignment planned in #65"
+validation_and_evaluation:
+  selected_layers: [E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11]
+  reasoning: "planned Wave 7 using OWL 2 DL checks with ROBOT/HermiT or governed equivalent; no journal-v2 reasoner PASS yet"
+  shacl_or_constraints: "planned Wave 7; allocation between OWL open-world axioms and SHACL integrity constraints owned by #69"
+  cq_regression: "52 governed CQs are concept/domain/relation traceable; executable SPARQL suite planned after formal modules"
+  comparative_or_expert: "competitor revalidation #64 required; targeted expert evaluation planned only if methodologically useful"
+  reproducibility: "stable research IDs, DDD registries, mappings and CQ traceability exist; formal release/checksums/SHA-bound evaluation package pending"
+publication_bindings:
+  - publication_id: PUB-002
+    semantic_release: "conference baseline"
+    evaluation_package: "published conference repository state"
+    status: published
+  - publication_id: PUB-003
+    semantic_release: "not yet released"
+    evaluation_package: "planned Gate-D/Gate-E package"
+    status: active_planned_extension
+portfolio_integration:
+  manifest: ".research/manifest.yaml"
+ci_execution_governance:
+  generic_policy: "ArazSaieArasi3/araz-research-portfolio/governance/ci-execution-governance.md"
+  semantic_profile: "ArazSaieArasi3/OGCM-RF/framework/semantic-ci-execution-profile.md"
+  adoption_status: staged
+  automatic_workflows: []
+  authoritative_gates:
+    - "Source Completeness Gate"
+    - "Wave-7 formal ontology validation gate"
+    - "Gate D evaluation-design lock"
+    - "Gate E publication/release lock"
+  semantic_source_paths:
+    - "model/journal-v2/"
+    - "research/COMPETENCY_QUESTION_REGISTRY_v2.csv"
+    - "research/PROFILE_COMPETENCY_QUESTION_REGISTRY_v2.csv"
+    - "mappings/"
+    - "conceptualization/source-mining/"
+  expensive_gate_policy: "risk-proportional; docs-only changes must not trigger full reasoner stacks; preserve all substantive semantic gates"
+  evidence_binding: "SHA-bound"
+  deviations:
+    - "No automatic formal CI is installed yet because journal-v2 OWL/SHACL sources are not frozen."
+adoption:
+  deviations:
+    - "Historical root OWL remains the conference baseline and is not the authoritative journal-v2 formal source."
+    - "The 2026-08-19 evidence program predated mandatory OGCM-RF ESM; retrospective Source Completeness reconciliation is active under #60."
+  deferred_capabilities:
+    - "Source Completeness Gate #60"
+    - "final Wave-7 module graph approval #58/#59"
+    - "formal commitments and UFO-to-OWL projection #69"
+    - "OWL/SHACL/ROBOT/HermiT/SPARQL implementation"
+    - "multi-layer Gate-D/Wave-8 evaluation"
+    - "versioned scholarly release and DOI"
+  last_reviewed: "2026-08-29"
+  notes: "Current objective is a well-founded integrated digital-identity reference ontology that bridges standards, regulatory/trust frameworks, operational IAM ecosystems and neighboring ontologies without absorbing their mature semantics unnecessarily."
