@@ -1,0 +1,23 @@
+mapping_id,keycloak_construct,cm4di_target_id,cm4di_target_label,mapping_strength,mapping_type,rationale,anti_equivalence,status
+KC-MAP-001,Realm,CM4DI-C1006,AdministrativeDomain,strong,implementation,"Realm is an isolated administrative partition managing users credentials roles groups and clients","Not IdentityContext; not TrustDomain",accepted
+KC-MAP-002,User,CM4DI-C1001,Account,strong,implementation,"Managed platform-local user representation","Not IdentitySubject",accepted
+KC-MAP-003,User profile attributes,CM4DI-C1002,UserProfile,strong,implementation,"Mutable user-associated profile data","Not the IdentitySubject itself",accepted
+KC-MAP-004,Identity provider as broker source,CM4DI-C1011,IdentityBroker,partial,implementation,"Keycloak brokers authentication to external IdP","External IdP system and broker role are distinct",accepted
+KC-MAP-005,Identity provider configuration,CM4DI-C1010,FederationConnection,strong,implementation,"Configured relationship to external OIDC/SAML/social IdP","Not automatically IdentitySource",accepted
+KC-MAP-006,User federation provider,CM4DI-C1003,IdentitySource,partial,implementation,"LDAP/AD/custom store supplies identity information","Provider adapter is not source entity itself in every deployment",accepted
+KC-MAP-007,User federation storage,CM4DI-C1005,IdentityStore,partial,implementation,"External LDAP/AD stores identity/account data","Store is implementation service not subject",accepted
+KC-MAP-008,User federation connection,CM4DI-C1013,ProvisioningConnection,strong,implementation,"Configured source-target retrieval/synchronization relation","Not FederationConnection",accepted
+KC-MAP-009,Identity provider mapper,CM4DI-C1014,AttributeMapping,strong,implementation,"Transforms incoming token/assertion attributes","Transformation does not establish truth/evidence by itself",accepted
+KC-MAP-010,Client,CM4DI-C1008,ApplicationRegistration,strong,implementation,"Client object configures relying app/service in realm","Not identical to software Application",accepted
+KC-MAP-011,Service account,CM4DI-C3003,ServiceAccount,strong,implementation,"Built-in non-human account for client token use","Not Workload or ServicePrincipal by itself",accepted
+KC-MAP-012,Role,CM4DI-C1016,PermissionBundle,strong,implementation,"Assignable/composable IAM role bundles authorization capability","Not UFO Role",accepted
+KC-MAP-013,User role mapping,CM4DI-C0029,AccessGrant,strong,implementation,"Durable assignment of authorization bundle to user/account","Not runtime AuthorizationResult",accepted
+KC-MAP-014,Group,CM4DI-C1019,AccessGroup,strong,implementation,"Operational user grouping for attributes/role assignment","Not social group or organization by default",accepted
+KC-MAP-015,Group membership,CM4DI-C1020,GroupMembership,strong,implementation,"User membership in operational group","Membership not identity equality",accepted
+KC-MAP-016,Session,CM4DI-C1015,Session,strong,implementation,"Temporally bounded login/SSO interaction relation","Not AuthenticationResult",accepted
+KC-MAP-017,Protocol mapper,CM4DI-C1014,AttributeMapping,strong,implementation,"Maps local attributes/roles into protocol claims/assertions","Protocol output not ontological definition",accepted
+KC-MAP-018,Authorization resource,CM4DI-C0026,Resource,partial,implementation,"Protected resource representation used in authorization services","Configuration object may represent real resource",accepted
+KC-MAP-019,Authorization scope,CM4DI-C0027,Action,partial,related,"Operational scope approximates allowed operation/action dimension","Scope string is not action event instance",accepted
+KC-MAP-020,Authorization policy,CM4DI-C1017,AccessPolicy,strong,implementation,"Policy artifact used in access decision configuration","Keycloak policy types remain implementation detail",accepted
+KC-MAP-021,Authorization permission,CM4DI-C0028,Permission,partial,related,"Permission config binds resource/scope with policies","Keycloak permission object has richer configuration semantics",investigate
+KC-MAP-022,Federated identity link,,linkedAccount,strong,implementation,"Links local account representation to external-provider identity","Never owl:sameAs and does not prove same subject without evidence",accepted
