@@ -1,0 +1,65 @@
+schema_version: '1.0'
+artifact: CM4DI Wave-7 module-graph deterministic pre-OWL validation
+issue: 58
+observed_at: 2026-08-29
+validated_artifact: model/journal-v2/formal/MODULE_GRAPH_v2.yaml
+status: partial_pass_relation_ownership_pending
+
+checks:
+  governed_concept_ownership:
+    result: PASS
+    expected: 102
+    observed: 102
+    unique_owned_ids: 102
+    duplicate_owned_ids: 0
+    unowned_ids_against_current_governed_concept_inventory: 0
+    decomposition:
+      core: 34
+      extensions: 68
+
+  module_inventory:
+    result: PASS
+    modules_excluding_aggregate_profiles: 12
+    aggregate_profile_entrypoints: 4
+    aggregate_profile_owned_entities: 0
+
+  bounded_context_alignment:
+    result: PASS
+    current_bounded_contexts: 13
+    graph_uses_only_current_bounded_context_ids: true
+    note: >-
+      Core is intentionally cross-context because the frozen Gate-C Core already owns canonical semantics
+      used by several Bounded Contexts; this does not redefine Context boundaries.
+
+  import_graph:
+    result: PASS
+    directed_cycle_count: 0
+    core_import_count: 0
+    core_to_extension_import_count: 0
+    device_imports_workload_identity: false
+    agent_imports_workload_identity: false
+
+  public_namespace:
+    result: PASS_BOUNDARY
+    public_w3id_or_http_registration_asserted: false
+    engineering_iri_scheme: urn:cm4di:ontology
+
+  relation_property_ownership:
+    result: PENDING
+    reason: >-
+      The current graph freezes concept ownership and module dependencies first. The 55 frozen Core relations
+      and 65 current profile relations still require an explicit property/module ownership projection from the
+      relation registries before the graph should be called the complete formal source-ownership manifest.
+    required_sources:
+      - model/journal-v2/CM4DI_CORE_RELATION_REGISTRY_GATE_C.csv
+      - model/journal-v2/profiles/PROFILE_RELATION_REGISTRY_v2.csv
+      - research/CQ_RELATION_TRACEABILITY_v2.csv
+
+claim_boundary:
+  - PASS values above are deterministic structural checks on the module-graph candidate only.
+  - They are not OWL 2 DL, HermiT, ROBOT, SHACL, SPARQL CQ, semantic-validity, expert-review, or publication PASS claims.
+
+next_gate:
+  - Assign all 120 current governed relations/properties to exactly one owning module or explicit shared Core source.
+  - Re-run duplicate/unowned/import-cycle checks on the combined concept-plus-relation manifest.
+  - Only after that should module OWL source generation begin.
