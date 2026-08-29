@@ -1,0 +1,103 @@
+concept_id,concept_label,primary_domain,relational_target,mapping_pattern,status
+CM4DI-C0001,Party,Identity Representation,role/view over typed participant references,contextual-role-not-standalone-entity,candidate
+CM4DI-C0002,IdentitySubject,Identity Representation,identity_subject_ref,role-linked-to-external-bearer,candidate
+CM4DI-C0003,DigitalIdentity,Identity Representation,digital_identity,direct-entity-table,candidate
+CM4DI-C0004,Identifier,Identity Representation,identifier,direct-entity-table,candidate
+CM4DI-C0005,IdentityContext,Identity Representation,identity_context,direct-context-table,candidate
+CM4DI-C0006,IdentityAttribute,Identity Information,identity_attribute,direct-information-table,candidate
+CM4DI-C0007,Claim,Identity Information,claim,direct-assertion-table,candidate
+CM4DI-C0008,Evidence,Identity Evidence,evidence_artifact,role-over-artifact,candidate
+CM4DI-C0009,Proof,Identity Evidence,proof_usage,role-usage-table,candidate
+CM4DI-C0010,IdentityBinding,Identity Evidence,identity_binding,relator-table,candidate
+CM4DI-C0011,Credential,Credential Management,credential,direct-artifact-table,candidate
+CM4DI-C0012,CredentialStatus,Credential Management,credential_status and credential_status_history,mode-plus-history,candidate
+CM4DI-C0013,CredentialLifecycleEvent,Credential Management,credential_lifecycle_event,event-table,candidate
+CM4DI-C0014,CredentialIssuance,Credential Management,credential_lifecycle_event typed issuance,event-specialization,candidate
+CM4DI-C0015,IdentityProofing,Identity Establishment,identity_proofing_event,event-table,candidate
+CM4DI-C0016,Enrollment,Identity Establishment,enrollment_event,event-table,candidate
+CM4DI-C0017,Authentication,Authentication,authentication_event,event-table,candidate
+CM4DI-C0018,Authenticator,Authentication,authentication_authenticator plus external object reference,contextual-role-link,candidate
+CM4DI-C0019,AuthenticationResult,Authentication,authentication_result,result-table,candidate
+CM4DI-C0020,AssuranceAssessment,Identity Evidence,assurance_assessment,assessment-table,candidate
+CM4DI-C0021,Authorization,Authorization,authorization event implicit around request/result or explicit authorization_event,event-table-or-derived,candidate
+CM4DI-C0022,AuthorizationRequest,Authorization,authorization_request,request-table,candidate
+CM4DI-C0023,AuthorizationContext,Authorization,authorization_context,context-table,candidate
+CM4DI-C0024,AuthorizationResult,Authorization,authorization_result,result-table,candidate
+CM4DI-C0025,Principal,Authorization,principal,contextual-principal-representation,candidate
+CM4DI-C0026,Resource,Authorization,resource,protected-target-table,candidate
+CM4DI-C0027,Action,Authorization,action,operation-specification-table,candidate
+CM4DI-C0028,Permission,Authorization,permission,normative-unit-table,candidate
+CM4DI-C0029,AccessGrant,Authorization,access_grant,relator-assignment-table,candidate
+CM4DI-C0030,Delegation,Authorization,delegation,relator-assignment-table,candidate
+CM4DI-C0031,TrustAssessment,Trust Governance,trust_assessment,assessment-table,candidate
+CM4DI-C0032,TrustReference,Trust Governance,trust_reference,external-reference-table,candidate
+CM4DI-C0033,RelyingParty,Federation,relying_party_registration plus participant role view,contextual-role-link,candidate
+CM4DI-C0034,Verifier,Identity Evidence,verification participant role view,contextual-role-link,candidate
+CM4DI-C1001,Account,Identity Administration,account,direct-managed-representation-table,candidate
+CM4DI-C1002,UserProfile,Identity Administration,user_profile,direct-profile-table,candidate
+CM4DI-C1003,IdentitySource,Identity Administration,identity_source,role/configuration-table,candidate
+CM4DI-C1004,AuthoritativeIdentitySource,Identity Administration,identity_source with authority scope,role-specialization,candidate
+CM4DI-C1005,IdentityStore,Identity Administration,identity_store,infrastructure-reference-table,candidate
+CM4DI-C1006,AdministrativeDomain,Identity Administration,administrative_domain,operational-boundary-table,candidate
+CM4DI-C1007,Application,Identity Administration,application,direct-software-reference-table,candidate
+CM4DI-C1008,ApplicationRegistration,Identity Administration,application_registration,configuration-table,candidate
+CM4DI-C1009,Federation,Federation,federation_relationship,relator-table,candidate
+CM4DI-C1010,FederationConnection,Federation,federation_connection,configuration-relator-table,candidate
+CM4DI-C1011,IdentityBroker,Federation,identity_broker_assignment,contextual-role-assignment,candidate
+CM4DI-C1012,Provisioning,Identity Administration,provisioning_event,event-table,candidate
+CM4DI-C1013,ProvisioningConnection,Identity Administration,provisioning_connection,configuration-relator-table,candidate
+CM4DI-C1014,AttributeMapping,Identity Administration,attribute_mapping,mapping-table,candidate
+CM4DI-C1015,Session,Authentication,session,temporal-relator-table,candidate
+CM4DI-C1016,PermissionBundle,Authorization,permission_bundle plus bundle_permission,aggregate-normative-table,candidate
+CM4DI-C1017,AccessPolicy,Authorization,access_policy,policy-artifact-table,candidate
+CM4DI-C1018,AccessCondition,Authorization,access_condition,predicate-table,candidate
+CM4DI-C1019,AccessGroup,Authorization,access_group,operational-group-table,candidate
+CM4DI-C1020,GroupMembership,Authorization,group_membership,relator-table,candidate
+CM4DI-C2001,Issuer,Credential Management,credential issuer role reference,contextual-role-link,candidate
+CM4DI-C2002,Holder,Credential Exchange,holder_relationship,contextual-role-link,candidate
+CM4DI-C2003,CredentialPresentationVerifier,Credential Exchange,verification participant role view,role-specialization,candidate
+CM4DI-C2004,Wallet,Credential Exchange,wallet_registration,software-role-registration,candidate
+CM4DI-C2005,HolderService,Credential Exchange,holder_service_registration,service-role-registration,candidate
+CM4DI-C2006,CredentialPresentation,Credential Exchange,credential_presentation_event,event-table,candidate
+CM4DI-C2007,PresentationRequest,Credential Exchange,presentation_request,request-table,candidate
+CM4DI-C2008,Controller,Credential Exchange,controller_assignment,contextual-role-assignment,candidate
+CM4DI-C2009,VerificationMethod,Credential Exchange,verification_method,artifact-table,candidate
+CM4DI-C2010,VerifiableDataRegistry,Credential Exchange,verifiable_data_registry_ref,external-service-reference,candidate
+CM4DI-C2011,SelectiveDisclosure,Credential Exchange,selective_disclosure_record,mode-or-operation-record,candidate
+CM4DI-C2012,VerifiablePresentation,Credential Exchange,verifiable_presentation_artifact,artifact-table,candidate
+CM4DI-C3001,Workload,Workload Identity,workload,direct-entity-table,candidate
+CM4DI-C3002,RuntimeInstance,Workload Identity,runtime_instance,direct-execution-table,candidate
+CM4DI-C3003,ServiceAccount,Workload Identity,service_account,managed-account-table,candidate
+CM4DI-C3004,ServicePrincipal,Workload Identity,service_principal,contextual-principal-representation,candidate
+CM4DI-C3005,ManagedIdentity,Workload Identity,managed_identity,provider-managed-pattern-table,candidate
+CM4DI-C3006,Device,Device Identity,device,direct-entity-table,candidate
+CM4DI-C3007,DeviceIdentityRecord,Device Identity,device_identity_record,managed-representation-table,candidate
+CM4DI-C3008,NodeAttestation,Workload Identity,node_attestation_event,event-table,candidate
+CM4DI-C3009,WorkloadAttestation,Workload Identity,workload_attestation_event,event-table,candidate
+CM4DI-C3010,TrustDomain,Workload Identity,trust_domain,technical-security-boundary-table,candidate
+CM4DI-C3011,TrustBundle,Workload Identity,trust_bundle_ref,artifact-reference-table,candidate
+CM4DI-C3012,SVID,Workload Identity,svid_credential,credential-specialization-table,candidate
+CM4DI-C3013,TemporaryCredential,Workload Identity,temporary_credential,credential-specialization-table,candidate
+CM4DI-C3014,TokenExchange,Workload Identity,token_exchange_event,event-table,candidate
+CM4DI-C3015,SoftwareAgent,Agent Identity,software_agent,direct-entity-table,candidate
+CM4DI-C3016,AIAgent,Agent Identity,ai_agent_profile,subtype-or-profile-table,candidate
+CM4DI-C3017,AgentIdentity,Agent Identity,agent_identity,managed-representation-table,candidate
+CM4DI-C3018,AgentSponsor,Agent Identity,agent_sponsor_assignment,contextual-role-assignment,candidate
+CM4DI-C4001,TrustFramework,Trust Governance,trust_framework,normative-framework-table,candidate
+CM4DI-C4002,GovernanceFramework,Trust Governance,governance_framework,normative-framework-table,candidate
+CM4DI-C4003,TrustRegistry,Trust Governance,trust_registry,governed-service-table,candidate
+CM4DI-C4004,TrustedList,Trust Governance,trusted_list,governed-artifact-table,candidate
+CM4DI-C4005,TrustAnchor,Trust Governance,trust_anchor_ref,contextual-root-reference,candidate
+CM4DI-C4006,TrustChain,Trust Governance,trust_chain_ref,structured-path-reference,candidate
+CM4DI-C4007,GovernanceAuthority,Trust Governance,governance_actor_role,contextual-role-assignment,candidate
+CM4DI-C4008,Registrar,Trust Governance,governance_actor_role,contextual-role-assignment,candidate
+CM4DI-C4009,Regulator,Trust Governance,governance_actor_role,contextual-role-assignment,candidate
+CM4DI-C4010,ConformityAssessmentBody,Trust Governance,governance_actor_role,contextual-role-assignment,candidate
+CM4DI-C4011,Certification,Trust Governance,certification_event,event-table,candidate
+CM4DI-C4012,Accreditation,Trust Governance,accreditation_event,event-table,candidate
+CM4DI-C4013,EcosystemParticipation,Trust Governance,ecosystem_participation,relator-table,candidate
+CM4DI-C4014,ParticipantStatus,Trust Governance,participant_status_history,mode-plus-history,candidate
+CM4DI-C4015,LegalIdentity,Government Identity,legal_identity_ref,profile-scoped-reference-table,candidate
+CM4DI-C4016,PersonIdentificationData,Government Identity,person_identification_data,governed-information-table,candidate
+CM4DI-C4017,GovernmentAttestation,Government Identity,government_attestation,credential-or-attestation-table,candidate
+CM4DI-C4018,IdentityServiceProvider,Government Identity,identity_service_provider_registration,contextual-role-registration,candidate
