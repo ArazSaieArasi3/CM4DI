@@ -1,0 +1,103 @@
+concept_id,en_label,fa_label,primary_domain,definition_reference,status
+CM4DI-C0001,Party,طرف مشارکت‌کننده,Identity Representation,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0002,IdentitySubject,موضوع هویت,Identity Representation,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0003,DigitalIdentity,هویت دیجیتال,Identity Representation,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0004,Identifier,شناسه,Identity Representation,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0005,IdentityContext,زمینه هویتی,Identity Representation,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0006,IdentityAttribute,ویژگی هویتی,Identity Information,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0007,Claim,ادعا,Identity Information,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0008,Evidence,شواهد,Identity Evidence,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0009,Proof,اثبات,Identity Evidence,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0010,IdentityBinding,پیوند هویتی,Identity Evidence,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0011,Credential,اعتبارنامه,Credential Management,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0012,CredentialStatus,وضعیت اعتبارنامه,Credential Management,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0013,CredentialLifecycleEvent,رویداد چرخه حیات اعتبارنامه,Credential Management,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0014,CredentialIssuance,صدور اعتبارنامه,Credential Management,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0015,IdentityProofing,اعتبارسنجی اولیه هویت,Identity Establishment,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0016,Enrollment,ثبت هویتی,Identity Establishment,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0017,Authentication,احراز اصالت,Authentication,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0018,Authenticator,ابزار احراز اصالت,Authentication,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0019,AuthenticationResult,نتیجه احراز اصالت,Authentication,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0020,AssuranceAssessment,ارزیابی اطمینان,Identity Evidence,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0021,Authorization,مجوزدهی,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0022,AuthorizationRequest,درخواست مجوزدهی,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0023,AuthorizationContext,زمینه مجوزدهی,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0024,AuthorizationResult,نتیجه مجوزدهی,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0025,Principal,پرینسیپال,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0026,Resource,منبع,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0027,Action,کنش,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0028,Permission,اجازه,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0029,AccessGrant,اعطای دسترسی,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0030,Delegation,تفویض اختیار,Authorization,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0031,TrustAssessment,ارزیابی اعتماد,Trust Governance,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0032,TrustReference,مرجع اعتماد,Trust Governance,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0033,RelyingParty,طرف متکی,Federation,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C0034,Verifier,اعتبارسنج,Identity Evidence,docs/concepts/CM4DI_CORE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1001,Account,حساب کاربری,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1002,UserProfile,نمایه کاربر,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1003,IdentitySource,منبع هویت,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1004,AuthoritativeIdentitySource,منبع مرجع هویت,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1005,IdentityStore,مخزن هویت,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1006,AdministrativeDomain,دامنه مدیریتی,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1007,Application,برنامه کاربردی,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1008,ApplicationRegistration,ثبت برنامه کاربردی,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1009,Federation,فدراسیون هویت,Federation,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1010,FederationConnection,اتصال فدراسیون,Federation,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1011,IdentityBroker,کارگزار هویت,Federation,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1012,Provisioning,تأمین هویت,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1013,ProvisioningConnection,اتصال تأمین هویت,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1014,AttributeMapping,نگاشت ویژگی,Identity Administration,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1015,Session,نشست,Authentication,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1016,PermissionBundle,بسته اجازه‌ها,Authorization,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1017,AccessPolicy,سیاست دسترسی,Authorization,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1018,AccessCondition,شرط دسترسی,Authorization,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1019,AccessGroup,گروه دسترسی,Authorization,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C1020,GroupMembership,عضویت گروه,Authorization,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2001,Issuer,صادرکننده,Credential Management,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2002,Holder,دارنده,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2003,CredentialPresentationVerifier,اعتبارسنج ارائه اعتبارنامه,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2004,Wallet,کیف هویت دیجیتال,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2005,HolderService,سرویس دارنده,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2006,CredentialPresentation,ارائه اعتبارنامه,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2007,PresentationRequest,درخواست ارائه,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2008,Controller,کنترل‌کننده,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2009,VerificationMethod,روش اعتبارسنجی,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2010,VerifiableDataRegistry,رجیستری داده قابل‌راستی‌آزمایی,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2011,SelectiveDisclosure,افشای گزینشی,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C2012,VerifiablePresentation,ارائه قابل‌راستی‌آزمایی,Credential Exchange,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3001,Workload,بارکاری,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3002,RuntimeInstance,نمونه زمان اجرا,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3003,ServiceAccount,حساب سرویس,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3004,ServicePrincipal,پرینسیپال سرویس,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3005,ManagedIdentity,هویت مدیریت‌شده,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3006,Device,دستگاه,Device Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3007,DeviceIdentityRecord,رکورد هویت دستگاه,Device Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3008,NodeAttestation,تصدیق گره,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3009,WorkloadAttestation,تصدیق بارکاری,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3010,TrustDomain,دامنه اعتماد,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3011,TrustBundle,بسته اعتماد,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3012,SVID,سند هویت قابل‌راستی‌آزمایی SPIFFE,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3013,TemporaryCredential,اعتبارنامه موقت,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3014,TokenExchange,تبادل توکن,Workload Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3015,SoftwareAgent,عامل نرم‌افزاری,Agent Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3016,AIAgent,عامل هوش مصنوعی,Agent Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3017,AgentIdentity,هویت عامل,Agent Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C3018,AgentSponsor,مسئول عامل,Agent Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4001,TrustFramework,چارچوب اعتماد,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4002,GovernanceFramework,چارچوب حکمرانی,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4003,TrustRegistry,رجیستری اعتماد,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4004,TrustedList,فهرست مورد اعتماد,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4005,TrustAnchor,لنگر اعتماد,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4006,TrustChain,زنجیره اعتماد,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4007,GovernanceAuthority,مرجع حکمرانی,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4008,Registrar,ثبت‌کننده,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4009,Regulator,تنظیم‌گر,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4010,ConformityAssessmentBody,نهاد ارزیابی انطباق,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4011,Certification,گواهی‌سازی,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4012,Accreditation,اعتباربخشی,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4013,EcosystemParticipation,مشارکت در اکوسیستم,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4014,ParticipantStatus,وضعیت مشارکت‌کننده,Trust Governance,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4015,LegalIdentity,هویت قانونی,Government Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4016,PersonIdentificationData,داده‌های شناسایی شخص,Government Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4017,GovernmentAttestation,تصدیق دولتی,Government Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
+CM4DI-C4018,IdentityServiceProvider,ارائه‌دهنده خدمات هویت,Government Identity,docs/concepts/CM4DI_PROFILE_CONCEPT_REFERENCE_v2.md,current
