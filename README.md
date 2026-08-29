@@ -1,233 +1,173 @@
-# CM4DI
+# CM4DI — Journal Extension Research
 
-CM4DI: an ontology for digital identity with trust integration, grounded in UFO, specified in OntoUML, and released as a lightweight OWL artifact.
+CM4DI is an ongoing research program for a **UFO-grounded, cross-paradigm digital-identity reference ontology**. This `journal-v2` branch develops the substantial journal extension of the published ICWR 2026 conference paper **“An Ontology-Driven Conceptual Model for Digital Identity with Trust Integration”** (DOI: `10.1109/ICWR69602.2026.11513313`).
 
-## Overview
+> **Important:** the root conference OWL and Generation2 diagram are preserved as historical PUB-002 baseline artifacts. They are **not** the authoritative semantic source for journal-v2.
 
-CM4DI (Conceptual Model for Digital Identity) is an ontology-driven conceptual model for digital identity with modular trust integration. It provides a minimal but expressive semantic backbone for identity-centric digital ecosystems by structuring identity-bearing entities, digital identities, credentials, claims, contextual scoping, authentication, authorization, and trust references within a coherent ontological framework.
+## Current research identity
+- Araz Research Portfolio: **R-015 / P1-L6 — Cross-Domain Foundational Semantics**
+- Bridges: P3, P5
+- Published precursor: **PUB-002**
+- Active journal extension: **PUB-003**
+- Current stage: **W6.5 — Retrospective Source Completeness Reconciliation**
+- Next gate: **OGCM-RF Source Completeness Gate**, then Wave-7 formal module approval and OWL/SHACL implementation.
 
-The model is grounded in the Unified Foundational Ontology (UFO) and specified in OntoUML. This repository documents the current conceptual specification of CM4DI and serves as the foundation for its lightweight OWL operationalization, future scenario-based validation, and subsequent formal enrichment.
+Machine-readable state:
+- `.research/manifest.yaml`
+- `.research/ogcm-rf-profile.yaml`
+- `.research/semantic-ci-policy.yaml`
 
-## Documentation
+## Scientific objective
+The journal extension aims to provide one coherent semantic integration layer across:
+- human and non-human digital identity;
+- enterprise IAM and federation;
+- credentials, wallets and verifiable presentations;
+- workload, device and AI-agent identity;
+- government/legal identity and trust governance;
+- authentication and authorization;
+- current identity standards, protocols and regulatory/trust frameworks;
+- mature neighboring ontologies that should be reused or aligned rather than duplicated.
 
-The CM4DI ontology core documentation includes:
+The project does **not** claim to be the first digital-identity ontology or the first UFO-grounded identity ontology. Claims such as `complete`, `comprehensive`, `integrated`, `interoperable`, `reference ontology` and `validated` are evaluation-dependent and governed by PUB-003 MQAP-EXT work.
 
-- Ontology model (OWL): [CM4DI ontology](CM4DI.owl)
-- Conceptual diagrams: [CM4DI ontology Diagram](CM4DI-Generation2-Version15.jpg)
-- Field registry: [CM4DI Field Registry](CM4DI-field-registry-v0.1.md)
-- Profile mappings
-- Case study in pharma: [Pharmaceutical Ecosystem Identity Case Study](docs/case-study-pharmaceutical-ecosystem.md)
+## Current governed semantic state
+- **102 governed concepts**: 34 frozen Core + 68 extension/profile concepts.
+- **120 governed relations**: 55 frozen Core + 65 extension/profile relations.
+- **52 Competency Questions**: 32 Core + 20 profile/context CQs.
+- **68 external/profile mappings**.
+- **15 DDD subdomains** and **13 Bounded Contexts**.
+- **4 cross-domain integration Profiles**.
+- Gate B approved; Gate C approved and retained after DDD regression.
+- DDD regression Issues #50–#57: PASS.
 
-## Vision and Evolution
+### DDD architecture
+Overall Domain: **Digital Identity Management**.
 
-CM4DI is intended as a reusable ontology artifact for digital identity conceptualization, documentation, and progressive formalization. The current release emphasizes:
+Canonical subdomains:
+1. Identity Representation
+2. Identity Information
+3. Identity Evidence
+4. Identity Establishment
+5. Credential Management
+6. Authentication
+7. Authorization
+8. Identity Administration
+9. Federation
+10. Credential Exchange
+11. Workload Identity
+12. Device Identity
+13. Agent Identity
+14. Trust Governance
+15. Government Identity
 
-- a principled ontology-driven conceptual core
-- explicit grounding in UFO and OntoUML
-- modular trust integration through `TrustReference`
-- explicit event-result symmetry for authentication and authorization
-- a lightweight publication baseline for documentation and future OWL release
+Governance invariant:
 
-Future releases may extend the current artifact with:
+`Domain != Bounded Context != Profile != OWL Module`
 
-- richer logical axiomatization
-- stronger OWL formalization
-- example instantiations and case-based mappings
-- extension modules for governance, consent, policy, and assurance details
-- additional documentation and external ontology alignment mappings
+Canonical Domain and Bounded Context names do not use `and`, `&`, or slash-composed semantic centers.
 
-## Scope of the Ontology
+### Cross-domain Profiles
+- **P01 Enterprise Identity Profile**
+- **P02 Verifiable Credential Profile**
+- **P03 Technical Identity Profile**
+- **P04 Governed Identity Profile**
 
-CM4DI focuses on the core ontological structure of digital identity. The ontology currently covers:
+Profiles are integration views; they do not own DDD meaning and do not automatically define OWL module boundaries.
 
-- identity-bearing entities
-- contextual identity representation
-- credentials and claims
-- identity attributes
-- enrollment mediation
-- authentication events
-- authorization events
-- trust references and lightweight external alignment
+## Gate-C conceptual source of truth
+Start here for current conceptual semantics:
+- `model/journal-v2/CM4DI_CORE_CONCEPT_REGISTRY_v2.csv`
+- `model/journal-v2/CM4DI_CORE_RELATION_REGISTRY_GATE_C.csv`
+- `model/journal-v2/CM4DI_CORE_CONCEPTUAL_MODEL_v2.mmd`
+- `model/journal-v2/ddd/DOMAIN_REGISTRY_v2.csv`
+- `model/journal-v2/ddd/BOUNDED_CONTEXT_REGISTRY_v2.csv`
+- `model/journal-v2/ddd/CONCEPT_DOMAIN_ASSIGNMENT_v2.csv`
+- `model/journal-v2/ddd/CONTEXT_MAP_v2.md`
+- `model/journal-v2/profiles/PROFILE_CONCEPT_REGISTRY_v2.csv`
+- `model/journal-v2/profiles/PROFILE_RELATION_REGISTRY_v2.csv`
 
-The following concerns are intentionally outside the current minimal core:
+The old conference README stereotypes and actor hierarchy are historical and superseded for journal-v2. In particular, journal-v2 does **not** model `Party` as a universal rigid kind or `IdentitySubject` as a rigid subkind; the Gate-C registry governs their current UFO interpretation.
 
-- full governance modeling
-- detailed consent and privacy policy layers
-- heavy access-control policy formalization
-- production deployment concerns
-- complete lifecycle orchestration
-- deep formalization of external trust ontologies
+## Evidence and Source Completeness
+The original discovery program produced **134 curated evidence records** spanning normative standards, government/trust frameworks, enterprise IAM, non-human identity, implementations/datasets, scholarship and Social Identity boundary work.
 
-This scope preserves ontological clarity and keeps the core model minimal, modular, and extensible.
+Current OGCM-RF requires a stronger **Exhaustive Source Mining** discipline before formal module/axiom freeze. The retrospective program is Issue #60 and uses:
+- `conceptualization/source-mining/SOURCE_REGISTER.csv`
+- `conceptualization/source-mining/SOURCE_COVERAGE.csv`
+- `conceptualization/source-mining/RAW_SOURCE_CONCEPTS.csv`
+- `conceptualization/source-mining/SOURCE_RECONCILIATION.csv`
 
-## Ontological Foundations
+Priority sources include current EU/EUDI law and ARF, ISO/NIST/W3C/OpenID/IETF/OASIS/FIDO, global trust frameworks, direct ontology competitors and neighboring ontologies.
 
-CM4DI is grounded in the **Unified Foundational Ontology (UFO)** and specified using **OntoUML**.
+Reviewer-facing tables live in `evidence/catalogs/` and separate:
+- standards;
+- protocol specifications;
+- EU regulatory/EUDI frameworks;
+- global trust frameworks;
+- direct competing ontologies;
+- broader academic competitors;
+- neighboring ontologies.
 
-The model adopts the following ontological distinctions:
+## European Digital Identity focus
+The journal program explicitly tracks:
+- Regulation (EU) 2024/1183;
+- EUDI Wallet Architecture and Reference Framework, current stable lineage;
+- wallet implementing regulations for PID/EAA, wallet integrity/core functionality, ecosystem notifications, certification, protocols/interfaces and relying-party registration;
+- 2026 amendment/consolidation lineage;
+- wallet actors, PID/EAA, relying-party registration/intended use, trust lists/anchors, certification and functional conformance.
 
-- `«kind»` for rigid identity-providing types
-- `«subkind»` for rigid specializations
-- `«role»` for anti-rigid context-dependent participation
-- `«relator»` for materially grounding mediated relations
-- `«quality»` for intrinsic moments inhering in bearers
-- `«social object»` for institutionally or socially constructed objects
-- `«information object»` for representational artifacts
-- `«event»` for occurrents unfolding in time
-- `«value object»` for abstract value-like constructs used in the engineering view
-- `«trace»` for lightweight external semantic alignment
+EU legal/technical concepts are mapped into CM4DI Domains/Contexts/Profiles; they do not automatically become Core ontology concepts.
 
-The OWL artifact associated with this repository should be understood as a lightweight operationalization of the conceptual model. It does not attempt to fully reduce all OntoUML/UFO distinctions into OWL, but rather provides a publishable and reusable ontology artifact aligned with the current conceptual specification.
+## Competing and neighboring ontologies
+Direct/near-direct ontology comparison currently includes MFSSIA 2026, Layouni and Pollet 2009 federated-identity OWL work, Nahar 2021 IAM ontology/metamodel and other qualified formal/conceptual identity models. Broader current work includes Comb and Martin 2026 and current SSI/interoperability frameworks.
 
-## Repository Contents
+Neighbor-ontology candidates currently include:
+- UFO / gUFO;
+- ONTrust;
+- PROV-O;
+- W3C Organization Ontology;
+- ODRL;
+- Data Privacy Vocabulary;
+- W3C VC/RDF vocabularies and additional qualified security/IAM ontologies.
 
-This repository contains or is intended to contain the following artifacts:
+The intended role of CM4DI is **semantic integration**: identity-specific concepts remain governed in CM4DI, while mature generic trust, provenance, organization, privacy and policy semantics are reused/aligned/bridged where justified.
 
-- `README.md` — repository overview and ontology documentation
-- `LICENSE` — repository license
-- `cm4di.owl` — lightweight OWL artifact of CM4DI
-- `diagram/CM4DI-Generation2-Version15.jpg` — current ontology diagram
-- `docs/concepts.md` — optional concept reference documentation
-- `docs/relations.md` — optional relation reference documentation
-- `docs/competency-questions.md` — optional competency question documentation
+## Wave-7 formal ontology status
+Issue #58 / Draft PR #59 contain a structurally validated **12-module engineering candidate** plus four non-owning aggregate Profile entrypoints.
 
-## Ontology Design Summary
+Current structural checks: 102/102 concept ownership, 120/120 relation ownership, no duplicates/orphans, no import cycles and no Core→extension imports.
 
-The CM4DI ontology is centered on the idea that digital identity should be modeled as a structured, context-scoped, ontology-grounded semantic backbone rather than as a collection of isolated protocol constructs.
+The PR intentionally remains **Draft and not frozen** until Source Completeness #60/#66 passes. After approval, Issue #69 defines formal UFO/gUFO-to-OWL projection and OWL-vs-SHACL constraint allocation before reasoner evaluation begins.
 
-At the core of the model are:
+No journal-v2 HermiT/ROBOT/SHACL/SPARQL formal PASS is currently claimed.
 
-- **identity-bearing entities**, represented by `Party` and its specializations
-- **identity representation artifacts**, represented by `DigitalIdentity`
-- **contextual scoping**, represented by `IdentityContext`
-- **institutional identity artifacts**, represented by `Credential` and `Claim`
-- **intrinsic identity characterization**, represented by `IdentityAttribute`
-- **mediated social grounding**, represented by `Enrollment`
-- **interaction events**, represented by `Authentication` and `Authorization`
-- **explicit event outcomes**, represented by `AuthenticationResult` and `AuthorizationResult`
-- **trust alignment hooks**, represented by `TrustReference`
+## Journal plan
+PUB-003 is governed by:
+- `research/JOURNAL_RESEARCH_CONTRACT_2026-08-29.md`
+- `publications/PUB002_TO_PUB003_EXTENSION_DELTA.md`
+- Issue #67 — ARP::MQAP-EXT research/contribution lock.
 
-The model explicitly separates:
+The manuscript must demonstrate substantive conference-to-journal delta through source completeness, stronger formal ontology engineering, standards/EU/framework integration, neighbor-ontology alignment, direct-competitor benchmarking and reproducible multi-layer evaluation.
 
-- rigid identity-bearing entities from context-dependent participation roles
-- information objects from social objects
-- intrinsic qualities from asserted claims
-- interaction mediation from event participation
-- core identity structure from external trust semantics
+## Current execution order
+1. Complete #61 source universe/coverage.
+2. Execute #62 EU/EUDI, #63 standards/frameworks, #64 competitors and #65 neighbors.
+3. Complete #68 reviewer-facing catalogs.
+4. Reconcile sources and rerun semantic/module regression in #66.
+5. Pass #60 Source Completeness Gate.
+6. Confirm/amend and approve #58/#59 module architecture.
+7. Execute #69 formal ontology commitments and subsequent OWL/SHACL/CI/CQ work.
+8. Gate D → Wave 8 evaluation → PUB-003 manuscript/release → Gate E.
 
-This separation helps avoid category mistakes and supports a clean, extensible, identity-centered ontology.
+## Historical conference artifacts
+The following root files are retained for publication lineage and regression comparison:
+- `CM4DI.owl`
+- `CM4DI-Generation2-Version15.drawio`
+- `CM4DI-Generation2-Version15.jpg`
+- `CM4DI-field-registry-v0.1.md`
+- `case-study-pharmaceutical-ecosystem.md`
 
-## Ontology Diagram
-
-The conceptual diagram of the latest CM4DI version is shown below.
-
-![CM4DI Conceptual Model](CM4DI-Generation2-Version15.jpg)
-
-## Core Concepts
-
-| Concept | OntoUML Stereotype | Description |
-|---|---|---|
-| Party | `«kind»` | Base identity-providing entity for all parties participating in the digital identity ecosystem. |
-| IdentitySubject | `«subkind»` | A rigid specialization of `Party` that acts as the primary subject of digital identity representation, claims, and attributes. |
-| DigitalIdentity | `«information object»` | An informational representation of an `IdentitySubject` within a specific identity context. |
-| IdentityContext | `«kind»` | A contextual scope within which digital identity, identifiers, and trust references are interpreted. |
-| Identifier | `«value object»` | A value-like identifier used to identify a `DigitalIdentity` within a context. |
-| IdentityAttribute | `«quality»` | An intrinsic or descriptive quality inhering in an `IdentitySubject`. |
-| Claim | `«social object»` | A socially or institutionally constructed object that is about an `IdentitySubject` and asserts one or more identity attributes. |
-| Credential | `«social object»` | A socially or institutionally constructed object issued by a `CredentialServiceProvider` and held by a `Subscriber`. |
-| Authenticator | `«kind»` | An authentication mechanism or authenticator entity bound to a credential and participating in authentication events. |
-| Authentication | `«event»` | An event in which an identity subject is authenticated through one or more participating entities or artifacts. |
-| AuthenticationResult | `«value object»` | A value-like outcome produced by an authentication event. |
-| Authorization | `«event»` | An event in which access or authorization is determined based on claims and relying-party participation. |
-| AuthorizationResult | `«value object»` | A value-like outcome produced by an authorization event. |
-| IdentityProvider | `«subkind»` | A specialization of `Party` responsible for managing digital identities. |
-| CredentialServiceProvider | `«subkind»` | A specialization of `Party` responsible for issuing credentials. |
-| Verifier | `«subkind»` | A specialization of `Party` participating in authentication for validation or verification purposes. |
-| RelyingParty | `«subkind»` | A specialization of `Party` participating in authorization decisions and relying on identity-related information. |
-| Subscriber | `«role»` | A context-dependent anti-rigid role that an `IdentitySubject` may assume in order to hold credentials. |
-| Enrollment | `«relator»` | A relator materially grounding the mediated relation between a `Subscriber` and a `CredentialServiceProvider`. |
-| TrustReference | `«information object»` | A lightweight informational object used to reference and align with external trust semantics without embedding them into the core ontology. |
-| ONTrust:Trust | `«external reference»` | An external trust reference aligned through trace semantics rather than full ontological commitment. |
-
-## Core Relations
-
-| Concept 1 | Cardinality (Concept 1 side) | Relation | Arrow Type | Cardinality (Concept 2 side) | Concept 2 | Description |
-|---|---:|---|---|---:|---|---|
-| IdentitySubject | — | specializes | Generalization | — | Party | `IdentitySubject` is a rigid specialization of `Party`. |
-| IdentityProvider | — | specializes | Generalization | — | Party | `IdentityProvider` is a specialization of `Party`. |
-| RelyingParty | — | specializes | Generalization | — | Party | `RelyingParty` is a specialization of `Party`. |
-| CredentialServiceProvider | — | specializes | Generalization | — | Party | `CredentialServiceProvider` is a specialization of `Party`. |
-| Verifier | — | specializes | Generalization | — | Party | `Verifier` is a specialization of `Party`. |
-| Subscriber | — | specializes | Generalization | — | IdentitySubject | `Subscriber` is a role played by an `IdentitySubject`. |
-| Enrollment | 1 | mediates | Mediation | 0..* | Subscriber | `Enrollment` mediates the relation involving the subscriber role. |
-| Enrollment | 1 | mediates | Mediation | 0..* | CredentialServiceProvider | `Enrollment` mediates the relation involving the credential service provider. |
-| IdentitySubject | 1..* | representedBy | Open Arrow | 1 | DigitalIdentity | An `IdentitySubject` is represented by one or more `DigitalIdentity` instances; each `DigitalIdentity` represents one `IdentitySubject`. |
-| DigitalIdentity | 1 | scopedIn | Open Arrow | 1..* | IdentityContext | A `DigitalIdentity` is scoped in an `IdentityContext`; a context may contain multiple digital identities. |
-| DigitalIdentity | 1 | identifiedBy | Open Arrow | 1..* | Identifier | A `DigitalIdentity` is identified by one or more identifiers. |
-| IdentitySubject | 1 | hasAttribute | Characterization | 1..* | IdentityAttribute | An `IdentitySubject` has one or more intrinsic identity attributes. |
-| DigitalIdentity | 1 | reflects | Open Arrow | 1..* | IdentityAttribute | A `DigitalIdentity` reflects one or more identity attributes. |
-| Claim | 1 | about | Open Arrow | 0..* | IdentitySubject | A `Claim` is about an `IdentitySubject`. |
-| Claim | 1 | asserts | Open Arrow | 0..* | IdentityAttribute | A `Claim` asserts an `IdentityAttribute`. |
-| CredentialServiceProvider | 1 | issues | Open Arrow | 0..* | Credential | A `CredentialServiceProvider` issues credentials. |
-| Subscriber | 1 | holds | Open Arrow | 0..* | Credential | A `Subscriber` holds credentials. |
-| Credential | 1 | boundTo | Open Arrow | 0..* | Authenticator | A `Credential` is bound to an `Authenticator`. |
-| Credential | 1 | supports | Open Arrow | 1..* | Claim | A `Credential` supports one or more claims. |
-| IdentitySubject | 1 | hasParticipant | Participation | 1 | Authentication | An `IdentitySubject` participates in an `Authentication` event. |
-| Verifier | 1 | hasParticipant | Participation | 1 | Authentication | A `Verifier` participates in an `Authentication` event. |
-| Claim | 1..* | hasParticipant | Participation | 1 | Authentication | One or more claims participate in an `Authentication` event. |
-| Authenticator | 1..* | hasParticipant | Participation | 1 | Authentication | One or more authenticators may participate in an `Authentication` event. |
-| Authentication | 1 | produces | Open Arrow | 1 | AuthenticationResult | An `Authentication` event produces an `AuthenticationResult`. |
-| RelyingParty | 1 | hasParticipant | Participation | 1 | Authorization | A `RelyingParty` participates in an `Authorization` event. |
-| Authorization | 1 | evaluates | Open Arrow | 1..* | Claim | An `Authorization` event evaluates one or more claims. |
-| Authorization | 1 | produces | Open Arrow | 1 | AuthorizationResult | An `Authorization` event produces an `AuthorizationResult`. |
-| IdentityProvider | 1 | manages | Open Arrow | 0..* | DigitalIdentity | An `IdentityProvider` manages digital identities. |
-| DigitalIdentity | 1 | hasTrustReference | Open Arrow | 0..* | TrustReference | A `DigitalIdentity` may have zero or more trust references. |
-| TrustReference | 1 | scopedIn | Open Arrow | 1 | IdentityContext | A `TrustReference` is scoped in an `IdentityContext`. |
-| TrustReference | 1 | alignedWith | Trace | 1..* | ONTrust:Trust | A `TrustReference` is weakly aligned with one or more external trust references. |
-
-## Trust Integration Strategy
-
-CM4DI does not model trust as a fully embedded core relator. Instead, it introduces `TrustReference` as a lightweight information object that enables semantic alignment with external trust ontologies through a weak trace relation.
-
-This strategy is intentional and serves several purposes:
-
-- it preserves the minimality of the core ontology
-- it avoids over-committing the identity core to a specific trust theory
-- it supports modular interoperability
-- it enables future alignment with external trust ontologies such as `ONTrust:Trust`
-- it maintains a clear separation between identity structure and external trust semantics
-
-In CM4DI, trust is therefore integrated **modularly**, not by embedding full trust semantics into the identity core.
-
-## Current Release Status
-
-This repository reflects the current lightweight release state of CM4DI.
-
-At this stage, the artifact should be understood as:
-
-- a grounded conceptual ontology
-- an OntoUML-specified model
-- a lightweight OWL-oriented release baseline
-- a reusable research artifact for transparency and reuse
-
-The current release also incorporates an explicit event-result symmetry for both authentication and authorization.
-
-## Notes on Model Interpretation
-
-The current model documentation is based on the present CM4DI conceptual diagram. All named concepts and all explicitly represented labeled relations from the model have been captured in this README.
-
-In the current version, `Authorization` explicitly produces `AuthorizationResult`, thereby aligning the authorization structure with the event-result pattern already used for authentication.
-
-## Citation
-
-If you use or refer to this artifact, please cite the associated paper and, where appropriate, the repository itself.
-
-Suggested repository reference text:
-
-**CM4DI Repository. CM4DI: an ontology for digital identity with trust integration, grounded in UFO, specified in OntoUML, and released as a lightweight OWL artifact. GitHub repository.**
-
-A more formal citation entry can be added in future tagged releases.
+Do not infer current journal-v2 conceptual semantics from these files unless a current mapping/decision artifact explicitly says so.
 
 ## License
-
-This project is released under the **Apache License 2.0**. See the `LICENSE` file for details.
+Apache License 2.0; see `LICENSE`.
