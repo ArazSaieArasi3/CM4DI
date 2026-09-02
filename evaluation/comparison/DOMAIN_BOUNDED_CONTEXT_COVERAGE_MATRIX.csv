@@ -1,0 +1,1 @@
+row_id,domain_id,domain_name,bounded_context_id,bounded_context_name,source_family,source_id,source_title,coverage_strength,concept_ids,relation_ids,event_patterns,lifecycle_patterns,constraints,cq_ids,boundary_signal,rename_split_merge_signal,decision,notes
