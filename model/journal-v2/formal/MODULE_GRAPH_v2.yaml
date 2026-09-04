@@ -1,0 +1,304 @@
+schema_version: '1.0'
+artifact: CM4DI Journal V2 Wave-7 Module Graph
+research_line: CM4DI journal-v2
+issue: 58
+status: engineering_baseline_candidate
+semantic_baseline: Gate-C plus approved DDD alignment
+
+claim_boundary:
+  - This graph packages frozen semantic ownership for formal engineering; it does not change Gate-C concept identity.
+  - Module membership is not equivalent to Domain, Bounded Context, or Profile membership.
+  - No OWL, SHACL, reasoner, CQ, CI, release, or public-IRI PASS is asserted by this artifact.
+  - Public namespace registration remains a separate owner/release action.
+
+source_of_truth:
+  module_architecture_input: model/journal-v2/ddd/WAVE7_MODULE_ARCHITECTURE_INPUT.md
+  bounded_context_registry: model/journal-v2/ddd/BOUNDED_CONTEXT_REGISTRY_v2.csv
+  concept_domain_assignment: model/journal-v2/ddd/CONCEPT_DOMAIN_ASSIGNMENT_v2.csv
+  core_concept_registry: model/journal-v2/CM4DI_CORE_CONCEPT_REGISTRY_v2.csv
+  core_relation_registry: model/journal-v2/CM4DI_CORE_RELATION_REGISTRY_GATE_C.csv
+  profile_concept_registry: model/journal-v2/profiles/PROFILE_CONCEPT_REGISTRY_v2.csv
+  profile_relation_registry: model/journal-v2/profiles/PROFILE_RELATION_REGISTRY_v2.csv
+
+iri_policy:
+  status: internal_engineering_iri_until_public_namespace_decision
+  ontology_iri_pattern: 'urn:cm4di:ontology:{module_id}'
+  version_iri_pattern: 'urn:cm4di:ontology:{module_id}:journal-v2:w7'
+  public_w3id_or_http_registration_asserted: false
+
+invariants:
+  - id: MG-I01
+    rule: core_imports_no_extension
+  - id: MG-I02
+    rule: every_governed_concept_owned_exactly_once
+  - id: MG-I03
+    rule: aggregate_profiles_own_no_entities
+  - id: MG-I04
+    rule: imports_must_be_acyclic
+  - id: MG-I05
+    rule: shared_semantics_not_promoted_to_core_without_separate_semantic_decision
+  - id: MG-I06
+    rule: device_and_agent_must_not_import_workload_merely_for_profile_membership
+  - id: MG-I07
+    rule: technical_trust_domain_bundle_not_equated_with_institutional_trust_framework_registry
+  - id: MG-I08
+    rule: linkedAccount_must_not_imply_owl_sameAs_or_subject_identity
+
+modules:
+  - module_id: core
+    kind: canonical_core
+    ontology_iri: urn:cm4di:ontology:core
+    version_iri: urn:cm4di:ontology:core:journal-v2:w7
+    imports: []
+    bounded_context_alignment:
+      - CM4DI-BC0001
+      - CM4DI-BC0002
+      - CM4DI-BC0003
+      - CM4DI-BC0004
+      - CM4DI-BC0005
+      - CM4DI-BC0007
+      - CM4DI-BC0012
+    owned_entity_ids:
+      - CM4DI-C0001
+      - CM4DI-C0002
+      - CM4DI-C0003
+      - CM4DI-C0004
+      - CM4DI-C0005
+      - CM4DI-C0006
+      - CM4DI-C0007
+      - CM4DI-C0008
+      - CM4DI-C0009
+      - CM4DI-C0010
+      - CM4DI-C0011
+      - CM4DI-C0012
+      - CM4DI-C0013
+      - CM4DI-C0014
+      - CM4DI-C0015
+      - CM4DI-C0016
+      - CM4DI-C0017
+      - CM4DI-C0018
+      - CM4DI-C0019
+      - CM4DI-C0020
+      - CM4DI-C0021
+      - CM4DI-C0022
+      - CM4DI-C0023
+      - CM4DI-C0024
+      - CM4DI-C0025
+      - CM4DI-C0026
+      - CM4DI-C0027
+      - CM4DI-C0028
+      - CM4DI-C0029
+      - CM4DI-C0030
+      - CM4DI-C0031
+      - CM4DI-C0032
+      - CM4DI-C0033
+      - CM4DI-C0034
+    owned_entity_count: 34
+    reused_entity_sources: []
+
+  - module_id: credential-lifecycle
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:credential-lifecycle
+    version_iri: urn:cm4di:ontology:credential-lifecycle:journal-v2:w7
+    imports: [core]
+    bounded_context_alignment: [CM4DI-BC0003]
+    owned_entity_ids: [CM4DI-C2001]
+    owned_entity_count: 1
+    reused_entity_sources: [core]
+
+  - module_id: authentication
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:authentication
+    version_iri: urn:cm4di:ontology:authentication:journal-v2:w7
+    imports: [core, credential-lifecycle]
+    bounded_context_alignment: [CM4DI-BC0004]
+    owned_entity_ids: [CM4DI-C1015]
+    owned_entity_count: 1
+    reused_entity_sources: [core, credential-lifecycle]
+
+  - module_id: authorization
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:authorization
+    version_iri: urn:cm4di:ontology:authorization:journal-v2:w7
+    imports: [core]
+    bounded_context_alignment: [CM4DI-BC0005]
+    owned_entity_ids:
+      - CM4DI-C1016
+      - CM4DI-C1017
+      - CM4DI-C1018
+      - CM4DI-C1019
+      - CM4DI-C1020
+    owned_entity_count: 5
+    reused_entity_sources: [core]
+
+  - module_id: identity-administration
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:identity-administration
+    version_iri: urn:cm4di:ontology:identity-administration:journal-v2:w7
+    imports: [core, authorization]
+    bounded_context_alignment: [CM4DI-BC0006]
+    owned_entity_ids:
+      - CM4DI-C1001
+      - CM4DI-C1002
+      - CM4DI-C1003
+      - CM4DI-C1004
+      - CM4DI-C1005
+      - CM4DI-C1006
+      - CM4DI-C1007
+      - CM4DI-C1008
+      - CM4DI-C1012
+      - CM4DI-C1013
+      - CM4DI-C1014
+    owned_entity_count: 11
+    reused_entity_sources: [core, authorization]
+
+  - module_id: trust-governance
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:trust-governance
+    version_iri: urn:cm4di:ontology:trust-governance:journal-v2:w7
+    imports: [core]
+    bounded_context_alignment: [CM4DI-BC0012]
+    owned_entity_ids:
+      - CM4DI-C4001
+      - CM4DI-C4002
+      - CM4DI-C4003
+      - CM4DI-C4004
+      - CM4DI-C4005
+      - CM4DI-C4006
+      - CM4DI-C4007
+      - CM4DI-C4008
+      - CM4DI-C4009
+      - CM4DI-C4010
+      - CM4DI-C4011
+      - CM4DI-C4012
+      - CM4DI-C4013
+      - CM4DI-C4014
+    owned_entity_count: 14
+    reused_entity_sources: [core]
+
+  - module_id: federation
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:federation
+    version_iri: urn:cm4di:ontology:federation:journal-v2:w7
+    imports: [core, authentication, identity-administration, trust-governance]
+    bounded_context_alignment: [CM4DI-BC0007]
+    owned_entity_ids:
+      - CM4DI-C1009
+      - CM4DI-C1010
+      - CM4DI-C1011
+    owned_entity_count: 3
+    reused_entity_sources: [core, authentication, identity-administration, trust-governance]
+
+  - module_id: credential-exchange
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:credential-exchange
+    version_iri: urn:cm4di:ontology:credential-exchange:journal-v2:w7
+    imports: [core, credential-lifecycle, trust-governance]
+    bounded_context_alignment: [CM4DI-BC0008]
+    owned_entity_ids:
+      - CM4DI-C2002
+      - CM4DI-C2003
+      - CM4DI-C2004
+      - CM4DI-C2005
+      - CM4DI-C2006
+      - CM4DI-C2007
+      - CM4DI-C2008
+      - CM4DI-C2009
+      - CM4DI-C2010
+      - CM4DI-C2011
+      - CM4DI-C2012
+    owned_entity_count: 11
+    reused_entity_sources: [core, credential-lifecycle, trust-governance]
+
+  - module_id: workload-identity
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:workload-identity
+    version_iri: urn:cm4di:ontology:workload-identity:journal-v2:w7
+    imports: [core, credential-lifecycle, authentication, authorization, identity-administration, trust-governance]
+    bounded_context_alignment: [CM4DI-BC0009]
+    owned_entity_ids:
+      - CM4DI-C3001
+      - CM4DI-C3002
+      - CM4DI-C3003
+      - CM4DI-C3004
+      - CM4DI-C3005
+      - CM4DI-C3008
+      - CM4DI-C3009
+      - CM4DI-C3010
+      - CM4DI-C3011
+      - CM4DI-C3012
+      - CM4DI-C3013
+      - CM4DI-C3014
+    owned_entity_count: 12
+    reused_entity_sources: [core, credential-lifecycle, authentication, authorization, identity-administration, trust-governance]
+
+  - module_id: device-identity
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:device-identity
+    version_iri: urn:cm4di:ontology:device-identity:journal-v2:w7
+    imports: [core, authentication, authorization, identity-administration]
+    bounded_context_alignment: [CM4DI-BC0010]
+    owned_entity_ids: [CM4DI-C3006, CM4DI-C3007]
+    owned_entity_count: 2
+    reused_entity_sources: [core, authentication, authorization, identity-administration]
+
+  - module_id: agent-identity
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:agent-identity
+    version_iri: urn:cm4di:ontology:agent-identity:journal-v2:w7
+    imports: [core, authorization, trust-governance]
+    bounded_context_alignment: [CM4DI-BC0011]
+    owned_entity_ids: [CM4DI-C3015, CM4DI-C3016, CM4DI-C3017, CM4DI-C3018]
+    owned_entity_count: 4
+    reused_entity_sources: [core, authorization, trust-governance]
+
+  - module_id: government-identity
+    kind: context_extension
+    ontology_iri: urn:cm4di:ontology:government-identity
+    version_iri: urn:cm4di:ontology:government-identity:journal-v2:w7
+    imports: [core, credential-lifecycle, authentication, federation, credential-exchange, trust-governance]
+    bounded_context_alignment: [CM4DI-BC0013]
+    owned_entity_ids: [CM4DI-C4015, CM4DI-C4016, CM4DI-C4017, CM4DI-C4018]
+    owned_entity_count: 4
+    reused_entity_sources: [core, credential-lifecycle, authentication, federation, credential-exchange, trust-governance]
+
+aggregate_profile_entrypoints:
+  - profile_id: P01
+    label: Enterprise Identity Profile
+    owns_entities: false
+    imports: [core, authentication, authorization, identity-administration, federation]
+  - profile_id: P02
+    label: Verifiable Credential Profile
+    owns_entities: false
+    imports: [core, credential-lifecycle, credential-exchange, trust-governance]
+  - profile_id: P03
+    label: Technical Identity Profile
+    owns_entities: false
+    imports: [core, authorization, credential-lifecycle, authentication, workload-identity, device-identity, agent-identity, trust-governance]
+  - profile_id: P04
+    label: Governed Identity Profile
+    owns_entities: false
+    imports: [core, credential-lifecycle, authentication, federation, credential-exchange, trust-governance, government-identity]
+
+pre_owl_validation_rules:
+  expected_governed_concept_count: 102
+  expected_core_owned_count: 34
+  expected_extension_owned_count: 68
+  expected_total_owned_count: 102
+  expected_bounded_context_count: 13
+  expected_module_count_excluding_aggregate_profiles: 12
+  duplicate_owned_entity_count_target: 0
+  unowned_governed_entity_count_target: 0
+  core_outbound_extension_import_count_target: 0
+  aggregate_profile_owned_entity_count_target: 0
+  import_cycle_count_target: 0
+
+formalization_handoff:
+  next_steps_after_graph_acceptance:
+    - project frozen concept and relation registries into module OWL sources
+    - document UFO/OntoUML-to-OWL projection decisions
+    - divide conceptual constraints between OWL and SHACL according to open-world versus closed-world semantics
+    - generate deterministic serializations
+    - compile CQ ownership and SPARQL query suite by module
+    - run local or governed ROBOT/HermiT/SHACL validation before any formal PASS claim
+  public_release_allowed: false

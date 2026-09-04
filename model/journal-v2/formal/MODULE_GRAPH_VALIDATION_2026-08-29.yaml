@@ -1,0 +1,77 @@
+schema_version: '1.1'
+artifact: CM4DI Wave-7 module-graph deterministic pre-OWL validation
+issue: 58
+observed_at: 2026-08-29
+validated_artifacts:
+  - model/journal-v2/formal/MODULE_GRAPH_v2.yaml
+  - model/journal-v2/formal/MODULE_RELATION_OWNERSHIP_v2.yaml
+status: structural_pre_owl_package_pass
+
+checks:
+  governed_concept_ownership:
+    result: PASS
+    expected: 102
+    observed: 102
+    unique_owned_ids: 102
+    duplicate_owned_ids: 0
+    unowned_ids_against_current_governed_concept_inventory: 0
+    decomposition:
+      core: 34
+      extensions: 68
+
+  governed_relation_ownership:
+    result: PASS
+    expected: 120
+    observed: 120
+    unique_owned_ids: 120
+    duplicate_owned_ids: 0
+    unowned_ids_against_current_relation_registries: 0
+    decomposition:
+      gate_c_core_relations: 55
+      wave6_profile_relations: 65
+
+  module_inventory:
+    result: PASS
+    modules_excluding_aggregate_profiles: 12
+    aggregate_profile_entrypoints: 4
+    aggregate_profile_owned_entities: 0
+    aggregate_profile_owned_relations: 0
+
+  bounded_context_alignment:
+    result: PASS
+    current_bounded_contexts: 13
+    graph_uses_only_current_bounded_context_ids: true
+    note: >-
+      Core is intentionally cross-context because the frozen Gate-C Core already owns canonical semantics
+      reused by several Bounded Contexts; this does not redefine Context boundaries.
+
+  import_graph:
+    result: PASS
+    directed_cycle_count: 0
+    core_import_count: 0
+    core_to_extension_import_count: 0
+    device_imports_workload_identity: false
+    agent_imports_workload_identity: false
+
+  public_namespace:
+    result: PASS_BOUNDARY
+    public_w3id_or_http_registration_asserted: false
+    engineering_iri_scheme: urn:cm4di:ontology
+
+  protected_semantics:
+    result: PASS_BOUNDARY
+    linkedAccount_owner: identity-administration
+    linkedAccount_equality_claim: false
+    technical_trust_relations_owner: workload-identity
+    institutional_trust_relations_owner: trust-governance
+    device_or_agent_forced_workload_dependency: false
+
+claim_boundary:
+  - PASS values above are deterministic structural checks on the Wave-7 module-ownership package only.
+  - They are not OWL 2 DL, HermiT, ROBOT, SHACL, SPARQL CQ, semantic-validity, expert-review, empirical-evaluation, or publication PASS claims.
+  - Property characteristics, OWL domain/range axioms, cardinalities, inverses, chains, and SHACL constraints remain later formal-projection work.
+
+next_gate:
+  - Owner may approve/amend the module/package freeze before it becomes the governing Wave-7 formal architecture baseline.
+  - After approval, generate module OWL sources and explicit UFO/OntoUML-to-OWL projection decisions.
+  - Run formal validation only on the resulting exact ontology heads; never infer formal PASS from this structural package.

@@ -1,0 +1,136 @@
+schema_version: '1.0'
+artifact: CM4DI Journal V2 Wave-7 Relation Ownership Manifest
+issue: 58
+status: engineering_baseline_candidate
+
+source_registries:
+  core: model/journal-v2/CM4DI_CORE_RELATION_REGISTRY_GATE_C.csv
+  profile: model/journal-v2/profiles/PROFILE_RELATION_REGISTRY_v2.csv
+  cq_traceability: research/CQ_RELATION_TRACEABILITY_v2.csv
+
+ownership_rule:
+  - All 55 frozen Gate-C Core relations remain owned by the Core module.
+  - A profile relation whose only extension-specific endpoint belongs to one module is owned by that module.
+  - If both endpoints are extension-specific in different modules, ownership follows the relation's contextual semantic source/initiating construct and must not imply entity migration.
+  - Aggregate Profiles own no relation definitions.
+  - Relation ownership is packaging/provenance, not a change to Gate-C or Wave-6 semantics.
+
+module_relation_ownership:
+  core:
+    registry_selector: 'CM4DI-R0001..CM4DI-R0055'
+    owned_relation_count: 55
+
+  identity-administration:
+    owned_relation_ids:
+      - CM4DI-R1001
+      - CM4DI-R1002
+      - CM4DI-R1003
+      - CM4DI-R1004
+      - CM4DI-R1005
+      - CM4DI-R1006
+      - CM4DI-R1007
+      - CM4DI-R1010
+      - CM4DI-R1011
+      - CM4DI-R1012
+      - CM4DI-R1013
+      - CM4DI-R1020
+    owned_relation_count: 12
+    notes:
+      - CM4DI-R1020 linkedAccount remains account-correlation semantics and must not imply owl:sameAs or subject equality.
+
+  federation:
+    owned_relation_ids: [CM4DI-R1008, CM4DI-R1009]
+    owned_relation_count: 2
+
+  authentication:
+    owned_relation_ids: [CM4DI-R1014]
+    owned_relation_count: 1
+
+  authorization:
+    owned_relation_ids:
+      - CM4DI-R1015
+      - CM4DI-R1016
+      - CM4DI-R1017
+      - CM4DI-R1018
+      - CM4DI-R1019
+    owned_relation_count: 5
+
+  credential-lifecycle:
+    owned_relation_ids: [CM4DI-R2001]
+    owned_relation_count: 1
+
+  credential-exchange:
+    owned_relation_ids:
+      - CM4DI-R2002
+      - CM4DI-R2003
+      - CM4DI-R2004
+      - CM4DI-R2005
+      - CM4DI-R2006
+      - CM4DI-R2007
+      - CM4DI-R2008
+      - CM4DI-R2009
+      - CM4DI-R2010
+      - CM4DI-R2011
+      - CM4DI-R2012
+      - CM4DI-R2013
+    owned_relation_count: 12
+
+  workload-identity:
+    owned_relation_ids:
+      - CM4DI-R3001
+      - CM4DI-R3002
+      - CM4DI-R3003
+      - CM4DI-R3004
+      - CM4DI-R3006
+      - CM4DI-R3007
+      - CM4DI-R3008
+      - CM4DI-R3009
+      - CM4DI-R3010
+      - CM4DI-R3011
+      - CM4DI-R3012
+    owned_relation_count: 11
+    notes:
+      - CM4DI-R3006 attestsNode remains owned by workload-attestation semantics even though Device is a reused target.
+
+  device-identity:
+    owned_relation_ids: [CM4DI-R3005]
+    owned_relation_count: 1
+
+  agent-identity:
+    owned_relation_ids: [CM4DI-R3013, CM4DI-R3014, CM4DI-R3015, CM4DI-R3016]
+    owned_relation_count: 4
+
+  trust-governance:
+    owned_relation_ids:
+      - CM4DI-R4001
+      - CM4DI-R4002
+      - CM4DI-R4003
+      - CM4DI-R4004
+      - CM4DI-R4005
+      - CM4DI-R4006
+      - CM4DI-R4007
+      - CM4DI-R4008
+      - CM4DI-R4009
+      - CM4DI-R4010
+      - CM4DI-R4011
+      - CM4DI-R4016
+    owned_relation_count: 12
+    notes:
+      - Technical TrustDomain/TrustBundle relations remain in workload-identity; this module owns institutional governance/trust relations only.
+
+  government-identity:
+    owned_relation_ids: [CM4DI-R4012, CM4DI-R4013, CM4DI-R4014, CM4DI-R4015]
+    owned_relation_count: 4
+
+validation_targets:
+  expected_core_relations: 55
+  expected_profile_relations: 65
+  expected_total_relations: 120
+  expected_unique_owned_relations: 120
+  duplicate_owned_relation_target: 0
+  unowned_relation_target: 0
+  aggregate_profile_owned_relation_target: 0
+
+claim_boundary:
+  - This manifest does not assert OWL object-property correctness, domain/range satisfiability, reasoner consistency, or CQ execution PASS.
+  - Property characteristics, inverses, chains, cardinalities and SHACL constraints remain later formal-projection decisions.
