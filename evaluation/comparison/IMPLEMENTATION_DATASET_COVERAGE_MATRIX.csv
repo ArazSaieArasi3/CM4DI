@@ -1,0 +1,19 @@
+row_id,evidence_type,source_id,title,owner_or_provider,version_or_status,coverage_or_use,cm4di_relevance,provenance_or_license_status,evaluation_role,next_action
+IMP-001,implementation,,w3c/vc-data-model-2.0-test-suite,W3C,,,,inspect authoritative LICENSE before code reuse,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-002,implementation,,openid-certification/conformance-suite,OpenID Certification,,,,license review required; authoritative development lineage must be recorded,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-003,implementation,,eu-digital-identity-wallet/eudi-lib-ios-wallet-kit,European Digital Identity Wallet,,,,Apache-2.0 per prior registry; re-check release LICENSE before reuse,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-004,implementation,,keycloak/keycloak,Keycloak,,,,Apache-2.0 known; verify release LICENSE,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-005,implementation,,zitadel/zitadel,ZITADEL,,,,license review required before code reuse,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-006,implementation,,ory/kratos,Ory,,,,license review required before code reuse,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-007,implementation,,ory/hydra,Ory,,,,license review required before code reuse,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-008,implementation,,goauthentik/authentik,authentik,,,,license review required before code reuse,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-009,implementation,,dexidp/dex,Dex,,,,Apache-2.0 commonly used; verify LICENSE,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-010,implementation,,spiffe/spire,SPIFFE,,,,Apache-2.0 known; verify release LICENSE,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+IMP-011,implementation,,mosip/mosip-ref-impl,MOSIP,,,,MIT reported in prior registry; verify LICENSE,implementation mapping/conformance evidence,Inspect schemas/state transitions/test fixtures and bind CQs
+DATA-012,dataset,CM4DI-DS0001,User-Computer Authentication Associations in Time,Los Alamos National Laboratory,,,,,empirical evaluation evidence,Record checksum/sample/license and bind to Gate-D scenario
+DATA-013,dataset,CM4DI-DS0002,Login Data Set for Risk-Based Authentication,Zenodo / H-BRS and Telenor Digital,,,,,empirical evaluation evidence,Record checksum/sample/license and bind to Gate-D scenario
+DATA-014,dataset,CM4DI-DS0003,ID4D Global Dataset 2025,World Bank ID4D,,,,,empirical evaluation evidence,Record checksum/sample/license and bind to Gate-D scenario
+DATA-015,dataset,CM4DI-DS0004,Global Findex Database 2025 world microdata with ID4D module,World Bank,,,,,empirical evaluation evidence,Record checksum/sample/license and bind to Gate-D scenario
+DATA-016,dataset,CM4DI-DS0005,Comprehensive Multi-Source Cyber-Security Events,Los Alamos National Laboratory,,,,,empirical evaluation evidence,Record checksum/sample/license and bind to Gate-D scenario
+DATA-017,dataset,CM4DI-DS0006,Behavior-based User Authentication Dataset,Zenodo,,,,,empirical evaluation evidence,Record checksum/sample/license and bind to Gate-D scenario
+DATA-018,dataset,CM4DI-DS0007,Pre-AttentiveGaze gaze-based authentication dataset,Scientific Data,,,,,empirical evaluation evidence,Record checksum/sample/license and bind to Gate-D scenario
