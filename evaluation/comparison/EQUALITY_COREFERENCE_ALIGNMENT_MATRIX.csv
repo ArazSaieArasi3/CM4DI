@@ -1,0 +1,7 @@
+pattern,external_source,external_construct,cm4di_construct,alignment,anti_conflation_rule,status
+Account correlation,Auth0,linked identities/accounts,linkedAccount,bridge-to,"linked accounts are not owl:sameAs and do not imply subject equality",supported-pass-1
+Federated account correlation,Keycloak,federated identity link,linkedAccount,bridge-to,"brokered/local account link is not account or subject equality",supported-pass-1
+Distributed semantic identity,semDIM,owl:sameAs-based distributed identity,IdentitySubject/DigitalIdentity/Account,conflicts-with,"CM4DI keeps co-reference/correlation distinct from semantic identity equality",full-text deep-dive pending #103
+Identifier equivalence,W3C DID,DID,Identifier,specializes,"DID is an Identifier specialization, not DigitalIdentity equality",supported
+Service representation,Microsoft Entra,Application object vs ServicePrincipal,Application/ApplicationRegistration/ServicePrincipal,partially-overlaps,"application definition, tenant-local principal representation and executing workload are distinct",supported-pass-1
+Workload representation,Google Cloud,ServiceAccount vs federated workload,ServiceAccount/Workload/Principal,partially-overlaps,"service account is not workload identity equality",supported-pass-1
