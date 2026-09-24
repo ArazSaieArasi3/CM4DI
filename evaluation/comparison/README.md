@@ -74,4 +74,12 @@ Do not synthesize heterogeneous dimensions into one arbitrary overall ontology s
 - `REASONING_CQ_EVALUATION_MATRIX.csv`
 - `IMPLEMENTATION_DATASET_COVERAGE_MATRIX.csv`
 
-Full population is intentionally deferred until active deep-dives provide sufficient source coverage.
+## Execution status — 2026-09-24
+- #136 direct competitors: ACTIVE; governed competitor catalog loaded into comparison workspace.
+- #137 neighbor ontologies: ACTIVE; provisional reuse/import/bridge decisions loaded.
+- #138 standards/EUDI/trust frameworks: ACTIVE; current normative family baseline and EUDI crosswalk loaded.
+- #139 operational ecosystems: QUEUED behind active deep-dives, with profile/cloud mappings already represented.
+- #140 reverse coverage: ACTIVE; all 102 governed concepts, 120 governed relations and 13 Bounded Contexts now have explicit reverse-audit rows.
+- #141 manuscript synthesis: PROVISIONAL baseline exists; final table selection remains blocked on #60/#66.
+
+Full publication conclusions remain deferred until active deep-dives provide sufficient source coverage. The workspace is now populated enough to expose gaps rather than merely define schemas.
